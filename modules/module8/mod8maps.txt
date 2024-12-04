@@ -1,0 +1,442 @@
+Module 8 Maps by Paladine
+
+
+Orc area
+
+
+              S (Slave master)
+              |
+              *
+              % (twist skull south, pull lever north)
+              *
+              |
+              *
+              |
+              *
+              |
+b-b           *           B-b   b - Barracks
+| |           |           | |   B - Barracks (regen room)
+b-B           *           b-b   t - Training Halls
+| |           |           | |   T - Training Halls (regen room)
+b-B T-t-t-t-t-T-t-t-t-t-T B-b   k - Kitchen
+| | | | | | | | | | | | | | |   K - Kitchen (regen room)
+b-b t-t-T-T-t-t-T-t-T-t-t b-b   a - Armoury 
+| | | | | | | | | | | | | | |   A - Armoury (regen room)
+b-B-T-t-t-t-t-t-t-T-t-t-t-B-B   c - Commander's quarters
+| | | | | | | | | | | | | | |   C - Commander's quarters (regen room)
+B-b T-t-t-t-t-T-t-t-t-t-T b-b   W - Orc Warlord
+| | | | | | | | | | | | | | |
+b-b t-t-t-t-t-t-t-t-t-T-t B-b
+| | | | | | | | | | | | | | |
+b-B T-t-T-t-t-T-T-t-t-t-t b-b
+| |   |     | | | | | | | | |
+B-b k-K-k   t-T-T t-t-t-T b-b
+| | | | |   | | |   |     | |
+b-b k-k-k   T-T-T A-a-a   b-b
+| | | | |   | | | | | |   | |
+b-b k-k-k   T-T-T a-a-A   B-b
+| | | | |         | | |   | |
+b-b k-k-k   c-W-c A-a-a   B-b
+| |         | | |         | |
+b-b-B-b-b-b c-C-c b-B-b-b-b-b
+| | | | | |   |   | | | | | |
+b-b-b-b-b-b-b-b-b-b-b-b-b-b-b
+
+Nanati area (This place wraps like vortex and caves of chaos)
+N = nanati regen area
+b = 500 darkness rooms
+L = lady of the dark (shimmering portal back to reality)
+Numbers wrap so watch out its easy to get lost
+
+                                          *
+                                          |\
+                                          *-*
+                                          | |     2
+                                          *-*     *
+                                          |        \
+                                          *-N-*-*-*-*
+  1                                      /        |
+  b-b                                   *       *-*-*
+ /  |                                    \     /| | |\
+L-b b                                     *   *-*-*-*-*
+| |  \                                    |
+b-b   *                                   *
+ \|   |                                   |
+  b   *                               *   N
+      |                               |\ /
+      N                               * *
+       \                              |       4
+        N-*                         N * N-*   *
+           \                       /|/  | |\ / \
+            *-*-* *-*-*-*         * *   N-*-*   *
+               /  | | |/         /             /
+              N   *-*-N       *-*         *-*-*
+               \ /           /           /     \
+                *-*       N-N           *       N3
+                  |      /|  \          |
+                  *     *-*   * *-*     *
+                  |     | |   | | |     |
+                  *     *-*   * *-N-*   N
+                 /            | |/ / \ /
+                *             N * *   *
+                 \           /    |
+                  *-*-N-*-*-*     *
+                    | | | | |     |
+                    *-*-N-*-* *   *
+                      | | |  / \ /
+                      *-N-*-*   N
+                      | |
+                      *-N-N         *-*
+                      | | |        /| |
+                    *-*-*-N   *   *-*-*
+                    | |      / \  |
+                   3*-*-N   *   *-N
+                    | | |  / \     \
+                    N-*-N-*   *     *
+                    2         |     |
+                              *     *
+                              |      \
+                              N       *
+                              1      /
+                                    *
+                                    |
+                                    *
+                                     \
+                                      *
+                                       \
+                                        *
+                                        |
+                                        *
+                                        |
+                                        *
+                                         \
+                                          N
+                                          |
+                                          *-N
+                                            4
+
+
+Darkened tunnels
+This area massively overlaps and traps that cant be searched are everywhere
+beware and bring some cure poison
+I've broken this into paths, there are lotsa different ones but they all
+lead to the master assassin (part 2)
+The only way to get in is by pulling both levers and going through 
+the door in the center (9)
+
+                         M Master (mistress?) Assassin
+                         |
+                 *>*<*<*-*-*>*>*>*   < = trap when heading west
+                /        #        \      > = trap when heading east
+               *       *-*-*       *     # = trap
+             12 11   14  9  13    8 10
+
+
+              1 2        4        6 7
+               *        3*5        *
+                \        |        /
+                 *-*-*-*-P-*-*-*-*       P = push panel (monster regen room)
+
+
+Legend:  # = trap either way
+         @ = search to reveal
+         L = monster lair
+
+
+1,4:                                 8
+                                    *
+                                    |
+                                    L
+                                    #
+                                    *
+                                     \
+                                      L
+                                       \ 
+                  *-*-*                 *
+                 #     \               /
+                *       *       L-*#*-*
+                |        \     /
+                *         L   *
+                |         |  /
+                *         * *-L-*-*-L#*
+                |          \           \
+                *           *           L
+                |            \          |
+                L             *         *
+                 \             #       /
+                  L             L     *
+                   \             \   @
+                    *             * *
+                     \            |@
+                      *           *
+                       #          |
+                        L-*       *
+                           #      |
+                            *     *
+                            |     #
+                            *     *
+                            |    /
+                            *   *
+                            |  /
+                          *-* *
+                         #    |
+                    L-*-L     *
+                   /         /
+                *-*         *
+               #            |
+              *             *
+              |             |
+              L             *
+               \            |
+                *           *
+                 1          4
+
+2:                             9
+                               *
+                               |
+                               *
+                               |
+                               L
+                               @ <--- opens when levers are pulled
+                     *-*-*-L-*#*
+                    #           
+                   *
+                    \
+                     *
+                      \
+                       *           *#*#*-*-*
+                        \         /         \
+                         *       L           *
+                         |      /            |
+                         L     *             L
+                          \   /              |
+                           *-*               *
+                                            /
+                                           *
+                                           |
+                                           *
+                                           |
+                                           *
+                                          /
+                                     *-*-*
+                                    /
+                               *-*-*
+                              /
+                         *-L#*
+                        /
+                   *-*-*
+                  /
+                 *   *-*-L-*-*
+                  \ #        |
+                   *         *
+                            /
+                           *
+                          /
+                         *
+                        /
+                       *
+                       |
+                       *
+                      2
+
+
+3:
+                                   10
+                                     *
+                                     |
+                                     L
+                                     |
+                                     *
+                                    /
+                             *-*-*-*
+                            /
+                         *#*
+                         |
+                         *#*
+                            \
+                             *
+                             |
+                             *
+                            /
+             *-*-*-*-L-*-*-*
+            /
+           *
+           |
+           *         L#*#*
+           |         |    \
+           *         *     *-*-*
+           |        #           \
+           *       *             *-*-*
+           |      /                  |
+           *-*-*-L                   *
+                                     |
+                                     *
+                                     |
+                                     *
+                                     |
+               *-*-*-L#*-L           L
+              /           \         /
+           L-*             L-*-*-L-L
+           |
+           *
+            \
+             L
+             |
+             *
+             |
+             *-*-*-*-*
+                     #
+                     L
+                      \
+                       *3
+
+5:
+          11
+            *
+            |
+            *
+             \
+ lever 1 ---> %-*-*#*-L-*-*
+                           #
+                          *-*
+                         /
+                      *-*
+                     #
+                *-*-*
+               /
+              L
+             /
+          *-*
+         /
+        L
+        |
+        *             *-*-*
+        |            /     #
+        *           L       L
+        |          /         \
+        *         *           *
+        |        /             \
+        *       *   *           *
+        |      /   / #          |
+        *     *   *   L         *
+         #   /   /    |         |
+          *-L   *     *         *
+               /      |        /
+              L       *       *
+              |       |      /
+              L       *     *
+              |        \   /
+              *         *-L
+              |
+              *
+               \
+                *-*
+                   \
+                    *-L
+                       \
+                        *
+                        |
+                        *
+                       /
+                     5*
+
+6:
+
+
+                          12           13
+                         *               *
+                         |               |
+                         *               *
+                         |               #
+                         *               *
+                        /                |
+                       *                 L
+                       |                /
+                       *               *
+                       |               |
+                       *               *-L-*-*-*-L
+                        \                         \
+                         *         *-*-*-*-*-*-*   L
+                          #       /             #  |
+                           *     *               * *
+                           #    /               /  |
+                           L-*-*               *   *
+                                              #    |
+                                             *     *
+                                            /     #
+                                           *     *
+                                          /      |
+                               *-*-*-*#*-*       *
+                              /       @         #
+                           *-*         *       *
+                          /             #     /
+                         *               *-*-*
+                         |
+                         *
+                         |
+                         L             *#*-*-L-*
+                          \           /         \
+                           *-*-*#*-L-*           *
+                                                 |
+                                                 *
+                                                 |
+                                                 *
+                                                 #
+                                                 *
+                                                /
+                                               *
+                                              / 
+                                             *
+                                             |
+                                             *
+                                              6
+
+
+7:
+                               14
+                              *
+                              |
+                              *
+                              |
+                              % <--- lever 2
+                              #
+                              *
+                             /
+                          *-*         *#*-*
+                         #           /     \
+                        L           *       *
+                       /           /        |
+                      *           *         *
+                     /           /          |
+                    *           *           *
+                   /           /           /
+                  *           *           *
+                  |          #           /
+                  *         L           *
+                  |        /           /
+                  *     *-*           *
+                   \   /             /
+                    *-*             *
+                                    |
+                                    L
+                                   /
+                                  *
+                                  #
+                                  *
+                                 /
+                                *
+                               / 
+                              *
+                              |
+                              *
+                             /
+                            *           *-*
+                           /           /   #
+                          L       *-L-*     L
+                           \     /           \
+                            *-*-*             *
+                                              |
+                                              *
+                                              |
+                                              *
+                                             7

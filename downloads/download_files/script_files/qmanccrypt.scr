@@ -1,0 +1,311 @@
+;This script was written by: Drizzt Do'Urden
+;If you have any questions or suggestions, my internet email address is
+;drizzt@pretend.com
+;
+;WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING!
+;
+;I have had problems getting this script to work with newer
+;test drive (unregistered) versions of QModem. I don't know
+;if this is due to the fact that it's unregistered or if it
+;is something they changed in the newer versions. I can only
+;guarantee this file to work with QModem Pro v1.50
+;You can go ahead and try, but if you keep getting script
+;errors (mainly "Too many WHEN's defined") then you need
+;to get an older version (or registered version?).
+;Don't send me hate mail if this thing gets you killed. I have used
+;it to get from 15th to 16th without the first problem. If you DO
+;come across any bugs, please send me email at the above address.
+
+TurnON   8_BIT
+TurnOFF  LINEFEED
+TurnOFF  XON/XOFF
+TurnOFF  NOISE
+TurnOFF  MUSIC
+TurnON   SCROLL
+TurnOFF  PRINT
+TurnOFF  SPLIT
+TurnOFF  STATUSLN
+TurnOFF  DOORWAY
+Graphics ANSI
+
+;===============================================
+;This part gets the ball rolling.
+;ANCIENT.TXT is the name of the movement file.
+;Only one direction per line.
+;===============================================
+
+start_script:
+closefile
+openfile  C:\qmpro\scripts\acrypt.txt  read
+delay 100
+goto speed_racer
+
+;===============================================================
+;This module checks to see if a monster/player is in the room.
+;===============================================================
+
+speed_racer:
+when
+timeout 3 next_move
+ send  "^M"
+ when  "into the room"        speed_racer
+ when  "stalks in"            speed_racer
+ when  "you for"              speed_racer
+ when  "at you with"          speed_racer
+ when  "reaches for"          speed_racer
+ when  "draws the breath"     speed_racer
+ when  "touches you"          speed_racer
+ when  "surprise"             check_bs
+ when  "moves to attack you"  not_getting_by_bud_light
+ when  "no exit in that"      hang_up
+waitfor  "Also here:"
+goto whats_here
+
+;==============================================
+;This is the part that makes you move around.
+;==============================================
+next_move:
+readfile  0
+if "$0" = "ENDLOOP"  start_script
+send "$0"
+goto speed_racer
+
+;=================================================================
+;Checks to see if it's another player, or a monster in the room.
+;=================================================================
+
+whats_here:
+timeout 1 next_move                                           
+when
+ when  "skeletal"             attack_skel
+ when  "moaning"              attack_moan
+ when  "minotaur"             attack_mino
+ when  "golum"                attack_golu
+ when  "gelatin"              attack_gela
+ when  "beetle"               attack_beet
+ when  "moves to attack you"  not_getting_my_bud_light
+ when  "surprise"             check_bs
+waitfor "abcdefg"
+
+;============================================================
+;Yadda yadda yadda, these are obviously the attack modules.
+;============================================================
+
+attack_skel:
+timeout 2 speed_racer
+when
+ send "sbol skel^M"
+waitfor "*Combat"
+goto kick_some_butt
+
+attack_moan:
+timeout 2 speed_racer
+when
+ send "sbol moan^M"
+waitfor "*Combat"
+goto kick_some_butt
+
+attack_mino:
+timeout 2 speed_racer
+when
+ send "sbol mino^M"
+waitfor "*Combat"
+goto kick_some_butt
+
+attack_golu:
+timeout 2 speed_racer
+when
+ send "sbol golu^M"
+waitfor "*Combat"
+goto kick_some_butt
+
+attack_gela:
+timeout 2 speed_racer
+when
+ send "sbol gela^M"
+waitfor "*Combat"
+goto kick_some_butt
+
+attack_beet:
+timeout 2 speed_racer
+when
+ send "sbol beet^M"
+waitfor "*Combat"
+goto kick_some_butt
+
+;=====================================================================
+;This is the part that handles combat. It checks health every round.
+;=====================================================================
+
+kick_some_butt:
+ when  "you for"              check_hea
+ when  "at you with"          check_hea
+ when  "reaches for"          check_hea
+ when  "draws the breath"     check_hea
+ when  "touches you"          check_hea
+ when  "left to the"          speed_racer
+ when  "surprise"             check_bs_combatmode
+ when  "moves to attack you"  not_getting_my_bud_light
+ timeout 45 speed_racer
+ waitfor "experience."
+goto get_cash_and_check
+
+;=================================================================
+;This is where you put the HP levels that you want the script to
+;hang up at, major heal, and minor heal.
+;=================================================================
+
+check_hea:
+when
+ send "health^M"
+ delay 100
+ assign 1 0
+ assign 2 0
+ waitfor "Health:   "
+ getx 1 3 /
+ waitfor "Mana: "
+ getx 2 3 /
+ if "$1" <= "20"              hang_up
+ if "$1" <= "50"              major_heal
+ if "$1" <= "125"             minor_heal
+goto kick_some_butt
+
+;=========================================================================
+;These are obviously the healing modules. If a major heal was called for
+;but you didn't have enough mana, it will try minor healing. If there 
+;isn't enough mana for mihe then it won't even try.
+;=========================================================================
+
+minor_heal:
+if "$2" < "2"                 kick_some_butt
+when
+ send "mihe^Ma^M"
+goto kick_some_butt
+
+major_heal:
+if "$2" < "6"                 minor_heal
+ send "mahe^Ma^M"
+goto kick_some_butt
+
+;=====================================================================
+;This module checks to see if you just SAW a BS or if YOU WERE BSed.
+;If you just SAW a BS it continues fighting.
+;=====================================================================
+
+check_bs_combatmode:
+timeout 2 kick_some_butt
+when
+ when "you for"                not_getting_my_bud_light
+ when "moves to attack you"    not_getting_my_bud_light
+ when "warrior for"            kick_some_butt
+ when "spirit for"             kick_some_butt
+waitfor "abcdefg"
+goto hang_up
+
+;======================================================
+;This is the part that snags all the loot. Since this 
+;script is made for the ancient crypt, it is only set
+;up to get fine broadswords. This is also where you
+;define at what number of HPs you want rest to start.
+;======================================================
+
+get_cash_and_check:
+send "get fine^M"
+delay 100
+when
+ send "health^M"
+ waitfor "Health:   "
+ assign 1 0
+ getx 1 3 /
+ if "$1" <= "20"              hang_up
+ if "$1" <= "80"              pre_rest
+goto speed_racer
+
+;==============================================================
+;This module checks to see if you just SAW a BS or WERE BSed.
+;If you just SAW a BS it will continue roaming.
+;==============================================================
+
+check_bs:
+timeout 2 speed_racer
+when
+ when "you for"               not_getting_my_bud_light
+ when "moves to attack you"   not_getting_my_bud_light
+ when "warrior for"           speed_racer
+ when "spirit for"            speed_racer
+waitfor "abcdefg"
+goto hang_up
+
+;====================
+;Begins rest cycle.
+;====================
+
+pre_rest:
+ send "rest^M"
+ delay 100
+goto rest_up
+
+;======================================================================
+;This is the main rest module, it will keep resting until the defined
+;number of HPs is reached. Keeping a watch for monsters, players
+;attacking/BSing you etc.
+;======================================================================
+
+rest_up:
+when
+ when  "skeletal"             attack_skel
+ when  "moaning"              attack_moan
+ when  "minotaur"             attack_mino
+ when  "golum"                attack_golu
+ when  "gelatin"              attack_gela
+ when  "beetle"               attack_beet
+timeout 5 check_up
+  when "moves to attack you"  not_getting_my_bud_light
+  when "surprise"             check_bs
+  when "you for"              speed_racer
+  when "at you with"          speed_racer
+  when "reaches for"          speed_racer
+  when "draws the breath"     speed_racer
+  when "touches you"          speed_racer
+ waitfor "abcdefg"
+ send "woohoo!^M"
+ timeout 2 speed_racer
+ waitfor "abcdefg"
+ delay 100
+goto rest_up
+
+;====================================================================
+;This is where you define at what number of HPs you want the script
+;to continue at after resting. The rest module does a check up
+;every 5 seconds or so.
+;====================================================================
+
+check_up:
+ send "health^M"
+ waitfor "Health:   "
+ assign 1 0
+ getx 1 3 /
+ if "$1" < "130" rest_up
+goto speed_racer
+
+;=====================================================================
+;This is the module that hangs up. You may need to change the hangup
+;command depending on how your BBS operates.
+;=====================================================================
+
+hang_up:
+ send ";o^M"
+ delay 100
+exit
+
+;===========================================================
+;This is the hangup module used if the script is attacked.
+;Once again, you may beed to change the logoff command.
+;===========================================================
+
+not_getting_my_bud_light:         
+ send "bg I WAS ATTACKED!"
+ send "=x^M"
+ delay 100
+exit
+

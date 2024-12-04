@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>MUDCENTRAL: Everything You Want to Know about MajorMUD</TITLE>
+<META name="description" content="Welcome to MUDcentral.  The place for information on Mud games, classes, spells, monsters, and weapons.  Drop by and play online with over 2,500 real/live people!!">
+<META name="keywords" content="entertainment, games, online games, online, gaming, MUD, MPOGs, majormud, major, chat, internet games, free games, web games, multiplayer, MUDs, MegaMud, SuperMud, supermud3, info, information, pvp, non-pvp, mush, roleplaying, multi-user, multi, player, BBS, d&d, MPOG, computer, game, experiences, competitions, explorations, fights, attacks, duos, dungeon, dragon, combats, multi-player, multi-user, dungeons, dragons, spells, powers, weapons, armor, champions, races, classes, mystical, scripting, terminal, news, hints, tricks, cheats, forums, maps, medevial, fantasy, mmclient, metropolis, fantasy, realms, fun, web based, video games, warrior, sword, medieval, middle ages, warriors, paladians, clerics, priests, ninjas, thief, thieves, guild, bards, gypsy, gypsies, warlocks, mages, druids, rangers, humans, dwarfs, dwarves, gnomes, halflings, elfs, elves, gods, lords">
+</HEAD>
+<BODY BACKGROUND="" BGCOLOR="#000000" TEXT="#c0c0c0" LINK="#0099ff" VLINK="Aqua" ALINK="#808000">
+
+<center>
+<table border=0 width=600>
+<tr><td border=0 colspan=2><a href="http://www.mudcentral.net" ALT="MudCentral Home">
+<img src="/images/mudcentralheader.gif" ALT="MudCentral Home" border=0></a></td></tr>
+<tr>
+<td border=1 width=123 height=391 valign=top>
+<IMG SRC="/images/newmudcentralnav.gif" usemap="#1"  name="navbar"  ALT="Click on a page to jump there" border=0>
+<A HREF="/sysops/index.html"><IMG SRC="/images/mudwizard.gif" ALT="Sysop Command Reference" border=0></A>
+</td>
+
+<map name="1">
+<area shape="rect" coords ="10,20,113,34"  href ="/chardev/index.html">
+<area shape="rect" coords ="10,41,57,53"  href="/items/index.html">
+<area shape="rect" coords ="10,60,68,74"  href="/spells/index.html">		
+<area shape="rect" coords ="10,81,91,93"  href="/monsters/index.html">
+<area shape="rect" coords ="10,101,69,113"  href="/quests/index.html">
+<area shape="rect" coords ="10,120,40,134"  href="/pvp/index.html">
+<area shape="rect" coords ="10,141,82,153"  href="/modules/index.html">
+<area shape="rect" coords ="10,161,87,174"  href="/toplists/index.html">
+<area shape="rect" coords ="10,181,103,194"  href="/downloads/index.html">
+<area shape="rect" coords ="10,201,106,214"  href="http://www.mudmarket.com/">
+<area shape="rect" coords ="10,221,51,234"  href="http://www.greatermud.com/">
+<area shape="rect" coords ="10,241,72,253"  href="http://www.mudforum.com/cgi-bin/majormud/majormud.cgi">
+<area shape="rect" coords ="10,261,94,273"  href="http://www.greatermud.com/">
+<area shape="rect" coords ="10,281,115,295"  href="/mudmaps/index.html">
+<area shape="rect" coords ="10,300,115,314"  href="/bbs_reviews/index.html">
+<AREA SHAPE=RECT COORDS="9,319,117,338" HREF="/help/howtoplay.html">
+<AREA SHAPE=RECT COORDS="7,341,56,360" HREF="/help/">
+</map>
+<td valign=top width=448>
+  
+     
+<center><b><font size=6 color=#ffcc33>Module 8: A Call to Arms</center></font>
+<pre>
+<center>+        Version 1.11g - 10/23/2000       +</center>
+
+
+1) Gangshop duplication bug is fixed.
+2) Ganghouse items removed from ganghouse floors at cleanup if
+   the items don't belong to that ganghouse.
+3) "Noises" lessened in Silvermere and surrounding areas.
+4) Park statues all set to be visible after cleanup
+5) Some bugs related to ganghouse commands fixed.
+6) You can now summon guards without them disappearing after cleanup
+7) Misc. spell and item bugs fixed.
+8) More items sellable in the junkyard and other stores.
+
+
+<center>+        Version 1.11f - 09/06/2000       +</center>
+
+1)  Chainmail armor is available to Warlocks.
+2)  "Noises" added to Silvermere and surrounding areas.
+3)  Most mystic forms no longer give a bonus to criticals or dodge.
+4)  Silvermere graveyard expanded.
+5)  Gravestones added to Silvermere Graveyard, five are BBS customizable.
+6)  Negative Power Plane expanded and monsters added.
+7)  Greet messages added to some monsters.
+8)  Gangleaders can buy a healer in their ganghouse.
+9)  Rubbish rooms added to each ganghouse.
+10) Sections in the darkwood forest have been converted to gangshops for all
+    ganghouses.
+11) NT crash bug caused by cleanup now fixed.
+12) Practice monster added to portal arena.
+13) When dying in Silvermere Portal Arena or Silvermere Small Arena, you now
+    appear outside the entrance.
+14) Some monsters will now drop body parts to use as weapons.
+15) Half-Ogres can now use kai powers.
+16) Different levels of racial nightvision added.
+17) Different levels of light items added.
+18) Added new travel portals.
+19) The Silvermere Casino is open.
+20) Additional items added to the junkyard.
+21) Statues added to the park, one for each class, customizable by BBS.
+22) Gang emblems are now wearable.
+23) Beginning alignment quest NPC's can now assist you in your current
+    alignment quest.
+24) Ganghouse keys now give a message when broken.
+
+
+<center>+        Version 1.11e - 05/12/2000       +</center>
+
+1)  Fixed item sweeping on ganghouses during cleanup. This should no longer
+    happen unless done by your Sysop.
+2)  Changed meditate regeneration to appropriately match natural mana
+    regeneration per different spell groups.
+3)  Increased accuracy, defence, and hold penalties for person/monster that
+    is SMASHed per user feedback.
+4)  Removed MUD Internal Error, attack_user_monster error when using weapon
+    with an attached spell. This message should no longer appear.
+5)  Fixed gangshop bug that allowed for mass duplication of items (thanks go
+    out to the users that reported it!)
+6)  Fixed traps that unnaturally boosted a monster's hp.
+7)  Fixed "weird" swings and accuracy bug where a player would get 1 swing
+    and then 10 swings etc. as well as sudden low accuracy.
+8)  Fixed random scattering of monsters that left their regeneration area.
+9)  Set specific mage and druid armor spells to be non stackable, and
+    upgraded the value of higher level armor spells to compensate
+    (Translation: stoneskin cancels barkskin, mageshield cancels blur and
+    shld, however stoneskin and mageshield were upgraded).
+10) Changed buggy ganghouse room descriptions.
+11) Set ganghouse deeds to delete at cleanup if on the floor.
+12) Increased life of dying master assassin per user feedback.
+13) Adjusted Lieutenant flag so that is is removed in all cases that a player
+    leaves a gang.
+
+
+<center>+        Version 1.11d - 05/02/2000       +</center>
+
+1)  Fixed the crashing related to drain weapons.
+2)  Fixed crashing related to constrictor coils.
+3)  Modified gang house cleanup process. Some people were reporting double
+    fault during cleanup. This problem should be resolved. Please report
+    any continued problems to bugs@majormud.com
+4)  Fixed problem where people could premote or demote members of other
+    gangs. This function should now be working properly.
+5)  Fixed shops deleting inventory at cleanup.
+6)  Added some missing gang house room descriptions.
+7)  Adjusted the AC up on the jeweled turban and golden headdress due to
+    user feedback.
+8)  This release does not include all bugs reported with 1.11c, but a release
+    was necessary to resolve some of the more important issues quickly. An
+    additional release will follow in the near future.
+
+
+<center>+        Version 1.11c - 04/28/2000       +</center>
+
+1)  Ganghouses! Introduced ten ganghouses scattered across the realm. All
+    have user-customizable room and item descriptions. Locations to
+    Ganghouses are described in ganghouse "Deeds".
+2)  New "Deed" items, sold in the Deed Shop, purchasable only by the gang
+    leader with gang experience requirements set by the Sysop. Deeds handle
+    distribution of ganghouse keys and emblems, also the deed holder is the
+    only person who can control the ganghouse shop.
+3)  New guardian monsters for ganghouses, these monsters guard the
+    ganghouses from non gang-members. Emblems are required by gang members
+    to signify they belong to that gang. WARNING: IF YOU ATTACK THE
+    GUARDIANS WITH AN EMBLEM THEY WILL CONTINUE TO ATTACK UNTIL CLEANUP.
+4)  Added STOCK command for Gang Shops, "STOCK (item) (price) (currency)".
+5)  Added UNSTOCK command for Gang Shops, "UNSTOCK (item)".
+6)  Added MARKUP command for Gang Shops, "MARKUP (percent)".
+7)  Added new gang member type "Lieutenant". Lieutenants can invite or
+    uninvite gang members without requiring the gang leader to be online.
+8)  Added PROMOTE gang command, "PROMOTE (player name)", used to promote a
+    member to lieutenant. This command is for the gang leader only.
+9)  Added DEMOTE gang command, "DEMOTE (player name)", used to demote a
+    lieutenant to member. This command is for the gang leader only.
+10) Ganghouse rooms and items are customizable. Descriptions are stored in
+    a text file specified in the default file descriptions. You must create
+    the new description in a text file and give to your Sysop.
+11) Set certain spells to remove spells of like ability as they are not
+    stackable. These changes were done to discourage use of the "10 spell"
+    bug.
+12) Certain items set to magical due to their magic effects as per extensive
+    user feedback.
+13) Lowered magic resistance of certain items, as per extensive user
+    feedback.
+14) Mystic fighting forms changed per further testing and user feedback.
+15) Fixed bugs concerning certain monsters and monster regen areas due to
+    extensive difficulty.
+16) Changed Bash Attack Type, as well as attack, damage and speed modifiers.
+17) Added new abilities, allowing for additional commands to be used or
+    class abilities to be enhanced upon quest completion.
+18) Added taxation of ganghouses to prevent ganghouse hoarding or stagnation.
+    Taxation is withdrawn directly from the gang leader's Silvermere bank
+    account, and specified in the deed description.
+</pre>
+</td></tr></table>
+<p><p>
+<p>
+
+<CENTER><TABLE width="500" border="0">
+	<TR>
+        	<TD align="CENTER">
+
+		
+<script type="text/javascript"><!--
+google_ad_client = "pub-2720616807411724";
+/* 728x90, Mud Central */
+google_ad_slot = "9592774669";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+
+		
+		<FONT face="verdana,helvetica,arial" size="-1" color="#ffffff">
+
+               
+
+<hr>
+	<a href="http://www.80s.com" target="new">80s Webite</a> | 
+	<a href="http://www.gameport.com" target="new">Games</a> | 
+	<a href="http://www.macromusic.com" target="new">Music Store</a> | 
+	<a href="http://www.musicfanclubs.org" target="new">Music Fan Clubs</a><br><br>
+	
+	
+                <BR />Copyright &copy; 
+				<script language="JavaScript">
+				var d=new Date(); 
+				yr=d.getFullYear();
+				if (yr!=2003)
+				document.write("- "+yr);
+				</script>
+-- <a href="http://www.metrobbs.com">Metropolis Entertainment, Inc.</a>| <A HREF="privacypolicy.html">Privacy Policy</A><BR /> 
+		Send questions or comments to <a href="mailto:info@mudcentral.com">MudCentral Webmaster</a>
+                </FONT></TD>
+	</TR>
+</TABLE>
+
+
+</CENTER>
+
+
+<script type="text/javascript">
+
+
+</script>
+<script type="text/javascript">
+try {
+
+
+} catch(err) {}</script>
+
+</center>
+
+</body></html>
+
+ 
+
+
+ 

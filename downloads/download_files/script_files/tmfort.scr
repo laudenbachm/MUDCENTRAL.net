@@ -1,0 +1,761 @@
+CONF = 0
+TRAPPED = 0
+IF NOT CONNECTED
+ when "(N)onstop, (Q)uit, or (C)ontinue?" , "^M"
+ when "(Y/N)" , "n^M"
+ DIAL "12"
+ WAITFOR "login:" , 10
+ PUT "alias"
+ WAITFOR "password:" , 5
+ PUT ""
+ WAITFOR "Enter your ALIAS, or type NEW:" , 40
+ IF FOUND
+  PUT "mortician"
+  WAITFOR "your password:" , 5
+  PUT "123 yeah"
+  WAITFOR "Choose an Option:" , 20
+  DELAY 10
+;  PUT "=b"
+  PUT "gm"
+  DELAY 10
+  WAITFOR "[MAJORMUD]:" , 10
+  PUT "e"
+  DELAY 10
+ ELSE
+  WAITFOR "login:" , 10
+  PUT "alias"
+  WAITFOR "password:" , 5
+  PUT ""
+  WAITFOR "Enter your ALIAS, or type NEW:" , 40
+  IF FOUND
+   PUT "mortician"
+   WAITFOR "your password:" , 5
+   PUT "123 yeah"
+   WAITFOR "Choose an Option:" , 20
+   DELAY 10
+;   PUT "=b"
+   PUT "gm"
+   DELAY 10
+   WAITFOR "[MAJORMUD]:" , 10
+   PUT "e"
+   DELAY 10
+ ELSE
+  WAITFOR "login:" , 10
+  PUT "alias"
+  WAITFOR "password:" , 5
+  PUT ""
+  WAITFOR "Enter your ALIAS, or type NEW:" , 40
+  IF FOUND
+   PUT "mortician"
+   WAITFOR "your password:" , 5
+   PUT "123 yeah"
+   WAITFOR "Choose an Option:" , 20
+   DELAY 10
+;   PUT "=b"
+   PUT "gm"
+   DELAY 10
+   WAITFOR "[MAJORMUD]:" , 10
+   PUT "e"
+   DELAY 10
+  ENDIF
+ ENDIF
+ENDIF
+ENDIF
+
+;Major Mud "Warrior type" Under The House (FOLLOW) Script.
+;Created by Mindcrime - CDS
+;put "=p off^M.action none^Mtalk slow^m"
+
+A = "dark cultist"
+B = "dark cleric"
+C = "dark priest"
+DD = "dark paladin"
+EE = "hellhound"
+F = "giant bat"
+G = "cave worm"
+H = "grey spider"
+I = "tentacled"
+XX = "th elemental"
+YY = "dark warrior"
+ZZ = "dark assassin"
+AB = "dark mage"
+AC = "dark warlock"
+AD = "violet spore"
+AE = "tkin shaman"
+AF = "tkin warrior"
+AG = "tkin hunter"
+AH = "bola spider"
+AI = "giant ant"
+AJ = "winged horror"
+AK = "fungus tree"
+AL = "swamp serpent"
+AM = "giant toad"
+AN = "shambling mound"
+AO = "obsidian demon"
+AP = "magma man"
+AQ = "ame elemental"
+AR = "ater hellhound"
+AS = "pyro jelly"
+AU = "fire bat"
+AV = "rattlesnake"
+AW = "tering ooze"
+AX = "glowing worm"
+AY = "lline spider"
+AZ = "guard captain"
+BA = "elite guard"
+BB = "mutant"
+
+
+;When "moves to attack you!" , "/Blushing Being Attacked!!!!^M^#"
+;When "silver drop" , "get silver^M"
+;When "copper drop" , "get copper^M"
+;When "gold drop" , "get gold^M"
+when "you gain" , "get gold^Mget silver^Mrest^M"
+;when "Blushing just hung up" , "break^M^#"
+when "MajorMUD - ROL" , "rest^M"
+when "falters" , "get fine^M"
+;when "Blushing just entered the realm" , "invite blush^M"
+when "too afraid to do that" , "a^m"
+when "party at the present time" , "invite blush^M"
+when "[Invited]" , "uninvite blush^Minvite blush^M"
+when "You fumble in confusion" , ",^M"
+when "you feel ill." , ",I like being poisoned^M"
+when "with a wail" , "get hide^M"
+when "MajorMUD - ROL" , "rest^M"
+;when "you for" , "slap blushing^M"
+;when "Blushing slaps you" , "bs^M"
+when "reaper moves to attack" , ",^M"
+when "a hail of arrows rains down on you!" , "rest^M"
+when "greater hellhound hide here" , "get hide^Mrest^M"
+when "a hail of arrows rains down upon you!" , "rest^M"
+
+PROCEDURE ATTACKB
+REPEAT
+put ""
+WAITFOR A,B,C,DD,YY,ZZ,AB,AC,AZ,BA,BB , "You can move again" , "confusion wear off" , 20
+UNTIL FOUND OR NOT CONNECTED
+;DELAY 5
+SWITCH FOUND
+CASE 1:
+ PUT "=e off^Mbs cult"
+ WAITFOR "falls" , "collapses" , "cultist just left" , "no effect." , "Following your" , "You can move again" , "confusion wear off" , 100
+ IF FOUND
+  PUT "rest"
+  TRAPPED = 0
+  CONF = 0
+  RETURN
+ ENDIF
+CASE 2:
+ PUT "=e off^Mbs cler"
+ WAITFOR "falls" , "collapses" , "cleric just left" , "no effect." , "Following your" , "You can move again" , "confusion wear off" , 100
+ IF FOUND
+  PUT "rest"
+  TRAPPED = 0
+  CONF = 0
+  RETURN
+ ENDIF
+CASE 3:
+ PUT "=e off^Mbs pries"
+ WAITFOR "falls" , "collapses" , "priest just left" , "no effect." , "Following your" , "You can move again" , "confusion wear off" , 100
+ IF FOUND
+  PUT "rest"
+  TRAPPED = 0
+  CONF = 0
+  RETURN
+ ENDIF
+CASE 4:
+ PUT "=e off^Mbs pala"
+ WAITFOR "falls" , "collapses" , "paladin just left" , "no effect." , "Following your" , "You can move again" , "confusion wear off" , 100
+ IF FOUND
+  PUT "rest"
+  TRAPPED = 0
+  CONF = 0
+  RETURN
+ ENDIF
+CASE 5:
+ PUT "=e off^Mbs warr"
+ WAITFOR "dies with" , "warrior just left" , "no effect." , "Following your" , "You can move again" , "confusion wear off" , 100
+ IF FOUND
+  PUT "rest"
+  TRAPPED = 0
+  CONF = 0
+  RETURN
+ ENDIF
+CASE 6:
+ PUT "=e off^Mbs assass"
+ WAITFOR "spits up" , "assassin just left" , "no effect." , "Following your" , "You can move again" , "confusion wear off" , 100
+ IF FOUND
+  PUT "rest"
+  TRAPPED = 0
+  CONF = 0
+  RETURN
+ ENDIF
+CASE 7:
+ PUT "=e off^Mbs mage"
+ WAITFOR "tries to cast" , "mage just left" , "no effect." , "Following your" , "You can move again" , "confusion wear off" , 100
+ IF FOUND
+  PUT "rest"
+  TRAPPED = 0
+  CONF = 0
+  RETURN
+ ENDIF
+CASE 8:
+ PUT "=e off^Mbs warlock"
+ WAITFOR "tries to cast" , "warlock just left" , "no effect." , "Following your" , "You can move again" , "confusion wear off" , 100
+ IF FOUND
+  PUT "rest"
+  TRAPPED = 0
+  CONF = 0
+  RETURN
+ ENDIF
+CASE 9:
+ PUT "=e off^Mbs captain"
+ WAITFOR "growls" , "clutches" , "captain just left" , "no effect." , "Following your" , "You can move again" , "confusion wear off" , 100
+ IF FOUND
+  PUT "rest"
+  TRAPPED = 0
+  CONF = 0
+  RETURN
+ ENDIF
+CASE 10:
+ PUT "=e off^Mbs guard"
+ WAITFOR "clutches" , "growls" , "guard just left" , "no effect." , "Following your" , "You can move again" , "confusion wear off" , 100
+ IF FOUND
+  PUT "rest"
+  TRAPPED = 0
+  CONF = 0
+  RETURN
+ ENDIF
+CASE 11:
+ PUT "=e off^Mbs mutant"
+ WAITFOR "sighs" , "mutant just left" , "no effect." , "Following your" , "You can move again" , "confusion wear off" , 100
+ IF FOUND
+  PUT "rest"
+  TRAPPED = 0
+  CONF = 0
+  RETURN
+ ENDIF
+CASE 12:
+ TRAPPED = 0
+ RETURN
+CASE 13:
+ CONF = 0
+ RETURN
+ENDSWITCH
+ENDPROC
+
+PROCEDURE ATTACK
+REPEAT
+put ""
+WAITFOR A,B,C,DD,EE,F,G,H,I,XX,YY,ZZ,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS,AU,AV,AW,AX,AY,AZ,BA,BB, 3
+IF NOT FOUND
+ PUT "hea"
+ WAITFOR "[100%]","[99%]","[98%]","[97%]","[96%]","[95%]","[94%]","[93%]","[92%]","[91%]","[90%]","[89%]","[88%]","[87%]","[86%]","[85%]", 2
+ IF FOUND
+;  PUT "par"
+;  WAITFOR "nter) [H:100%]" , "nter) [H: 9" , "nter) [H: 89" , "nter) [H: 88" , "nter) [H: 87" , "nter) [H: 86" , "nter) [H: 85" ,2
+;  IF FOUND OR NOT CONNECTED
+   RETURN
+;  ENDIF
+ ENDIF
+ENDIF
+;DELAY 5
+SWITCH FOUND
+CASE 1:
+ PUT "=e off^Mbs cult"
+ WAITFOR "falls" , "collapses" , "cultist just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 2:
+ PUT "=e off^Mbs cler"
+ WAITFOR "falls" , "collapses" , "cleric just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+ PUT "st"
+ WAITFOR "Your legs are paralyzed" , 2
+ IF FOUND 
+  TRAPPED = 1
+  REPEAT 
+  ATTACKB
+  UNTIL TRAPPED = 0 
+ ENDIF
+CASE 3:
+ PUT "=e off^Mbs pries"
+ WAITFOR "falls" , "collapses" , "priest just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+ PUT "st"
+ WAITFOR "Your legs are paralyzed" , 2
+ IF FOUND 
+  TRAPPED = 1
+  REPEAT 
+  ATTACKB
+  UNTIL TRAPPED = 0 
+ ENDIF
+CASE 4:
+ PUT "=e off^Mbs pala"
+ WAITFOR "falls" , "collapses" , "paladin just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 5:
+ PUT "=e off^Mbs hellh"
+ WAITFOR "collapses" , "growls" , "hound just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 6:
+ PUT "=e off^Mbs giant"
+ WAITFOR "falls" , "at just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 7:
+ PUT "=e off^Mbs cave"
+ WAITFOR "falls" , "collapes" , "collapses" , "worm just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 8:
+ PUT "=e off^Mbs grey"
+ WAITFOR "pider just left" , "falls" , "collapses" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 9:
+ PUT "=e off^Mbs tent"
+ WAITFOR "abomination just left" , "collapses" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 10:
+ PUT "=e off^Mbs earth"
+ WAITFOR "quivers" , "elemental just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 11:
+ PUT "=e off^Mbs warr"
+ WAITFOR "dies with" , "warrior just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 12:
+ PUT "=e off^Mbs assass"
+ WAITFOR "spits up" , "assassin just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 13:
+ PUT "=e off^Mbs mage"
+ WAITFOR "tries to cast" , "mage just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+ PUT "st"
+ WAITFOR "You are confused" , 2
+ IF FOUND 
+  CONF = 1
+  REPEAT 
+  ATTACKB
+  UNTIL CONF = 0 
+ ENDIF
+CASE 14:
+ PUT "=e off^Mbs warlock"
+ WAITFOR "tries to cast" , "warlock just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+ PUT "st"
+ WAITFOR "You are confused" , 2
+ IF FOUND 
+  CONF = 1
+  REPEAT 
+  ATTACKB
+  UNTIL CONF = 0 
+ ENDIF
+CASE 15:
+ PUT "=e off^Mbs spore"
+ WAITFOR "collapses" , "spore just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 16:
+ PUT "=e off^Mbs shaman"
+ WAITFOR "one last" , "shaman just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 17:
+ PUT "=e off^Mbs warr"
+ WAITFOR "hisses" , "warrior just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 18:
+ PUT "=e off^Mbs hunter"
+ WAITFOR "and dies" , "hunter just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 19:
+ PUT "=e off^Mbs spider"
+ WAITFOR "screeches" , "spider just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 20:
+ PUT "=e off^Mbs ant"
+ WAITFOR "collapses" , "ant just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 21:
+ PUT "=e off^Mbs horror"
+ WAITFOR "shrill cry" , "horror just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 22:
+ PUT "=e off^Mbs tree"
+ WAITFOR "collapses" , "tree just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 23:
+ PUT "=e off^Mbs swamp"
+ WAITFOR "hisses" , "serpent just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 24:
+ PUT "=e off^Mbs toad"
+ WAITFOR "croaks in" , "toad just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 25:
+ PUT "=e off^Mbs mound"
+ WAITFOR "falls" , "mound just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 26:
+ PUT "=e off^Mbs demon"
+ WAITFOR "broken shards" , "demon just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 27:
+ PUT "=e off^Mbs magma"
+ WAITFOR "pulsates" , "man just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 28:
+ PUT "=e off^Mbs flame"
+ WAITFOR "utters" , "elemental just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 29:
+ PUT "=e off^Mbs greater"
+ WAITFOR "collapses" , "hellhound just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 30:
+ PUT "=e off^Mbs jelly"
+ WAITFOR "quivers" , "jelly just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 31:
+ PUT "=e off^Mbs bat"
+ WAITFOR "explodes" , "bat just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 32:
+ PUT "=e off^Mbs ratt"
+ WAITFOR "hisses" , "snake just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 33:
+ PUT "=e off^Mbs ooze"
+ WAITFOR "solidifies" , "ooze just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 34:
+ PUT "=e off^Mbs worm"
+ WAITFOR "curls" , "worm just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 35:
+ PUT "=e off^Mbs spider"
+ WAITFOR "shatters" , "spider just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 36:
+ PUT "=e off^Mbs captain"
+ WAITFOR "growls" , "captain just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 37:
+ PUT "=e off^Mbs guard"
+ WAITFOR "clutches" , "guard just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+CASE 38:
+ PUT "=e off^Mbs mutant"
+ WAITFOR "sighs" , "mutant just left" , "no effect." , "Following your" , 100
+ IF FOUND
+  PUT "rest"
+ ENDIF
+ENDSWITCH
+UNTIL NOT CONNECTED
+SCRIPT "C:\TLM\FORTWAR2.SCR"
+ENDPROC
+
+PROCEDURE SE
+put "se",
+ENDPROC
+
+PROCEDURE NW
+put "nw",
+ENDPROC
+
+PROCEDURE SW
+put "sw",
+ENDPROC
+
+PROCEDURE NE
+put "ne",
+ENDPROC
+
+PROCEDURE E
+put "e",
+ENDPROC
+
+PROCEDURE W
+put "w",
+ENDPROC
+
+PROCEDURE N
+put "n",
+ENDPROC
+
+PROCEDURE S
+put "s",
+ENDPROC
+
+PROCEDURE D
+put "d",
+ENDPROC
+
+PROCEDURE U
+put "u",
+ENDPROC
+
+REPEAT
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ D
+ ATTACK
+ S
+ ATTACK
+ W
+ ATTACK
+ NW
+ ATTACK
+ NW
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ SE
+ ATTACK
+ SE
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ NE
+ ATTACK
+ NE
+ ATTACK
+ N
+ ATTACK
+ W
+ ATTACK
+ W
+ ATTACK
+ W
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ N
+ ATTACK
+ NW
+ ATTACK
+ SE
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ SW
+ ATTACK
+ SW
+ ATTACK
+ W
+ ATTACK
+ N
+ ATTACK
+ U
+ ATTACK
+ S
+ ATTACK
+ E
+ ATTACK
+ NE
+ ATTACK
+ NE
+ ATTACK
+ N
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ W
+ ATTACK
+ W
+ ATTACK
+ W
+ ATTACK
+ W
+ ATTACK
+ N
+ ATTACK
+ S
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ N
+ ATTACK
+ NW
+ ATTACK
+ NW
+ ATTACK
+ W
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ W
+ ATTACK
+ SW
+ ATTACK
+ SW
+ ATTACK
+ S
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ U
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ W
+ ATTACK
+ SW
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ SE
+ ATTACK
+ E
+ ATTACK
+ N
+ ATTACK
+ S
+ ATTACK
+ E
+ ATTACK
+ NE
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ NW
+ ATTACK
+ W
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ D
+ ATTACK
+ W
+ ATTACK
+ W
+ ATTACK
+ W
+ ATTACK
+ S
+ ATTACK
+ SE
+ ATTACK
+ SE
+ ATTACK
+ E
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ PUT "hide 300 silver^Mhide 100 gold"
+ DELAY 15
+UNTIL NOT CONNECTED  

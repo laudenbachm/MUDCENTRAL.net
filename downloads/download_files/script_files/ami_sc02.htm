@@ -1,0 +1,207 @@
+<html>
+<head><title>The Major MUD Scripts Page</title></head>
+<pre>
+
+/*              Written by: Anakin @ California BBS                    */
+/* This is a 'roaming' script for the first level of the Crypt for the */
+/* Amiga program Terminus, written for a ranger but should work for    */
+/* any class. If being used for a non-druid, just change mend to mihe  */
+/* or take it out all together. Send any comments, questions, improve- */
+/* ments, ect. to: Internet: anakin@calbbs.com  MajorNET: Anakin@URB   */
+
+init:
+ONCARRIER GOTO blah
+goto parta
+
+parta:
+GOSUB mons
+gosub n
+gosub n
+gosub n
+gosub n
+gosub w
+gosub w
+gosub s
+gosub s
+gosub s
+gosub s
+gosub n
+gosub n
+gosub n
+gosub n
+gosub e
+gosub e
+gosub e
+gosub e
+gosub s
+gosub s
+gosub s
+gosub s
+gosub n
+gosub n
+gosub n
+gosub n
+gosub w
+gosub w
+gosub n
+gosub n
+gosub n
+gosub w
+gosub w
+gosub n
+gosub n
+gosub n
+gosub n
+gosub n
+gosub e
+gosub e
+gosub s
+gosub s
+gosub s
+gosub s
+gosub s
+gosub e
+gosub e
+gosub n
+gosub n
+gosub n
+gosub n
+gosub n
+gosub w
+gosub w
+gosub s
+gosub s
+gosub s
+gosub s
+gosub s
+gosub s
+gosub s
+gosub s
+gosub s
+gosub s
+gosub s
+gosub s
+goto parta
+
+n:
+SEND "sn^Mnorth^M"
+WAIT "Crypt"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+s:
+SEND "sn^Msouth^M"
+WAIT "Crypt"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+e:
+SEND "sn^Meast^M"
+WAIT "Crypt"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+w:
+SEND "sn^Mwest^M"
+WAIT "Crypt"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+mons:
+SEND "^M"
+WHEN 1 "zombie" GOTO zom
+WHEN 2 "skeleton" GOTO skel
+WAIT "Obvious"
+return
+
+zom:
+SEND "bs zombie^M"
+WHEN 1 "Well Spoken..." GOTO mons
+WHEN 2 "you for" GOTO mend
+WAIT "gain"
+GOTO mons
+
+skel:
+SEND "bs skel^M"
+WHEN 1 "Well Spoken..." GOTO mons
+WHEN 2 "you for" GOTO mend
+WAIT "gain"
+GOTO mons
+
+mend:
+SEND "mend^M"
+GOTO mons
+
+heal:
+SEND "health^M"
+WHEN 2 "Health:    29/76" GOTO rest
+WHEN 3 "Health:    28/76" GOTO rest
+WHEN 4 "Health:    27/76" GOTO rest
+WHEN 5 "Health:    26/76" GOTO rest
+WHEN 6 "Health:    25/76" GOTO rest
+WHEN 7 "Health:    24/76" GOTO rest
+WHEN 8 "Health:    23/76" GOTO rest
+WHEN 9 "Health:    22/76" GOTO rest
+WHEN 10 "Health:    21/76" GOTO rest
+WHEN 11 "Health:    20/76" GOTO rest
+WHEN 12 "Health:    19/76" GOTO rest
+WHEN 13 "Health:    18/76" GOTO rest
+WHEN 14 "Health:    17/76" GOTO rest
+WHEN 15 "Health:    16/76" GOTO rest
+WHEN 16 "Health:    15/76" GOTO rest
+WHEN 17 "Health:    14/76" GOTO rest
+WHEN 18 "Health:    13/76" GOTO rest
+WHEN 19 "Health:    12/76" GOTO rest
+WHEN 20 "Health:    11/76" GOTO rest
+WHEN 21 "Health:    10/76" GOTO rest
+WHEN 22 "Health:     9/76" GOTO rest
+WHEN 23 "Health:     8/76" GOTO rest
+WHEN 24 "Health:     7/76" GOTO rest
+WHEN 25 "Health:     6/76" GOTO rest
+WHEN 26 "Health:     5/76" GOTO rest
+WHEN 27 "Health:     4/76" GOTO rest
+WHEN 28 "Health:     3/76" GOTO rest
+WHEN 29 "Health:     2/76" GOTO rest
+WHEN 30 "Health:    30/76" GOTO rest
+WAIT "Mana:"
+RETURN
+
+rest:
+SEND "rest^M"
+WHEN 1 "skeleton" GOTO mons
+WHEN 2 "zombie" GOTO mons
+WAIT 45 "blajhdjhf"
+GOTO check
+
+check:
+SEND "health^M"
+WHEN 1 "Health:    70/76" GOTO mons
+WHEN 2 "Health:    71/76" GOTO mons
+WHEN 3 "Health:    72/76" GOTO mons
+WHEN 4 "Health:    73/76" GOTO mons
+WHEN 5 "Health:    74/76" GOTO mons
+WHEN 6 "Health:    75/76" GOTO mons
+WHEN 7 "Health:    76/76" GOTO mons
+WAIT "Mana:"
+GOTO rest
+
+crap:
+SEND "break^M"
+SEND "~~~+++~~~"
+WAIT "OK"
+SEND "ATH^M"
+END
+
+blah:
+END
+</pre>
+
+</body></html>

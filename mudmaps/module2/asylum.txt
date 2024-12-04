@@ -1,0 +1,23 @@
+     #  P--#  P--#                       P=Padded cells
+     |     |     |                       O=Old man
+     #--P  #--P  #           #--#--#     #=Warped Asylum
+     |     |     |           |  |        T=*see below*
+     #--#--T--T--#--T--T--#--#  P  P
+        |     |     |     |  |     |     A padded cell with an exit west will
+        #--P  #--P  #  P  P  T--#--#     teleport you at random ONLY to any
+        |     |     |  |     |  |        other padded cell with exit west.
+        T  P--T  P--T--T--#--T  P  P     The same follows for padded cells 
+        |     |     |     |  |     |     with exits north, east, or south.
+        T--#--T--P  O  P  P  #--#--#
+        |     |        |     |           When crossing from one "T" to
+  #--#--#  P  P  P  P--T--#--T           another "T", you will be randomly
+  |     |  |     |     |     |           teleported to any "T" in the asylum.
+  P  P  T--#--T--T--P  T--P  T
+     |  |     |  |     |     |           The most reliable way to get to old
+  #--#--T  P  P  #  P--#  P--#           man is to hunt for a padded cell 
+  |     |  |     |     |     |           with exits east. From this padded 
+  P  P  #--#--T--T--#--T--T--#--#        cell, go east and then look south.
+  |  |  |           |     |     |        If you see the old man, go south. If 
+  #--#--#           #  P--#  P--#        not then go west back into the 
+                    |     |     |        padded cell and try again and again 
+                    #--P  #--P  #        until you do see him.

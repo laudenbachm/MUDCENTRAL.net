@@ -1,0 +1,26 @@
+
+       Glacial Caverns
+
+   G G-G     O O   O-O O
+   |  \ \     \|\ /   \|\
+   G   G G     O O     O O
+    \ /   \           /   
+     G     G       O O     
+     |    /       / \|
+     G   G     O-O   O
+         |     |     |
+   D-D   G     O   F F
+  /   \ /     /    |\ \
+ D     D     O     F F F
+  \    |     |    /   \|
+   D   D-D   O   F   F F
+   |      \ /    |  / \ 
+   D-D     D     F-F   F
+      \     \ 
+ $     D     D D   D-D  
+  \   /      |/ \ /   \
+   D-D       D   D     D-C
+
+C: Touch Crystal to Glacial Stair
+D: Path to Massive Ice Dragon
+$: Massive Ice Dragon

@@ -1,0 +1,575 @@
+;MajorMUD Script for QModem Pro
+;designed by ZabreX, Modified by Whiplash
+;Whiplash@bbs.nexes.com
+
+Graphics ANSI
+TurnON   8_BIT
+TurnOFF  LINEFEED
+TurnON   XON/XOFF
+TurnON   NOISE
+TurnON   SCROLL
+TurnOFF  PRINT
+TurnOFF  ECHO
+TurnOFF  SPLIT
+TurnON   STATUSLN
+TurnOFF  DOORWAY
+
+timeout 600
+
+start:
+assign 0 0
+assign 1 0
+assign 8 0
+
+;openfile C:\qm\scripts\follow.txt read               ;Direction file to use
+
+begin:
+when
+timeout 30 move
+delay 500
+when "invited you to follow him" follow
+when "also here:" fight
+when "you for" hangcheck
+
+fight:
+when
+when "minotaur"         minotaur
+when "moaning"          moaning
+when "skeletal"         skeletal
+when "stone golem"      stone 
+when "roc"              roc
+when "gelatine"         gelatine
+when "huge tiger"       beetle
+when "spider"           spider
+when "grey"             grey
+when "nomadic"          shaman
+when "chest"            chest
+when "black"            black
+when "werewolf"         werewolf
+when "thrag"            thrag
+when "golem"            ice
+when "worm"             worm
+when "hellhound"        hellhound
+when "mage"             mage
+;when "assassin"         assassin
+;when "warrior"          warrior
+;when "warlock"          warlock
+;when "ant"              ant
+;when "violet"           violet
+;when "fungus"           fungus
+;when "serpentkin"       serpent
+;when "horror"           horror
+;when "mound"            mound
+;when "cyclop"           cyclop
+when "glittering"       glittering
+;when "elite"            elite
+when "captain"          captain
+
+money:
+when "The room is very dark" light
+when "combat engaged" money2
+timeout 10 move
+waitfor "experience."
+
+money2:
+when
+when "you for" hangcheck
+when "Finish up" spa
+when "System shutdown" spa
+
+money3:
+timeout 60 move
+waitfor "experience."
+;send "g gold^M g silv^M g cop^M"
+when
+;send "=t^M"
+send "health^M"
+send "exp^M"
+delay 100
+timeout 3 begin
+waitfor "Health:   "
+assign 1 0
+getx 1 3 /
+if "$1" < "100" rest                ;The HP you want to rest at.
+goto begin
+
+follow:
+when
+delay 100
+timeout 3 begin
+send "follow Slash^M"
+delay 100
+goto begin
+
+hangcheck:
+delay 100
+timeout 3 begin
+send "Health^M"
+delay 100
+timeout 3 begin
+waitfor "Health:   "
+assign 1 0
+getx 1 3 /
+if "$1" <= "25" hang                ;The HP you want to drop at.
+;if "$1" <= "83" heal               ;The HP you want to cast a healing
+                                    ;spell at.
+goto begin
+
+heal:
+when
+delay 100
+send "Swan^MA^M"                       ;The spell to cast. Change 'heal' to
+                                    ;an appropriate spell code.
+goto begin
+
+light:
+when
+delay 100
+send "use Lant^M"                ;Uses a lantern. Change to 'torch'
+                                    ;or a light spell if you wish.
+send "^M"
+delay 100
+goto begin
+
+orc:
+when
+delay 100
+send "a orc^M"
+goto money
+
+minotaur:
+when 
+delay 100
+send "a mino^M"
+goto money
+
+beetle:
+when
+delay 100
+send "a huge^M"
+goto money
+
+moaning:
+when
+delay 100
+send "a moan^M"
+goto money
+
+skeletal:
+when
+delay 100
+send "a skel^M"
+goto money
+
+banshee:
+when 
+delay 100
+send "a ban^M"
+goto money
+
+dog:
+when
+delay 100
+send "a wild^M"
+goto money
+
+roc:
+when
+delay 100
+send "a r^M"
+goto money
+
+stone:
+when
+delay 100
+send "a stone^M"
+goto money
+
+bandit:
+when
+delay 100
+send "a bandit^M"
+goto money
+
+dog:
+when
+delay 100
+send "a wild^M"
+goto money
+
+grey:
+when
+delay 100
+send "a gre^M"
+goto money
+
+gelatine:
+when
+delay 100
+send "a gel^M"
+goto money
+
+spider:
+when
+delay 100
+send "a forest^M"
+goto money
+
+shaman:
+when
+delay 100
+send "a nomadic^M"
+goto money
+
+goblin:
+when
+delay 100
+send "a goblin^M"
+goto money
+
+chest:
+when
+delay 100
+send "a chest"
+goto money
+
+black:
+when
+delay 100
+send "a black^M"
+goto money
+
+dire:
+when
+delay 100
+send "a dire^M"
+goto money
+
+kobold:
+when
+delay 100
+send "a kobold^M"
+goto money
+
+half:
+when
+delay 100
+send "a half^M"
+goto money
+
+werewolf:
+when
+delay 100
+send "a werewolf^M"
+goto money
+
+thrag:
+when
+delay 100
+send "a thrag^M"
+goto money
+
+archer:
+when
+delay 100
+send "a archer^M"
+goto money
+
+vampire:
+when
+delay 100
+send "a vampire^M"
+goto money
+
+wood:
+when
+delay 100
+send "a wood^M"
+goto money
+
+carn:
+when
+delay 100
+send "a carn^M"
+goto money
+
+animate:
+when
+delay 100
+send "a animate^M"
+goto money
+
+earth:
+when
+delay 100
+send "a earth^M"
+goto money
+
+druid:
+when
+delay 100
+send "a druid^M"
+goto money
+
+highdruid:
+when
+delay 100
+send "a high^M"
+goto money
+
+yeti:
+when
+delay 100
+send "a yeti^M"
+goto money
+
+ice:
+when
+delay 100
+send "a ice^M"
+goto money
+
+sorceress:
+when
+delay 100
+send "a sorc^M"
+goto money
+
+cultist:
+
+when
+delay 100
+send "a cultist^M"
+goto money
+
+cleric:
+when
+delay 100
+send "a cleric^M"
+goto money
+
+paladin:
+when
+delay 100
+send "a paladin^M"
+goto money
+
+tent:
+when
+delay 100
+send "a tent^M"
+goto money
+
+worm:
+when
+delay 100
+send "a worm^M"
+goto money
+
+hellhound:
+when
+delay 100
+send "a hell^M"
+goto money
+
+mage:
+when
+delay 100
+send "a mage^M"
+goto money
+
+assassin:
+when
+delay 100
+send "a assassin^M"
+goto money
+
+warrior:
+when
+delay 100
+send "a warrior^M"
+goto money
+
+warlock:
+when
+delay 100
+send "a warlock^M"
+goto money
+
+ant:
+when
+delay 100
+send "a ant^M"
+goto money
+
+violet:
+when
+delay 100
+send "a violet^M"
+goto money
+
+fungus:
+when
+delay 100
+send "a fungus^M"
+goto money
+
+serpent:
+when
+delay 100
+send "a serpent^M"
+goto money
+
+horror:
+when
+delay 100
+send "a horror^M"
+goto money
+
+mound:
+when
+delay 100
+send "a mound^M"
+goto money
+
+cyclop:
+when
+delay 100
+send "a cyclop^M"
+goto money
+
+glittering:
+when
+delay 100
+send "a glittering^M"
+goto money
+
+elite:
+when
+delay 100
+send "a elite^M"
+goto money
+
+captain:
+when
+delay 100
+send "a captain^M"
+goto money
+
+bishop:
+when
+delay 100
+send "a bishop^M"
+goto money
+
+blood:
+when
+delay 100
+send "a blood^M"
+goto money
+
+greater:
+when
+delay 100
+send "a hellion^M"
+goto money
+
+move:
+if "$8" = "1" relog
+delay 500
+
+;read:
+;readfile 0
+;if "$0" = "STUD" done
+;delay 300
+;send "$0"
+;goto begin
+
+done:
+closefile
+goto start
+
+spa:
+assign 8 1
+goto money3
+
+rest:
+when
+send "rest^M"
+send "^M"
+when "minotaur"         minotaur
+when "moaning"          moaning
+when "skeletal"         skeletal
+when "banshee"          banshee
+when "stone golem"      stone 
+when "orc"              orc
+when "thug"             thug
+when "roc"              roc
+when "gelatine"         gelatine
+when "huge tiger"       beetle
+when "spider"           spider
+when "dark goblin"      goblin
+when "bandit"           bandit
+when "wild dog"         dog
+when "grey wolf"        grey
+when "nomadic"          shaman
+when "chest"            chest
+when "black"            black
+when "dire"             dire
+when "kobold"           kobold
+when "half-ogre"        half
+when "werewolf"         werewolf
+when "thrag"            thrag
+when "archer bush"      archer
+when "vampire"          vampire
+when "wood golem"       wood
+when "carnivorous"      carn
+when "animate"          animate
+when "earth"            earth
+when "dark druid"       druid
+when "high druid"       highdruid
+when "yeti"             yeti
+when "golem"            ice
+when "sorceress"        sorceress
+when "cultist"          cultist
+when "cleric"           cleric
+when "paladin"          paladin
+when "tentacled"        tent
+when "worm"             worm
+when "hellhound"        hellhound
+when "mage"             mage
+when "assassin"         assassin
+when "warrior"          warrior
+when "warlock"          warlock
+when "ant"              ant
+when "violet"           violet
+when "fungus"           fungus
+when "serpentkin"       serpent
+when "horror"           horror
+when "mound"            mound
+when "cyclop"           cyclop
+when "glittering"       glittering
+when "elite"            elite
+when "captain"          captain
+when "bishop"           bishop
+when "blood"            blood
+when "greater"          greater
+when "you for"          hangcheck
+timeout 80 restcheck
+waitfor "in from the"
+goto begin
+
+restcheck:
+send "health^M"
+timeout 4 begin
+waitfor "Health:   "
+assign 0 0
+getx 0 3 /
+if "$0" < "132" rest                 ;The HP you want to rest to.
+goto begin
+
+hang:
+send "=x^M"
+
+exit
+

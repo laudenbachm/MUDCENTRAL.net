@@ -1,0 +1,362 @@
+HTTP 200 Document follows
+Date: Tue, 27 Jan 1998 11:42:17 GMT
+Server: NCSA/1.5.2
+Content-type: text/html
+
+<html><head><title>Calculating EXP in MMUD 1.1d</title></head>
+
+<BODY BGCOLOR="#000000" TEXT="#CCFFFFFF" LINK="#339933" VLINK="#33CCCC" ALINK="#990099"><CENTER><TABLE><TR><TD align=center><IMG SRC="/graphics/mudcentralheader.gif" BORDER=0 ALT="Dan's Major MUD Page Page"></TD></TR></TABLE></CENTER>
+
+<center>
+
+<table width=675 border=0>
+
+<tr>
+
+<td>
+
+<pre>This text relates to MajorMUD v1.1d and all other versions
+
+consistent with it in their experience tables.
+
+
+
+Notation:
+
+1) a string of numbers delimited by underscores means
+
+   that that string is infinitely repeated,
+
+   eg, 1/3 = 0._3_ and 4/3 = 1._3_ and 1/7 = 0._142857_
+
+2) the function floor() simply rounds down towards negative
+
+   infinity the real number within the parentheses into an integer
+
+
+
+Note that the multipliers from second level are only
+
+approximate.  They are not calculated from the other type of
+
+multiplier.  They are calculated simply by dividing the current
+
+experience by the base experience at level two.  For the most
+
+part, I chose to keep only 4 significant digits.  The second
+
+type of multipliers are inherently approximate because at each
+
+new level, the experience is always rounded down to an integer,
+
+so that for different race/class combinations, the rounding
+
+will take place at different levels.
+
+
+
+If you want to figure out the experience table for any
+
+race/class combination *exactly*, you'll have to start with the
+
+base experience and calculate it one by one, each level from
+
+the last, using the first type of multiplier.  If you just
+
+want an approximate value for one particular level for some
+
+race/class, you can just use the second type of multiplier.
+
+Also, you can approximate for a fixed level the experience
+
+needed for one class using another class's value.  For instance,
+
+a dark-elf ranger needs 8,062,050 for lvl 20 with base exp 280.
+
+A dwarf paladin would need very close to 245/280 of this.
+
+
+
+For levels 2 to about 43 million exp:
+
+Experience for nth level is calculated with multiplers from
+
+experience needed for (n-1)th level, rounded DOWN.
+
+ie, new_exp = floor(old_exp * multiplier for new_level)
+
+
+
+Without special measures, integer variables can only go so high.
+
+In MajorMUD's calculations of experience, special measures are
+
+taken once the numbers are predicted to be too large.  This
+
+limit is called the maximum size of an unsigned long integer
+
+(4 bytes).  An unsigned long integer has a range from 0 to
+
+(2^32)-1 = 4,294,967,295.  Now, the multipliers to calculate
+
+experience from one level to the next are stored as fractions
+
+with integral parts.  Suppose we are going from level 26 to 27;
+
+then the fraction is 99/79.  The exp needed for lvl 26 is first
+
+multiplied by 99, and then checked to see if it surpassed
+
+(2^32)-1.  If it hasn't, the new product is then divided by 79
+
+to get the exp needed for lvl 27.  Otherwise, a new procedure
+
+is used to work within the confines of unsigned long integers.
+
+What happens then is that all the experience needed from there
+
+on become multiples of 100, so MajorMUD can ignore the last two
+
+digits, effectively increasing by 100 the numbers it can work
+
+with (at the price of not being able to work directly with the
+
+last two digits).  If you understood all this, you need no
+
+explanation of the following formula:
+
+
+
+new_exp = 100 * floor(floor(old_exp/100) * 115 / 100)
+
+
+
+(Nit-picky question: why not *1.15, rather than *115/100 ?
+
+Because programs and computers in general can become rather
+
+inaccurate when dealing with real numbers.  Careful operations
+
+with integers are safer.)
+
+
+
+======================================================================
+
+
+
+       Experience             Multipliers             Experience
+
+       ----------             -----------             ----------
+
+        Dark-Elf    from last level    from second       Human
+
+Lvl      Ranger     to current one           level       Thief
+
+---    ----------   ------------------------------    ----------
+
+ 2          2,800                                            800
+
+ 3          5,600   40/20 = 2                 2.00         1,600
+
+
+
+ 4         10,266   44/24 = 11/6              3.67         2,933
+
+ 5         18,821     = 1.8_3_                6.72         5,377
+
+
+
+ 6         32,264   48/28 = 12/7             11.52         9,217
+
+ 7         55,309     = 1._714285_           19.75        15,800
+
+
+
+ 8         89,877   52/32 = 13/8             32.10        25,675
+
+ 9        146,050     = 1.625                52.16        41,721
+
+
+
+10        227,188   56/36 = 14/9             81.13        64,899
+
+11        353,403     = 1._5_               126.2        100,954
+
+
+
+12        530,104   60/40 = 3/2             189.3        151,431
+
+13        795,136     = 1.5                 284.0        227,146
+
+
+
+14      1,148,558   65/45 = 13/9            410.2        328,099
+
+15      1,659,028     = 1._4_               592.5        473,920
+
+
+
+16      2,322,634   70/50 = 7/5             829.5        663,488
+
+17      3,251,694     = 1.4               1,161          928,883
+
+
+
+18      4,434,128   75/55 = 15/11         1,583        1,266,658
+
+19      6,046,538     = 1._36_            2,159        1,727,260
+
+
+
+20      8,062,050   80/60 = 4/3           2,879        2,303,013
+
+21     10,749,400     = 1._3_             3,839        3,070,684
+
+
+
+22     14,006,793   86/66 = 43/33         5,002        4,001,194
+
+23     18,251,275     = 1._30_            6,518        5,213,677
+
+
+
+24     23,321,073   92/72 = 23/18         8,328        6,661,920
+
+25     29,799,148     = 1.2_7_           10,640        8,512,453
+
+
+
+26     37,343,236   99/79                13,335       10,667,504
+
+27     46,797,219*    = 1.253164557...   16,710       13,368,137
+
+
+
+28     53,816,700*  115/100 = 23/20      19,220       15,373,357
+
+29     61,889,200      = 1.15            22,100       17,679,360
+
+30     71,172,500                        25,420       20,331,264
+
+
+
+31     81,848,300                        29,230       23,380,953
+
+32     94,125,500                        33,610       26,888,095
+
+33    108,244,300                        38,660       30,921,309
+
+34    124,480,900                        44,450       35,559,505
+
+35    143,153,000                        51,120       40,893,430*
+
+
+
+36    164,625,900                        58,790       47,027,400*
+
+37    189,319,700                        67,610       54,081,500
+
+38    217,717,600                        77,750       62,193,700
+
+39    250,375,200                        89,410       71,522,700
+
+40    287,931,400                       102,800       82,251,100
+
+
+
+41    331,121,100                       118,250       94,588,700
+
+42    380,789,200                       136,000      108,777,000
+
+43    437,907,500                       156,400      125,093,500
+
+44    503,593,600                       179,800      143,857,500
+
+45    579,132,600                       206,800      165,436,100
+
+
+
+46    666,002,400                       237,800      190,251,500
+
+47    765,902,700                       273,500      218,789,200
+
+48    880,788,100                       314,500      251,607,500
+
+49  1,012,906,300                       361,700      289,348,600
+
+50  1,164,842,200                       416,000      332,750,800
+
+
+
+======================================================================
+
+
+
+A human thief (80) needs about 333 million for level 50.
+
+A goblin ranger/mystic with about the same exp would be about
+
+   (log(290/80)/log(1.15)) = 9 lvls lower, lvl 41.
+
+A goblin ranger/mystic (290) needs about 1.21 billion for level 50,
+
+   about 290/80 = 3.63 times that needed by a human thief.
+
+And for all you countless dwarf paladins, you need just over
+
+   one billion, which will match you with a lvl 49 dark-elf ranger...
+
+
+
+By such high levels, the difference is excruciating.  But the more
+
+subtle and more excruciating difference comes when you look not
+
+at the total amount of experience needed for a certain level,
+
+but at the amount you need to gain to rise to the next level.  Another
+
+point of view, more comforting for classes with more costly experience
+
+tables, comes when you stop comparing the experience needed for a given
+
+level, and look at the levels obtained with a given amount of
+
+experience.  A thief may always need several times less exp than others
+
+(focusing on the multiplicative aspect), but will only be several levels
+
+ahead for a given amount of experience (focusing on the additive
+
+aspect), and at the cost of, well, being a thief...
+
+</pre><hr></td></tr>
+
+<tr><td align=center>
+
+<i><b><br>Written by:</b><br>
+
+thanh@ugcs.caltech.edu<p>
+
+<b>Found for the web page by:</b><br>
+
+Blood@sts.net</i>
+
+<hr><p></td></tr>
+
+</table>
+<p>
+<p>
+<p>
+<table width=675 border=0>
+<tr><td align=CENTER><a href=/><img align=middle src=/graphics/mudback.gif alt="Back.." border=0></a><p>
+<hr>
+
+Copyright &copy; 1997 -- <a href="mailto:cservice@metpro.com">Metropolis, Inc.&#153;</a></TD></TR>
+</table>
+
+</center>
+
+
+</body></html>

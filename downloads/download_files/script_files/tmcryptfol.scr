@@ -1,0 +1,259 @@
+when "combat off" , "rest^m"
+when "no effect." , "rest^m"
+when "shutting down in" , "x^m"
+when "Your meditation has" , "break^m^#"
+when "you for" , "hea^m"
+when "rips you" , "hea^m"
+when "clubs you" , "hea^m"
+when "bites you" , "hea^m"
+when "chills you" , "hea^m"
+when "/88    [7" , "mihe^m"
+when "/88    [6" , "mihe^m"
+when "/88    [5" , "mihe^m"
+when "/88    [4" , "mihe^m"
+when "/88    [3" , "mihe^m"
+when "/88    [2" , "mihe^m"
+when "[HP=1/" , "bg dying by the undead!^m^#"
+when "[HP=2/" , "bg dying by the undead!^m^#"
+when "[HP=3/" , "bg dying by the undead!^m^#"
+when "[HP=4/" , "bg dying by the undead!^m^#"
+when "[HP=5/" , "bg dying by the undead!^m^#"
+when "[HP=6/" , "bg dying by the undead!^m^#"
+when "[HP=7/" , "bg dying by the undead!^m^#"
+when "[HP=8/" , "bg dying by the undead!^m^#"
+when "[HP=9/" , "bg dying by the undead!^m^#"
+when "[HP=10/" , "bg dying by the undead!^m^#"	
+when "[HP=-" , "bg Im mortally wounded in the Crypt!^m^#"
+
+PROCEDURE ATTACK
+REPEAT
+put ""
+WAITFOR "zombie" , "skeleton" , "wight" , "ghoul" , "shade" , "mummy" , 4
+IF NOT FOUND
+ PUT "hea"
+ WAITFOR "/116   [95%]" , "/116   [96%]" , "/116   [97%]" , "/116   [98%]" , "/116   [99%]" , "/116   [100%]" , 3
+
+ IF FOUND OR NOT CONNECTED
+  RETURN
+ ENDIF
+ENDIF
+SWITCH FOUND
+CASE 1:
+ PUT "at zomb"
+WAITFOR "Combat off" , "you gain" , "no effect." , 45
+CASE 2:
+ PUT "at skele"
+WAITFOR "Combat off" , "you gain" , "no effect." , 45
+CASE 3:
+ PUT "at wig"
+WAITFOR "Combat off" , "you gain" , "no effect." , 45
+CASE 4:
+ PUT "at gho"
+WAITFOR "Combat off" , "you gain" , "no effect." , 45
+CASE 5:
+ PUT "at shad"
+WAITFOR "Combat off" , "you gain" , "no effect." , 45
+CASE 6:
+ PUT "at mum"
+WAITFOR "Combat off" , "you gain" , "no effect." , 45
+ENDSWITCH
+UNTIL NOT CONNECTED
+ENDPROC
+
+
+
+
+
+PROCEDURE E
+put "e",
+ENDPROC
+
+PROCEDURE W
+put "w",
+ENDPROC
+
+PROCEDURE N
+put "n",
+ENDPROC
+
+PROCEDURE S
+put "s",
+ENDPROC
+
+PROCEDURE NE
+put "ne",
+ENDPROC
+
+PROCEDURE NW
+put "nw",
+ENDPROC
+
+PROCEDURE SE
+put "se",
+ENDPROC
+
+PROCEDURE SW
+put "sw",
+ENDPROC
+
+PROCEDURE U
+put "u",
+ENDPROC
+
+PROCEDURE D
+put "d",
+ENDPROC
+ 
+
+REPEAT
+ PUT "rest"
+ Delay 5
+ ATTACK
+ D
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ W
+ ATTACK
+ W
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ S
+ ATTACK
+ S 
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ W
+ ATTACK
+ W
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ W
+ ATTACK
+ W
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ W
+ ATTACK
+ W
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ N
+ ATTACK
+ W
+ ATTACK
+ W
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ E
+ ATTACK
+ E
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ S
+ ATTACK
+ U
+ ATTACK
+UNTIL NOT CONNECTED 
+
+
+

@@ -1,0 +1,250 @@
+PROCEDURE destroy
+waitfor " mummy"," shade"," wight"," ghoul"," zombie"," skeleton",3
+if found
+   switch found
+      case 1:  put "attack mummy"
+      case 2:  put "attack shade"
+      case 3:  put "attack wight"
+      case 4:  put "attack ghoul"
+      case 5:  put "attack zombie"
+      case 6:  put "attack skeleton"
+   endswitch
+
+   waitfor "*combat engaged*",3
+   if found
+      waitfor "you gain","*combat off*","blackhawk drops to the ground",100
+      switch found
+         case 1,2:
+            put "cast mahe^Mrest"
+         case 3:
+            waitfor "[hp=-",3
+            if found
+               put "^#~~~+++~~~"
+               time now
+               put now
+               STOP
+            endif
+      endswitch
+   else
+      put ""
+   endif
+
+   waitfor " at you "," you for "," into the room ","[hp=11","[hp=12","[hp=13","[hp=14",100
+   switch found
+      case 1,2,3,4:
+         delay 50
+         put "cast mahe^M" ;[Once you have mahe, change the mihe here to mahe]
+         destroy
+      case 5:
+         delay 50
+         put "cast mahe^M"
+         destroy
+      case 6,7:
+         destroy
+   endswitch
+endif
+
+endproc
+
+repeat
+
+whenidle 30,"^M"
+when "Choose (N)onstop display (Q)uit display or (C)ontinue display","^M"
+
+when "[majormud]: ","^#~~~+++~~~ATH0^M~"
+when "[hp=1/","^#~~~+++~~~ATH0^M~"
+when "[hp=2/","^#~~~+++~~~ATH0^M~"
+when "[hp=3/","^#~~~+++~~~ATH0^M~"
+when "[hp=4/","^#~~~+++~~~ATH0^M~"
+when "[hp=5/","^#~~~+++~~~ATH0^M~"
+when "[hp=6/","^#~~~+++~~~ATH0^M~"
+when "[hp=7/","^M~~~+++~~~ATH0^M~"
+when "[hp=8/","^#~~~+++~~~ATH0^M~"
+when "[hp=9/","^M~~~+++~~~ATH0^M~"
+when "[hp=10/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=11/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=12/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=13/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=14/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=15/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=16/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=17/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=18/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=19/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=20/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=21/","cast mihe^M~^#~~~+++~~~ATH0^M~" ;[If you want the script to drop
+;when "[hp=22/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; carrier when your hitpoints
+;when "[hp=23/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; are at 21 through 30 also,
+;when "[hp=24/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; just delete the first set of
+;when "[hp=25/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; semicolons on the first column
+;when "[hp=26/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; for these lines so that the
+;when "[hp=27/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; compiler will include it into
+;when "[hp=28/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; the script.]
+;when "[hp=29/","cast mihe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=30/","cast mihe^M~^#~~~+++~~~ATH0^M~"
+
+destroy
+put "cast bles"
+put "i"
+put "exp"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "e"
+destroy
+put "e"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "cast bles"
+put "pull lever"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "w"
+destroy
+put "w"
+destroy
+put "w"
+destroy
+put "w"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "cast bles"
+put "pull lever"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "e"
+destroy
+put "e"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "cast bles"
+put "exp"
+destroy
+put "n"
+destroy
+put "e"
+destroy
+put "e"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "w"
+destroy
+put "w"
+destroy
+put "cast bles"
+put "exp"
+destroy
+put "w"
+destroy
+put "w"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "e"
+destroy
+put "e"
+destroy
+put "s"
+destroy
+put "cast bles"
+put "exp"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+
+time now
+put now
+
+IF NOT CONNECTED
+   time now
+   put now
+   ALARM
+   STOP
+endif
+
+until 4 = 0 ; 4 = 0 Start all over again
+

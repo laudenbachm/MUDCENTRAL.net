@@ -1,0 +1,74 @@
+;This is a somewhat crude exp/hour and other things calculator.
+;It can give you an idea of how to incorporate read-outs into
+;other scripts, though.
+;The number of lines of code could be reduced a lot, probably.
+;But I'm a lazy man that doesn't want to bother.
+;If your statline changes, change this:
+statline = "[HP=" ; It only needs something that never changes
+                  ; in it. (HP= would never change.
+                  ; This is used for ignoring communications.monKill        = 0
+expTotal       = 0total          = 0expAhour       = 0minsPassed     = 0
+xp             = 0currentExpToGo = 0
+integer monKill,expTotal,total,expAhour,minsPassed,xp,currentExpToGoput "exp"
+waitfor "next level: ",0repeat   getch ch   concat derf,chuntil ch = " "
+atoi derf,expToGoclear textprint "[0m",
+print "[0;31mExp[1;31m/[0;31mhour calculator created by [1;30mN[0;31mightmare
+[1;30mG[0;31morgonous."
+print "If at any time you wish to [1;31mreset [0;31mthe exp counter, type"
+print "[1;31m!reset[0;31m, [1;31m([0;31mNo enter needed[1;31m) [0;31mand the script will
+[1;31mreset"print "[0;31mit's self."print
+print "[0;31mQuestions[1;31m/[0;31mComments welcomed. Email me at:"
+print "[0;31mGorgonous[1;31m@[0;31mAol.Com"print "[0m"TIME startTIME start2
+concat start2,"^H^H^H"Procedure DiffTime string time1,time2,integer seconds
+integer h1,m1,s1,h2,m2,s2string hh,mm,ss   substr time1,1,2,hh
+   substr time1,4,2,mm   substr time1,7,2,ss   atoi hh,h1   atoi mm,m1
+   atoi ss,s1   substr time2,1,2,hh   substr time2,4,2,mm   substr time2,7,2,ss
+   atoi hh,h2   atoi mm,m2   atoi ss,s2   if h2<h1      h2 = h2 + 24   endif
+   seconds = (h2-h1)*3600 + (m2-m1)*60 + (s2-s1)EndProcprocedure doPrintDisplay
+repeat   getch ch   concat exp,chuntil ch = " "   concat exp,"^H"
+   waitfor "experience."   TIME stamp   Difftime start,stamp,amt   atoi Exp, XP
+   if XP > 0      monKill = monKill + 1   endif   total = total + XP
+   if currentexptogo = 0      currentexptogo = exptogo - XP   else
+      currentexptogo = currentexptogo - XP   endif   average = total / monkill
+   print "[0m",   print "[31mYou've gained [1;31m",   print total,
+   print " [0m[31mexperience in [1;31m",monkill," [0m[31mmonsters.[0m",
+   print " [31m(Avg. Exp[1;31m/[0m[31mMon = [1;31m",average,"[0m[31m)"
+   If amt > 60 AND xp > -1      amt2 = amt / 60      xp2 = total / amt2
+      xp2 = xp2 * 60      expAhour = xp2      minsPassed = amt2
+      print "[31mExp per hour: [1;31m",xp2,"[0;31m ([1;31m",amt2," [0;31mminute(s) have
+passed.)"   If currentexptogo <= 0      print "[5;1;34mLevel!"   else
+      if (total / amt2) > currentexptogo
+         print "[1;31mLess [0;31mthan a minute remaining! [0;31m([1;31m",currentexptogo,"
+[0;31mexperience remaining.)"      else
+         minutes = currentexptogo / (total / amt2)
+         if currentexptogo < xp2            if minutes = 1
+               print "[1;31m",minutes," [0;31mminute until level. 
+[0;31m([1;31m",currentexptogo," [0;31mexperience remaining.)"            else
+               print "[1;31m",minutes," [0;31mminutes until level. 
+[0;31m([1;31m",currentexptogo," [0;31mexperience remaining.)"
+            endif         else            hours = minutes / 60
+            leftover = minutes - (hours * 60)            if leftover = 0
+               if hours = 1
+                  print "[1;31m",hours," [0;31mhour until level. 
+[0;31m([1;31m",currentexptogo," [0;31mexperience remaining.)"
+               else
+                  print "[1;31m",hours," [0;31mhours until level. 
+[0;31m([1;31m",currentexptogo," [0;31mexperience remaining.)"
+               endif            else               if hours = 1
+                  print "[1;31m",hours," [0;31mhour, [1;31m",
+               else
+                  print "[1;31m",hours," [0;31mhours, [1;31m",
+               endif               if leftover = 1
+                  print leftover," [0;31mminute until level. [0;31m([1;31m",currentexptogo,"
+[0;31mexperience remaining.)"               else
+                  print leftover," [0;31mminutes until level. [0;31m([1;31m",currentexptogo,"
+[0;31mexperience remaining.)"               endif            endif
+         endif      endif   endif   else
+      print "[0;31mToo soon to calculate exp per hour."   endifendprocrepeat
+   waitfor "You gain ","says","gossips","auctions","is pagin","telepaths","gangpaths","broadcast
+from","!reset",0   switch found   case 1:      doPrintDisplay
+   case 2,3,4,5,6,7,8:      waitfor statline   case 9:      put "^H^H^H^H^H^H",
+      TIME start      TIME start2      concat start2,"^H^H^H"      total   = 0
+      monkill = 0      print
+      print "[0;31mExp counters have been fully [1;31mreset[0;31m.."
+      print   endswitchuntil 0

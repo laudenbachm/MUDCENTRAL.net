@@ -1,0 +1,409 @@
+PROCEDURE destroy                            
+waitfor "also here"," into the room from the ",2
+if found
+put "^M"      
+waitfor "orc","thug","cultis","bodyguard",2
+switch found
+case 1:
+put "bs orc"
+case 2:
+put "bs thug"
+case 3:
+put "bs cultist"
+case 4:
+put "bs bodyguard"
+endswitch                          
+
+waitfor "*combat",3
+if found
+waitfor "collapses","you gain","*combat off*","Steele drops to the ground",900
+switch found
+case 1,2,3,4:
+put "g silver^Mg copper^M"
+put "Be one with your soul BIOTCH!!!!"
+case 5:
+waitfor "hp=-",1
+if found
+put "^#~~~+++~~~"
+time now
+put now
+STOP
+endif
+endswitch
+endif
+put "rest^mexp^Mwealth^M"
+waitfor "at you","Damage!","into the room","slithers out","whips you","you feel ill","kai=1203","hp=120","damage!","hp=120","hp=120 ","hp=120","hp=120","hp=120","moves to attack you!",700
+switch found 
+
+case 1,2,3,4,5,6,9:
+
+destroy 
+
+case 6:
+
+put "rest"
+
+destroy
+
+case 15:
+
+waitfor "damage",10
+if found
+put "^#"
+time now
+put now
+endif
+endswitch
+
+endif
+
+endproc 
+
+
+
+
+
+repeat
+
+;when "You don't think","sn^M"
+
+when " 5 ... Major Mud","5^m"
+
+when "Choose (N)onstop display (Q)uit display or (C)ontinue display","^m"
+
+when "[hp=1]","^#~~~+++~~~ATH0^m~"
+
+when "[hp=2]","^#~~~+++~~~ATH0^m~"
+
+when "[hp=3]","^#~~~+++~~~ATH0^m~"
+
+when "[hp=4]","^#~~~+++~~~ATH0^m~"
+
+when "[hp=5]","^#~~~+++~~~ATH0^m~"
+
+when "[hp=6]","^#~~~+++~~~ATH0^m~"
+
+when "[hp=7]","^#~~~+++~~~ATH0^M"
+
+when "[hp=8]","^#~~~+++~~~ATH0^m"
+
+when "[hp=9]","^#~~~+++~~~ATH0^m"
+
+when "[hp=10]","^#~~~+++~~~ATH0^m"
+
+when "[hp=11]","^#~~~+++~~~ATH0^m"
+
+when "[hp=12]","^#~~~+++~~~ATH0^m"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+put "s"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay 15
+
+put "w"
+
+destroy;delay 15
+
+put "w"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay 15
+
+put "w"
+
+destroy;delay 15
+
+put "w"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay 15
+
+put "w"
+
+destroy;delay 15
+
+put "w"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay 15
+
+put "w"
+
+destroy;delay 15
+
+put "n"
+
+destroy;delay 15
+
+put "n"
+
+destroy;delay 15
+
+put "n"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay 15
+
+put "n"
+
+destroy;delay 15
+
+put "n"
+
+destroy;delay 15
+
+put "e"
+
+destroy;delay 15
+
+put "e"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay15
+
+put "e"
+
+destroy;delay 15
+
+put "e"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay15
+
+put "w"
+
+destroy;delay 15
+
+put "w"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay15
+
+put "w"
+
+destroy;delay 15
+
+put "w"
+
+destroy;delay 15
+
+put "n"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay15
+
+put "n"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay15
+
+put "e"
+
+destroy;delay 15
+
+put "e"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay15
+
+put "e"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay15
+
+put "e"
+
+destroy;delay 15
+
+put "n"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay15
+
+put "e"
+
+destroy;delay 15
+
+put "e"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay15
+
+put "e"
+
+destroy;delay 15
+
+put "n"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay15
+
+put "n"
+
+destroy;delay 15
+
+put "n"
+
+destroy;delay 15
+
+;put "sn"
+
+destroy;delay15
+
+put "n"
+
+destroy;delay 15
+
+put "n"
+
+destroy;delay 15
+
+time now
+
+ IF NOT CONNECTED
+     dial "1"
+
+  waitfor "Enter User-ID or ",60
+  delay 30
+  put "test^m"
+  waitfor "Enter your password:",60
+  put "test^m"
+  waitfor "(C)ontinue ?",60
+  put "^m"
+  waitfor "or X to eXit):",60
+  switch found
+  case 1,2:
+  delay 20
+  put "gm^M"
+  endswitch
+  waitfor "Choose one of the options above, H for help, or X to exit:",60
+  switch found
+  case 1,2:
+  delay 20
+  put "m^m"
+  endswitch
+  ;waitfor "Type xxx and wait 3 seconds to disconnect.",60
+  ;delay 60
+  ;put "s^m"
+  waitfor "[MAJORMUD]:",60
+  delay 20
+  put "e^m"
+ endif 
+
+until 4 = 0 ; 4 = 0 Start all over again whump bum dumdie dum nee.
+

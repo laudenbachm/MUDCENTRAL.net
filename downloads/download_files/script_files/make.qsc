@@ -1,0 +1,33 @@
+timeout 200
+dim buffer as string
+dim filename as string
+print "name of the file?"
+input filename
+filename = "c:\dev\paths\" + filename + ".txt"
+print
+print
+print "using filename ";filename
+print
+print
+open filename for append as 1
+a:
+receive buffer
+buffer = lcase(buffer)
+if instr(buffer, "invited you") then send "follow saint^Mfollow silent^M"
+if instr(buffer, "party leader southwest") then print #1,"sw" :buffer = ""
+if instr(buffer, "party leader northwest") then print #1,"nw" :buffer = ""
+if instr(buffer, "party leader southeast") then print #1,"se" :buffer = ""
+if instr(buffer, "party leader northeast") then print #1,"ne" :buffer = ""
+if instr(buffer, "you scale") then print #1, "USING ROPE";buffer = ""
+if instr(buffer, "party leader south") then print #1,"s" :buffer = ""
+if instr(buffer, "party leader north") then print #1,"n" :buffer = ""
+if instr(buffer, "party leader east") then print #1,"e" :buffer = ""
+if instr(buffer, "party leader west") then print #1,"w" :buffer = ""
+if instr(buffer, "party leader up") then print #1,"u" :buffer = ""
+if instr(buffer, "party leader down") then print #1,"d" :buffer = ""
+if instr(buffer, "all-done") then print #1,"end" : goto aa :buffer = ""
+goto a
+aa:
+catch err_timeout
+goto a:
+

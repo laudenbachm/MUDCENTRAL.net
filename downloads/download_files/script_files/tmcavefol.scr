@@ -1,0 +1,270 @@
+string hangupstr
+
+hangupstr = "=td^M^#"
+
+when "105   [3",hangupstr
+when "105   [2",hangupstr
+when "105   [19%",hangupstr
+when "105   [18%",hangupstr
+when "105   [17%",hangupstr
+when "105   [16%",hangupstr
+when "105   [15%",hangupstr
+when "105   [14%",hangupstr
+when "105   [13%",hangupstr
+when "105   [12%",hangupstr
+when "105   [11%",hangupstr
+when "105   [10%",hangupstr
+when "105   [9%",hangupstr
+when "105   [8%",hangupstr
+ when "105   [7%",hangupstr
+when "105   [6%",hangupstr
+when "105   [5%",hangupstr
+when "105   [4%",hangupstr
+when "105   [3%",hangupstr
+when "105   [2%",hangupstr
+when "105   [1%",hangupstr
+when "MA=10]",hangupstr
+when "MA=9]",hangupstr
+when "MA=8]",hangupstr
+when "MA=7]",hangupstr
+when "MA=6]",hangupstr
+when "MA=5]",hangupstr
+when "MA=4]",hangupstr
+when "MA=3]",hangupstr
+when "MA=2]",hangupstr
+when "MA=1]",hangupstr
+when "MA=0]",hangupstr
+when "in from the","c^M"
+when "HP=-" , "bg Help im mortally wounded!^m^#"
+when "Lovergirl hugs you" , "invite lover^m"
+when "you do not see","rest^M"
+when "you for" , "hea^m"
+when "on you" , "hea^m"
+when "Combat off" , "rest^m"
+when "no effect." , "rest^m"
+when "interrupt here,",hangupstr
+when "silver drop" , "g silv^M"
+when "gold drop" , "g gold^M"
+when "feel ill","wear jade^Muse jade^Mwear bone^Mrest^M"
+
+PROCEDURE ATTACK
+REPEAT
+PUT ""
+WAITFOR "Shaman" , "Warlock" , "orc" , "warrior" , "goblin" , "slave" , "wolf" , "spider" , "beast" , 2
+IF NOT FOUND
+ PUT "hea"
+ WAITFOR "/105   [9" , "/105   [100%]" , 3
+ IF FOUND OR NOT CONNECTED
+ WAITFOR "/108 [8" , "/108 [9" , "/108 [100%]" , 3
+ IF FOUND OR NOT CONNECTED
+ PUT "par"
+ WAITFOR "(Cleric)     [100%]" , "(Cleric)     [9" , "you are not in a party"
+  RETURN
+   ENDIF
+  ENDIF
+ ENDIF
+SWITCH FOUND
+CASE 1:
+ PUT "sbol SHAMAN"
+ WAITFOR "Combat off" , "you gain" , "no effect." , 45
+CASE 2:
+ PUT "sbol WARLOCK"
+ WAITFOR "Combat off" , "you gain" , "no effect." , 45
+CASE 3:
+ PUT "sbol ORC"
+ WAITFOR "Combat off" , "you gain" , "no effect." , 45
+CASE 4:
+ PUT "sbol WARRIOR"
+ WAITFOR "Combat off" , "you gain" , "no effect." , 45
+CASE 5:
+ PUT "sbol GOBLIN"
+ WAITFOR "Combat off" , "you gain" , "no effect." , 45
+CASE 6:
+ PUT "lbol SLAVE"
+ WAITFOR "Combat off" , "you gain" , "no effect." , 45
+CASE 7:
+ PUT "sbol WOLF"
+ WAITFOR "Combat off" , "you gain" , "no effect"  , 45
+CASE 8:
+ PUT "lbol SPIDER"
+ WAITFOR "Combat off" , "you gain" , "no effect." , 45
+CASE 9:
+ PUT "sbol BEAST"
+ WAITFOR "Combat off" , "you gain" , "no effect." , 45
+ENDSWITCH
+UNTIL NOT CONNECTED
+ENDPROC
+
+
+
+PROCEDURE E
+put "e",
+ENDPROC
+
+PROCEDURE W
+put "w",
+ENDPROC
+
+PROCEDURE N
+put "n",
+ENDPROC
+
+PROCEDURE S
+put "s",
+ENDPROC
+
+PROCEDURE NE
+put "ne",
+ENDPROC
+
+PROCEDURE NW
+put "nw",
+ENDPROC
+
+PROCEDURE SE
+put "se",
+ENDPROC
+
+PROCEDURE SW
+put "sw",
+ENDPROC
+
+PROCEDURE U
+put "u",
+ENDPROC
+
+PROCEDURE D
+put "d",
+ENDPROC
+ 
+PROCEDURE SNEAK
+PUT "sneak"
+Delay 8
+WAITFOR "You don't think you're sneaking" , 1
+IF FOUND
+ Delay 10
+ PUT "sneak"
+ Delay 15
+ENDIF
+ENDPROC
+
+PROCEDURE SHEILD
+PUT "st"
+Delay 4
+WAITFOR "You feel protected!" , 3
+IF NOT FOUND
+ Delay 4
+ PUT "mshi"
+ Delay 15
+ENDIF
+ENDPROC
+
+REPEAT
+ PUT "rest"
+ Delay 5
+ ATTACK
+ SHEILD
+ e
+ ATTACK
+ SHEILD
+ e
+ ATTACK
+ SHEILD
+ e
+ ATTACK
+ SHEILD
+ se
+ ATTACK
+ SHEILD
+ e
+ ATTACK
+ SHEILD
+ e
+ ATTACK
+ SHEILD
+ se
+ ATTACK
+ SHEILD
+ e
+ ATTACK
+ SHEILD
+ e
+ ATTACK
+ SHEILD
+ e
+ ATTACK
+ SHEILD
+ ne
+ ATTACK
+ SHEILD
+ ne
+ ATTACK
+ SHEILD
+ ne
+ ATTACK
+ SHEILD
+ nw
+ ATTACK
+ SHEILD
+ n
+ ATTACK
+ SHEILD
+ nw
+ ATTACK
+ SHEILD
+ se
+ ATTACK
+ SHEILD
+ s
+ ATTACK
+ SHEILD
+ se
+ ATTACK
+ SHEILD
+ sw
+ ATTACK
+ SHEILD
+ sw
+ ATTACK
+ SHEILD
+ sw
+ ATTACK
+ SHEILD
+ w
+ ATTACK
+ SHEILD
+ w
+ ATTACK
+ SHEILD
+ w
+ ATTACK
+ SHEILD
+ nw
+ ATTACK
+ SHEILD
+ w
+ ATTACK
+ SHEILD
+ w
+ ATTACK
+ SHEILD
+ nw
+ ATTACK
+ SHEILD
+ w
+ ATTACK
+ SHEILD
+ w
+ ATTACK
+ SHEILD
+ w
+ ATTACK
+ SHEILD
+UNTIL NOT CONNECTED 
+
+
+
+
+
+
+

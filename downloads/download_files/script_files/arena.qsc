@@ -1,0 +1,250 @@
+timeout 130
+declare sub retrain
+declare sub retrain1
+declare sub main
+declare sub relogging
+declare sub byebye
+declare sub killer
+declare sub attmons
+declare sub heal
+
+dim hit1 as string
+dim hit2 as string
+dim username as string
+dim password as string
+dim line as string
+dim killmon as string
+dim buffer as string
+dim bbsnum as string
+dim dorelog as integer
+dim relogtimer1 as integer
+dim relogtimer2 as integer
+dim combtimer1 as integer
+dim combtimer2 as integer
+
+
+bbsnum = "xxxx" 'set this to the name of the connection in your phonebook
+username = "rock"
+password = "xxxx"
+dorelog = 1
+hit1 = "u swipe"
+hit2 = "u smash"
+
+' note: this script trains 2 lvls for you IF you use the following statline
+'     set statline full custom [(HP)=%h] [%X] %r
+' when it trains the first time it will change it to
+'     set statline full custom [(HP)=%h] -%X- %r
+' then it will change it to "set statline full custom [(HP)=%h] +%X+ %r"
+' after training the 2nd time (to lvl 3 if you started at 1) This is
+' so that you can leave a newbie going overnight w/o gaining too much exp
+' to level again.
+' this script is obviously no THROUGHLY tested because it's hard to test an
+' arena script for too long, but it does work quite well, should be lvl 5
+' (too high to stay in arena either way) within 10-15 hrs of area scripting
+' depending on the race/class
+
+
+call main
+
+sub retrain
+       send "set statline full custom [(HP)=%h] -%X- %r"
+       send "break^Mu^Mn^Mtrain^Ms"
+       pause 5
+       send "e^Mn^Mbuy magic^Msell magic^Ms^mw^Md^M"
+       pause 5       
+end sub
+
+sub retrain1
+       send "set statline full custom [(HP)=%h] +%X+ %r"
+       send "break^Mu^Mn^Mtrain^Ms"
+       pause 5
+       send "e^Mn^Mbuy magic^Msell magic^Ms^mw^Md^M"
+       pause 5       
+end sub
+
+
+sub main
+top1:
+send "d^M"
+top:
+  if carrier = 0 then call relogging
+  receive buffer
+  buffer = lcase(buffer)
+  if instr (buffer,"drops to the ground") then call byebye
+  if instr (buffer,"ou don't think you're sne") then send "sn"
+  if instr (buffer,"u may not sneak right now") then send "sn"
+  if instr (buffer,"=-") then call byebye
+  if instr (buffer,"[0]") then call retrain
+  if instr (buffer,"-0-") then call retrain1
+  if instr (buffer,"(hp)=1") then call heal
+  if instr (buffer,"(hp)=20") then call heal
+  if instr (buffer,"(hp)=21") then call heal
+  if instr (buffer,"(hp)=22") then call heal
+  if instr (buffer,"(hp)=23") then call heal  
+  if instr (buffer,"kobold thief falls") then send "g s^Mg copper^M"
+  if instr (buffer,"thug") then
+           killmon="thug"
+           call attmons
+           line = ""
+        end if
+  if instr (buffer,"slime") then
+           killmon="slime"
+           call attmons
+           line = ""
+        end if
+  if instr (buffer,"kobold thief") then
+           killmon="thief"
+           call attmons
+           line = ""
+        end if
+  if instr (buffer,"carrion") then
+           killmon="carrion"
+           call attmons
+           line = ""
+        end if
+  if instr (buffer,"rat") then
+           killmon="rat"
+           call attmons
+           line = ""
+        end if
+  if instr(buffer, "filth") then
+          killmon = "filth"
+          call attmons
+          line = ""
+          end if
+  if instr(buffer, "lash") then
+          killmon = "lash"
+          call attmons
+          line = ""
+          end if
+goto top    
+catch err_timeout
+send
+goto top1
+
+end sub
+
+sub relogging
+  if dorelog = 0 then stop
+  top:
+    timeout 90
+    when clear all
+    when match "Hit CTRL-X to abort" do send "^X"
+    when match "Choose a number from 1 to 2" do send "1"
+    when match "Otherwise type " do send username
+    when match "(N)onstop, (Q)uit, or (C)ontinue?" do send
+    when match "X to EXIT!" do send "ddm"
+    when match "Enter the Realm" do send "e^M"
+    when match "Enter your Password:" do send password
+    relogtimer1 = timer
+    if(carrier = 0) and (dorelog = 1) then
+    print
+    print
+    print "Relogging"
+    print
+    print
+    relog:
+      if(carrier = 0)then
+        dial search BBSNUM
+      end if
+      receive buffer
+      if instr (buffer,"rops to the ground") then call byebye
+      if instr (buffer,"Sorry, that User-ID is already in use") then goto relog3
+      if instr (buffer,"HP")then goto relog2
+      relogtimer2 = timer
+      if relogtimer2 - relogtimer1 >= 15 then
+               send
+               relogtimer1 = timer
+               end if
+      goto relog
+    relog3:
+      hangup
+      pause 5
+      goto top
+    relog2:
+    timeout 30
+    when clear all
+    send
+  end if
+endrelog:
+if carrier = 0 then goto top
+catch err_timeout
+  hangup
+  pause 5
+  goto top
+end sub
+
+sub attmons
+  send "bs ";killmon
+  call killer
+end sub
+
+sub killer
+  combtimer1 = timer
+  a1:
+    if(carrier = 0)then goto a2
+    receive buffer
+    buffer = lcase(buffer)
+  if instr (buffer,"(hp)=1") then goto aa
+  if instr (buffer,"(hp)=20") then goto aa
+  if instr (buffer,"(hp)=21") then goto aa
+  if instr (buffer,"(hp)=22") then goto aa
+  if instr (buffer,"(hp)=23") then goto aa
+    if instr (buffer,"kobold thief falls") then send "g s^Mg c^M"    
+    if instr(buffer,"saint drops to the ground") then call byebye    
+'    if instr(buffer,"combat off")then goto a2
+    if instr(buffer,"you gain")then goto a2    
+    if instr(buffer,"your command")then goto a2
+    if instr(buffer,hit1) then combtimer1 = timer
+    if instr(buffer,hit2) then combtimer1 = timer
+    combtimer2 = timer
+    if combtimer2 - combtimer1 >=12 then
+         send "break"
+         goto a2
+         end if
+  goto a1
+  aa:
+  call heal
+  goto aaa
+  a2:
+  send "mihe^Msn^M"
+  print "hiney done kicked!"
+  aaa:
+catch err_timeout
+send
+end sub
+
+
+sub heal
+timeout 180
+if carrier = 0 then goto aa
+send "break^Mu^Mw^Mbuy heal^Mrest"
+top:
+receive buffer
+if instr (buffer,"and all your wounds are") then goto healed
+if instr (buffer,"do not have sufficient") then goto nothealed
+
+goto top
+healed:
+send "e^Md^M"
+goto aa
+nothealed:
+send "rest"
+pause 90
+send
+aa:
+catch err_timeout
+send
+timeout 130
+end sub
+
+
+
+sub byebye
+send "=x"
+pause 5
+hangup
+stop
+end sub
+
+

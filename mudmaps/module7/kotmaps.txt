@@ -1,0 +1,299 @@
+
+
+
+
+    All maps made by Kotar by hand
+    with help from Khirsah, Trojan,
+    Salamonius, ROCK, Tigger, Holy,
+    and Nick.  Thank you everyone.
+
+
+
+      U
+      |
+      #-#-S                     
+                                                    S: Wounded Sailor
+                 U     #   #                           'Push Rock' to open  
+                  \   / \ /                            passage to Underground
+                   #-#   #-#         #                 River
+ Underground              / \       /|              U: Up to Wounded Sailor
+   River           #     #   #-#-#-# #
+                  /     /             \
+                 #     #     #   #-#   #-#-#
+                  \     \    |  /   \ /
+                   #     # #-#-#     #
+                    \   /   /
+                     # #   #                               #                                                   
+                      \   / O: Giant Oysters (drop        /
+                       #-#     giant and glowing pearls) #
+                       |                                /
+                       #                 O             #-#
+                      /                 / \           /   \
+                     #   #       #   #-O   O-#     #-#     #-#
+                    /   /       /   /   \ /   \   /   \       \
+                   #   #   #-# # #-#     O     #-#     #       #
+                    \ /   /   \|/              |       |        \
+                     #-#-#     #               #       #         #                                         
+                                                \       \        |
+                                                 #       #       #-#-#-#       
+                                                                /
+                                                               #             
+                                                              M       M: 'Move Rocks' opens passage
+                                                             #           to Underground Lake
+                                                             |
+                                                           #-#-#
+                                                          / / \
+                                                     #-#-# #   #
+                                                    / \  | |  / \
+                                                   #   # # # #   #
+                                                    \ /   \ \ \ /
+                                                 #-#-#     # # #                                              
+                                                /   \      |  \ \               U: Up to sandbar
+                                               #     #     #-# # #              S: Sandbar
+                                                \             \|  \             K: King Crab (drops king crab
+                                                 #             #   #   O-O         claw;  dig sand opens passage
+                                                 |                 |  /   \        to Seher'Sahham, while claw equipped)
+                                                 #                 #-O     O    %: Seher'Sahham
+                                                /|                                                     _  _  _
+                                               #-#                   #-#   #            S   S-S      /         \
+                                               | |                   | |  / \          / \ /  |
+                                               # #     #             # #-#   U - -- - D   S S S-S-S |   S        \
+                                              / / \   / \           /   \              \     \    |     |         |
+                                             # #   #-#   #-#-#     #     #              S   S S   S K S-S
+                                              \ \            |     |    /                \ / \|   | |/            |
+                                               # #-#         #     #   #                  S   S S S S
+                                                  /           \   /   /                        \| | |             |
+                                                 #   # #   #   #-#   #-#   #                    S S S              
+                                                 |   |  \ /           \   / \                     | |           %-U
+                                               # # #-#   #-#           #-#   #-#                  S-S
+                                               |/ /   \ /                       \
+                                               #-# # # #                         #
+                                               |  / \| |
+                                               #-#   # #
+
+                                         _  _ _  _  _  _
+                                                          \ 
+                                       /
+                                                            \                   
+                                     / 
+                      S                     B-B-B             \
+                       a           /       /     \              
+                        n                 B B-B-B B             \
+                   B     d       /       /|/  |  \|\
+                    e     y             B B B-B-B B B             \
+                     a         /         / /    |  \
+                      c                 B B B-B-B B B               |
+                       h     /         / / /     \ \|\
+                                      B B B       B B B         B   |
+                           /         /|/           \ \         / \
+                                    B B     # #     B B   B-B-B   B R      R: Up to Rocky Cliffs
+                         /           /     / \ \     \ \ /         \|
+                                    B   #-# # # #     B-B           B
+                        |          /   /   / \| |
+                                  G   #-# # # # #             # 
+                        |         @      / / \   \           / \ 
+                                  R # # # #   #   #-#-O-# #-# #-# #
+                        |         |/| |\ \|  /          |  \  |  /
+                                  # # # #-# #     #-# # #-#-# # #-#
+                        |          /  |     |     | | |\  |  /    |
+                                  # # #     #   #-# # # # # #-#-#-#
+                        |         |/|/      |  /     \|  \ \     \
+         C                        # # #     # # #-#-# # # #-# #-# #
+          o             |             |\    |/   \   \ / \    |  \|
+           r                        # # #   # # #-# # # # # # #   #
+            a           |           |\| |    / \|   | |/ \ \|\|
+        R    l                  d   # O # # # # # #-# # # # # # #
+         e              |       |   |  / /| |/   /  |  / \ \    |\              G: 'Go Reef' goes to Coral Reef
+          e                   P%d-d-# # # # # #-#   #-#   # #   # C=U           W: 'Go Fountain' goes back to Seher'Sahham                                                           #-#
+           f            |       |   |  \|  \| |  \   /     \ \  |               %: Door                                                                                                |
+                                d   #-# # # # #   #-#       # # #   D - down    R: Go Beach goes to sandy beach                                                                        #-#
+                        |              \ / \ /     /         \ \|   |           P: Putakwa (Merman Merchant)                                                                             |
+                                      # #   # #   #     #-#-# # #   S           d: Floating Docks                                                                  # #   #-#             #
+                        |             |\     / \ /|     |   | |     |                                                                                               \|  /|              /                  U: Up to Lost City                           
+                                  #-#-#-# #-#   # #     #   # #     Q - - - Leads to Captain's Quarters                                                              #-# #             #         #-#-#-U      (Search West at dead end)
+                        |           | |   |       |     |  / \|             (Lift latch yields golden idol                                                          /    |              \        |
+                                    # #   #       #     # #   #              which is needed in the catacombs)                            Earthen                # #   # #   #-#         #       #
+                        |           |  \          |    /  |                                                                              Catacombs                \|   | |  /             \      |
+                                    #   #         #   #   #                                                                                                      # #   # # #             #-#   # #
+                        |           |    \        |  /   /                                                                                                       |    / \|  \           /   \ / \|
+                                    #     #   #   #-#   #                                                                           #                            #-#-#   #   #       % #   # #   #
+                        |           |      \  |\  |  \  |                                                                          / \                          / \          |\      |/   / \
+                                    #       #-# #-#   #-#                                                                         #   * #                      #   #-#-#-# # # #-# #-# #-#   #-#-#
+                        |          / \          |                                                                                /   /|  \                    / \      |  \| |   |/   /          |
+                                  #   #         #                                                                             #-# #-# #-# #-#          #-#-#-#   #-#   #   #-#   #   #     #-#-#-#
+                        |         |   |                                                                                      /|   |     |   |\           |       |  \        |   |   |     |
+                                  #   #                                                                                     # #   # #-# # #-# #-0      #-#-#-# # # # #-#-#   # #-#   #-#-# #   #
+                        |          \ /                                                                                     / /      |  \ \     / \            \|  /|     |  /  |  \       /    |
+                                    W                                                                                   #-# #   #-#-#   # #-# #   #-#      #   #-# #     # #   #   #-#-#-#   #-#
+                        |                                                                                              /  | |        \   \   \|      \      \       \         /   /|        /
+                R                                                                                                   #-#-# # #   #-#-#-#   #-# # #     #-#    #-#     #-#     #   ^ #   #-#-#
+                 o      |          D                                                                               /|     | |  / \     \     \  |    /   \      \   /   \   /   /       / 
+             C    c                                                                                               # # # #-# # #   #-#   # #   # #   #     #      >-#   # #-# #-# #   #-# 
+              l    k    |      #-#-U-#-#-#-#-#-#-T-                                                                 | |/  | |/      |   | |\  |/   /|     |         \  | |   |   |  /        
+               i    y          |\  |                                                                            #   # # # # #-# #-# #-@ # # # #   # # #   #          #-# #-$ #   #-#
+                f       |    #-D #-D                                                                             \ / /  |     | |  \      |   |\    | |   |             \       /
+                 f                      S: Down to Sandy Beach              Deep Jungle                           # #   #   # # &   #     #-#-# #-# #-# # #              #   #-#
+                  s            U   U    T: Room Trap which drops                                                   /   / \ /  | |    \   /  |     |   | | |               \ /        
+                        |     / \ /|       you down to a random                            #   #-#              # #   # #-# K-# #-# #-#-#   #     #-# # #-#                #
+                             D #-D #       Mud Pit (80-150 damage)                        / \   /|              |/     /|  \    |  /  |  \  |       | | |                                      
+                        |                                                              #-#   #-# #              # #-#-# #-# #-#-# #   # # # #-#     # # #                                       
+                           #-U   U-S                          D: Down                 /     /|  /               | |  \                  |  \  |     | | |       ^: Entering this room from the south teleports you to *
+                        |                                     U: Up                  # #-#-# #-#                # # # #   #             #   # #     # #-#-#     >: Entering this room from the west teleports you to 0
+                                   |                          G: Golden Idol Door    | | | |                    | | |  \  |              \    |     |/  |       @: Teleports to $
+                        |          |                          $: Door                # # # W-#$#$#G#-#----------# # #-# #-#         #-#-#-#-# #     #   #       %: Teleports to &
+                                                  \           A: Abandoned           |  /| |                    | |  /  |                    \|         |       &: Teleports from %
+                         \ _ _ _ _/                #             Temple              # # #-# #-#                # #-#   #                 #-#-# #     #-#       K: Kuel
+                                                  /|\         P: Mud Pit             | |    /  |                |   |  /|                 |    \|               0: Teleports you from >
+                                 P               # #          M: Giant Mound         # #-# #-# #                #   # # #               # #     #               *: Teleports you from ^
+                                  \ /           /   \            'Go Hole' to         \  |\  |                  |  / /  |                \ \
+                                   #           #     #           enter/exit            # # # #                  # # #   #                 #-#
+                                  /|           |    /  |         Abandoned             | | |  \                  \ /   /
+                                 #             # #-#   #-M       Temple          M     # # #-#-#                  #   #
+                                 |            /  |    / \|                       |    / / /   /                    
+                  Shallow        #           #   #   #   #-                      A   # # #   #                     
+                     Jungle      |           |  /   /                            |    \| |   |                     
+                                 #-          # # #-#                             A     # #-#-#
+                                /             \ \|                               |    / /| |  \
+                               P-#-#           # #                               A   # # # #   #
+                                   | |/     \   \                                |   | | |  \ /|
+                                   #-#       #-#-#                               A   # # #-# # #
+                                  /  |      /|                                   $   | |    \  |
+                                 #   #       #                               #   U   #-#-#   #-#
+                                 |  /|      / \                               \     /     \
+                                 # # #     # # #                               #-D-#   #-# #-#
+                                  \| |/  |/ \|  \                             /  |  \ /   \|
+                                   #-#-#-#   #-#-#                           #   #   #     #-#
+                                  /                                           \ / \ /
+                                 P                                             #-#-#
+                                                                               | | |
+                                                                               #-#-#
+                                                                               | | |
+                                                                             #-# #-#-#
+                                                                            /  |\ /|  \  
+                                                                           #   # # #   #
+                                                                            \ /  |  \ /
+                                                                             #   #   #                                           Massive Web
+                                                                                 |
+                                                                                 #-T-T
+                                                                                    /        T: Tasloi Village                                         M: 'Climb Tree' goes to Animal Master
+                                                                               T-T-T-T-T     C: Tasloi Chieftain                      W-M              S: Strands of Web slow you 
+                                                                              /  |      \    M: Tasloi Animal Master,                 |                T: 'Climb Strand' leads to Hanging Cocoons
+                                                                             T   T T-T   T      'Climb Tree' goes to              W-W-S-W-W            @: Massive Fanged Spider (this guy may wander)                   
+                                                                             |   | |            Massive Web.                     /    |    \
+                                                                             T   T-T         S: Large Tree, 'Climb Tree'        S   T-W-W   W
+                                                                             |  /               goes to Tasloi Treetops        / \    |    / \
+                                                                             M T-T   T                                        W   W-W S W-W   W
+                                                                                 |   |                                       /    |  \|/  |    \
+                                                                                 S-T-T C                                    W     W   T   S     W
+                                                                                     |/                                    / \   /    |    \   / \
+                                                                                     T                                    W   W-W   W-W-W   W-W   W
+                                                                                                                          |          /|\          |
+                                                                                                                          W   T   W-W W W-S   S   W
+                                                                                                                           \ / \ /    |    \ / \ /
+                                                                                                                            W   W     S     W   W
+                                                                                                                             \   \   / \   /   /
+  -                                                                                                                           W   W-W   W-S   W
+ -L-                                                                                                     -Tasloi Treetops-     \ /         \ /
+  -o-                                                                                                    /|             |\      W-W   W   W-W
+ - -s-                                                                                                                             \ / \ /   
+-C- -t-   #--#--#--#        #--#--#--#        #--#--#--#                                                       #     #-#            W   @
+ -i- -    |        |        |        |        |        |                                                        \    |  \         
+  -t-     |        |        |        |        |        |        *: Amazon Craftswoman                            # #-#   #
+   -y-    #  G--G  #  T--T%%#  #--*  #  T--T%%#  S--S  #        &: Amazon Battlemaster                           | |\    |
+    -     |  |  |  |  |     |  %     |  |     |  |  |  |       %%: Door                                        #-#-# H #-#    H: Tasloi Shaman
+          |  H  |  |  |     |  %     |  |     |  |  |  |        S: Slave Quarters                               /  |  /       S: 'Climb Tree' 
+          #     G  #  T--T  #  #%%#  #  T  Q  #  S  S  #        Q: Amazon Queen                                #   #-#   #       goes to Tasloi
+          |     %  |     |  |  |  |  |  |  |  |     %  |        T: Temple                                       \  |    /        Village
+          |     %  |     |  |  |  |  |  |  |  |     %  |        G: General Store                                 #-# #-#
+          #--#--#--#  Q--T  #  #  &  #  T--T  #--#--#--#        B: Bank                                            |   |
+             |\/|\/|        |  %     |        |\/|\/|           J: Jeweler                                         S   #
+             |/\|/\|        |  %     |        |/\|/\|           M: Magic Shop (Barren)                              \ /
+             #--#--#--#--#--#--#--#--#--#--#--#--#--#           A: Armor Shop                                        #
+             %                 |\/|                 %           L: Leather Shop
+             %                 |/\|                 %           W: Weapons Shop
+             #  R--R--R--R--R  #--#  R--R--R--R--R  #           $: Search East to 
+             |  |           |  |\/|  |           |  |              open passage to 
+             |  |           |  |/\|  |           |  |              Earthen Catacombs
+             #  R           R  #--#  R           R  #           G: Guarded Hut            
+             |  |           |  |\/|  |           |  |          >>: Search East for 
+             |  |           |  |/\|  |           |  |              Training Grounds
+             #>>R--R--U--R--R  #--#  R--R--U--R--R<<#          <<: Search West for 
+             |  |     |     |  |\/|  |     |     |  |              Training Grounds
+             |  |     |     |  |/\|  |     |     |  |           H: 'Go Hatch' to enter                         
+             #  R     R     R  #--#  R     R     R  #              the Ancient Tree    
+             |  |     |     |  |\/|  |     |     |  |
+             |  |     |     |  |/\|  |     |     |  |
+             #  R--R--R--R--R  #--#  R--R--R--R--R  #
+             %                 |\/|                 %
+             %                 |/\|                 %
+             #--#--#--#--#--#--T--T--#--#--#--#--#--#
+             |\/|\/|\/|\/|\/|  |  |  |\/|\/|\/|\/|\/|
+             |/\|/\|/\|/\|/\|  |  |  |/\|/\|/\|/\|/\|
+          #--#--#--#--#--#--#  T--T  #--#--#--#--#--#--#
+          |     |  |  |        |  |        |     |  |  |
+          |     |  |  |        |  |        |     |  G  |                              
+          #  W  B  A  T--T--T--T--T--T--T--T  M  J  |  #                              
+          |  |     |  |  |  |  |  |  |  |  |  |     G  |                              
+          |  |     |  |  |  |  |  |  |  |  |  |        |
+          #--W  L  A  T--T--T$ T--T  T--T--T--M  #     #                                 
+          |     |              |  |              |     |                     
+          |     |              |  |              |     |                                     
+          #--#--#--#        T--T--T--T        #--#--#--#                                  
+                                                                                          
+
+
+
+                                Ancient Tree
+
+
+
+                                     V2
+                                     |             H: 'Go Hatch' to enter the Guarded Hut
+                                   # # #-#         V: 'Pull Vine'
+                                  / \|/   \        K: 'Twist Knot'
+                                 # R # P V-#       B: 'Move Branch'
+                                 |  \  |  /|       P: 'Push Knot'
+                                 # K-#-#-# #       R: 'Tear Bark' opens passage to V2
+                                  \     \  |      V2: 'Climb Vine' leads to Barren
+                                   # # B # #          Hills
+                                   L\| | |/
+                                   # #-#-#
+                                   |
+                                   H
+
+
+
+
+
+
+                          \ /
+                           #                         I know that some of these areas are incomplete,
+                            \                        and I apologize.  Our party hasn't hooked up enough
+                             #                       for further exploration. I hope everyone enjoys
+                              \                      these, and I also hope to complete them soon.
+                               #
+                                \
+                                 #-                                      Kotar
+                                /
+                               #
+                                \
+                                 #
+                                 |
+                                 #-#-U
+                                /     \
+                               #       #
+                                \      |
+                               #-#     #
+                              /   \   /
+                             #   # #-#
+                    B        |  / \
+                     a       #-#   #
+                      r            |/
+                       r           #
+                    H   e           \
+                     i   n           #
+                      l             /    |      /
+                       l           #-#-#-#-#-#-#
+                        s                 /
+                                        V2
+

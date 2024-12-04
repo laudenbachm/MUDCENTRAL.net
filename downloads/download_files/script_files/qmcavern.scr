@@ -1,0 +1,610 @@
+;This script is for mages writtin by me, Thinker@jungle.net
+
+Graphics ANSI
+TurnON   8_BIT
+TurnOFF  LINEFEED
+TurnON   XON/XOFF
+TurnON   NOISE
+TurnON   SCROLL
+TurnOFF  PRINT
+TurnOFF  ECHO
+TurnOFF  SPLIT
+TurnON   STATUSLN
+TurnOFF  DOORWAY
+
+TIMEOUT  600
+
+string LAG RESTHP HANGHP MAHEALHP MIHEALHP RESTMA MOVE MAPFILE
+string MA HP ATTACK REST_HP_AT REST_MANA_AT HANDLE PASSWRD DO_U_HAVE_MANA
+string MONSTER1 MONSTER2 MONSTER3 MONSTER4 MONSTER5 ATTAC
+string MONSTER6 MONSTER7 MONSTER8
+send "set talk slow^M"
+
+start:
+;*********************************************************************
+;CHANGE THESE AS NEEDED
+;----------------------
+;1.    name of the map file to betused (must have DONE at the end)
+;2.    the lag delay
+;3.    hp you wish to rest until (usually like 5-10 less than your maxhp)
+;3a.   hp you want to rest at
+;4.    hp you wish to use minor healing
+;5.    hp you wish to use major healing
+;6.    hp you wish to hang up at
+;7.    mana you wish to rest until
+;7a.   mana you want to rest at
+;8-15. the names of the monsters you wish to attack.  If there are less than
+;      8 monsters, just fill in the remaining mosters with a previous one.2
+;      i.e. MONSTER1="ORC", MONSTER2="THUG", MONSTER3="ORC", MONSTER4="ORC",
+;           MONSTER5="ORC", MONSTER6="ORC", MONSTER7="ORC", MONSTER8="ORC".
+;      all 8 monsters must be filled in for script to work correctly!
+
+
+assign    MAPFILE  "C:\qmpro\scripts\caverns.txt"
+
+assign    HANDLE  ""
+assign    PASSWRD    ""
+assign    LAG       13
+assign    RESTHP    138
+assign    MIHEALHP  100
+assign    MAHEALHP  100
+assign    HANGHP    20
+assign    RESTMA    95
+assign    REST_MANA_At 75
+assign    rest_hp_at 100
+
+;===============================================================
+; PUT MONSTER INFO HERE
+;===============================================================
+
+assign    MONSTER1  "dark paladin"
+assign    MONSTER2  "hellhound"
+assign    MONSTER3  "worm"
+assign    MONSTER4  "dark priest"
+assign    MONSTER5  "dark cultist"
+assign    MONSTER6  "dark cleric"
+assign    MONSTER7  "spider"
+assign    MONSTER8  "bat"
+assign    ATTACK    "sbol"  ;your second attack
+assign    ATTAC   "bs"      ;your first attack
+
+;*********************************************************************
+
+assign    MOVE  "DONE"
+assign    HP    0
+assign    MA    0
+openfile     $MAPFILE    read
+send "blur^M"
+send "exp^M"
+
+goto restcheck
+
+begin:
+when
+delay    100
+when
+send     "^M"
+When     "Also here:"           attack
+when     "Your command had" restcheck
+when     "fades" mshi
+when     "of blur wear off"     blur
+When    "beep" BEEPS
+when     "Choose one of" mmud
+when     "Enter selection" mmud
+when     "no carrier" nocarrier
+When     "auto-cleanup" auto
+;when     "You For Health:"      rest
+When     "no exit in that dir"  move
+When     "alls of the dead"     hang
+When     "onstop" nonstop
+when     "silver nobles "               "get silver^M"
+when     "You feel ill."        cure
+timeout $LAG                    begin
+waitfor  "Obvious exits:"
+goto move
+
+nonstop:
+when
+delay 100
+send "N"
+goto restcheck
+
+attack:
+when
+when "no carrier" nocarrier
+when     "Your command had" restcheck
+when   "auto-cleanup" auto
+when     "telepaths:" BEEPS
+when     "gangpaths: blood" BEEPS
+when     "of blur wear off"     blur
+When   "$monster1"     MonsterOne
+When   "$monster2"     MonsterTwo
+When   "$monster3"     MonsterThree
+When   "$monster4"     MonsterFour
+When   "$monster5"     MonsterFive
+When   "$monster6"     MonsterSix
+When   "$monster7"      MonsterSeven
+When   "$monster8"     MonsterEight
+timeout  $LAG         restcheck
+waitfor  "Obvious exits:"
+goto move
+
+MonsterOne:
+when
+when "no carrier" nocarrier
+send "$attac $monster1^M"
+waitfor "You"
+send "$attack $monster1^M"
+goto Engaged
+
+MonsterTwo:
+when
+when "no carrier" nocarrier
+send "$attac $monster2^M"
+waitfor "You"
+send "rfir^M"
+send "$attack $monster2^M"
+goto Engaged
+
+MonsterThree:
+when
+when "no carrier" nocarrier
+send "$attac $monster3^M"
+waitfor "You"
+;send "break^Marm rune^M"
+send "$attack $monster3^M"
+goto Engaged
+
+BEEPS:
+beep 500
+beep 600
+beep 700
+beep 800
+goto restcheck
+
+MonsterFour:
+when
+when "no carrier" nocarrier
+send "$attac $monster4^M"
+waitfor "You"
+send "$attack $monster4^M"
+goto Engaged
+
+MonsterFive:
+when
+when "no carrier" nocarrier
+send "$attac $monster5^M"
+waitfor "You"
+send "$attack $monster5^M"
+goto Engaged
+
+MonsterSix:
+when
+when "no carrier" nocarrier
+send "$attac $monster6^M"
+waitfor "You"
+send "$attack $monster6^M"
+goto Engaged
+
+MonsterSeven:
+when
+when "no carrier" nocarrier
+send "$attac $monster7^M"
+waitfor "You"
+send "$attack $monster7^M"
+goto Engaged
+
+MonsterEight:
+when
+when "no carrier" nocarrier
+send "$attac $monster8^M"
+waitfor "You"
+send "$attack $monster8^M"
+goto Engaged
+
+Engaged:
+when
+when "no carrier" nocarrier
+when     "telepaths:" BEEPS
+when     "gangpaths: blood" BEEPS
+when     "Your command had" restcheck
+when     "Choose one of" mmud
+when     "Enter selection" mmud
+when      "You say"               Restcheck
+when      "You do not see"            Restcheck
+when      "auto-cleanup" auto
+when     "The effects of blur"     blur
+when     "fades" mshi
+when      "You For Health:"           rest
+when      "left to"                   Restcheck
+when      "paths: blood"                    gangpath1
+when      "surprise"                  Surprise
+when       "s you"                   hangcheck
+when       "you for"                 hangcheck
+when      "moves to attack you"      hang
+timeout   70                          begin
+Waitfor   "You g"
+send "get gold^Mget sil^M"
+goto CheckEnemies
+
+CheckEnemies:
+when
+timeout    $LAG           restcheck
+waitfor    "Combat Off"
+send "arm knife^M"
+when "no carrier" nocarrier
+when "auto-cleanup" auto
+when     "Your command had" restcheck
+when     "Choose one of" mmud
+when     "Enter selection" mmud
+when     "fades" mshi
+when     "of blur wear off"     blur
+When   "$monster1"     MonsterOne
+When   "$monster2"     MonsterTwo
+When   "$monster3"     MonsterThree
+When   "$monster4"     MonsterFour
+When   "$monster5"     MonsterFive
+When   "$monster6"     MonsterSix
+When   "$monster7"      MonsterSeven
+When   "$monster8"     MonsterEight
+timeout    $LAG        Restcheck goto exits
+
+EXITS:
+send "^M"
+waitfor  "Obvious exits:"
+goto Restcheck
+;oto smite
+
+Move:
+when "no carrier" nocarrier
+when "auto-cleanup" auto
+delay 50
+readfile    MOVE
+IF          "$MOVE"  =  "STUD" DONE
+IF          "$MOVE"  =  "DONE" DONE
+if          "$MOVE"  =  "pb"   PB
+if          "$MOVE"  =  "su"   su
+send "sneak^M"
+send        "$MOVE"
+goto Begin
+
+su:
+delay 100
+send "search u^M"
+when "nothing diff" "search u^M"
+waitfor "You found"
+goto begin
+
+PB:
+DELAY 100
+send "push button^M"
+goto begin
+
+Done:
+
+closefile
+goto start
+
+cure:
+when
+When   "$monster1"     MonsterOne
+When   "$monster2"     MonsterTwo
+When   "$monster3"     MonsterThree
+When   "$monster4"     MonsterFour
+When   "$monster5"     MonsterFive
+When   "$monster6"     MonsterSix
+When   "$monster7"      MonsterSeven
+When   "$monster8"     MonsterEight
+timeout 20 hangcheck
+waitfor "The effects of poison wear off"
+goto restcheck
+
+RestAttack:
+when
+when "no carrier" nocarrier
+when "auto-cleanup" auto
+when     "telepaths:" BEEPS
+when     "gangpaths: blood" BEEPS
+when     "Your command had" restcheck
+when     "Choose one of" mmud
+when     "Enter selection" mmud
+when     "fades" mshi
+when     "of blur wear off"     blur
+when     "sick"          cure
+when     "You feel ill." cure
+send "^M"
+when   "beep" beeps
+When   "$monster1"     MonsterOne
+When   "$monster2"     MonsterTwo
+When   "$monster3"     MonsterThree
+When   "$monster4"     MonsterFour
+When   "$monster5"     MonsterFive
+When   "$monster6"     MonsterSix
+When   "$monster7"      MonsterSeven
+When   "$monster8"     MonsterEight
+waitfor  "Obvious exits:"
+goto rest3
+
+Rest:
+when "no carrier" nocarrier
+when "auto-cleanup" auto
+when
+send    "rest^M"
+send    "st^M"
+when    "poison"   cure
+when     "Your command had" restcheck
+timeout $LAG           restcheck
+waitfor "now resting."
+
+Rest2:
+when
+when    "no carrier" nocarrier
+when     "Choose one of" mmud
+when     "Enter selection" mmud
+when     "Your command had" restcheck
+when    "auto-cleanup" auto
+send    "^M"
+when   "Also here:"                RestAttack
+when   "You For Health:"           rest
+when   "fades"  mshi
+
+Rest3:
+when "no carrier" nocarrier
+when "fades" mshi
+when "auto-cleanup" auto
+;when     "Choose one of" mmud
+;when     "Enter selection" mmud
+when   "you for"                   RestAttack
+when     "telepaths:" BEEPS
+;when     "gangpaths: blood" BEEPS
+when   "s you"                     RestAttack
+when   "You For Health:"           rest
+when     "blur wear off"  blur
+When   "moves to attack you" hang
+when   "surprise" surprise2
+;when "effects of smite"       smite
+timeout    $LAG restcheck2
+Waitfor "from the"
+goto Rest2
+
+hangcheck:
+when
+when "auto-cleanup" auto
+when     "telepaths:" BEEPS
+when     "gangpaths: blood" BEEPS
+when     "Choose one of" mmud
+when     "Your command had" restcheck
+when     "fades" mshi
+when     "Enter selection" mmud
+when     "of blur wear off"     blur
+when "beep" beeps
+when "no carrier" nocarrier
+send       "health^M"
+timeout    $LAG    begin
+when       "onstop" nonstop
+waitfor    "Health:   "
+assign     HP 0
+getx       HP 3 /
+if "$HP" <= "$HANGHP"  HANG
+GOTO engaged
+
+Restcheck:
+when
+when "auto-cleanup" auto
+when     "telepaths:" BEEPS
+when     "gangpaths: blood" BEEPS
+when     "Choose one of" mmud
+when     "Your command had" restcheck
+when     "fades" mshi
+when     "of blur wear off"     blur
+when     "Enter selection" mmud
+when "beep" beeps
+when "no carrier" nocarrier
+send       "health^M"
+timeout    $LAG    begin
+;when       "onstop" nonstop
+waitfor    "Health:   "
+assign     HP 0
+getx       HP 3 /
+if "$Do_u_havE_mana" = "no" If_rest
+if "$Do_u_havE_mana" = "n" If_rest
+Mana1:
+waitfor     "Mana: "
+assign      MA 0
+getx        MA 3 /
+If_rest:
+if         "$HP" <= "$Rest_hp_at"  rest
+if         "$MA" < "$Rest_mana_at"  rest
+goto begin
+
+Restcheck2:
+when
+when "no carrier" nocarrier
+when "auto-cleanup" auto
+when     "telepaths:" BEEPS
+when     "Your command had" restcheck
+when     "gangpaths: blood" BEEPS
+when     "fades" mshi
+when     "of blur wear off"     blur
+when     "Choose one of" mmud
+when     "Enter selection" mmud
+send       "^M"
+timeout    $LAG   restcheck
+waitfor    "(Resting)"
+send       "health^M"
+timeout    $LAG   begin
+waitfor    "Health:   "
+assign     HP 0
+getx       HP 3 /
+if "$Do_u_havE_mana" = "no" If_rest1
+if "$Do_u_havE_mana" = "n" If_rest1
+mana2:
+waitfor     "Mana: "
+assign      MA 0
+getx        MA 3 /
+if_rest1:
+if         "$HP" <= "$resthp"  rest2
+if         "$MA" <= "$restma"  rest2
+goto begin
+
+mshi:
+when
+delay 200
+send "mshi^M"
+when "fail." "mshi^M"
+when "this round" "mshi^M"
+waitfor "You cast"
+goto restcheck
+
+blur:
+when
+delay 200
+send "blur^M"
+when "fail." "blur^M"
+when "this round" "blur^M"
+waitfor "You cast"
+goto restcheck
+
+smite:
+when
+delay 75
+send "smit^M"
+when "fail." "smit^M"
+when "this round" "smit^M"
+waitfor "You cast"
+goto restcheck
+
+Surprise:
+when
+when       "you"   hang
+timeout    $LAG    hang
+waitfor    "^M"
+when
+goto Engaged
+
+Surprise2:
+when
+when       "you"   hang
+timeout    $LAG    hang
+waitfor    "^M"
+when
+goto rest2
+
+Path1:
+gangpath1:
+when
+timeout   $LAG       restcheck
+waitfor "["
+when
+goto Engaged
+
+Path2:
+gangpath2:
+when
+timeout   $LAG       restcheck
+waitfor "["
+when
+goto rest2
+
+
+nocarrier:
+when
+hangup
+send "atdt5866915^M" ;dial number here
+when "busy" busy
+when     "Your command had" restcheck
+when "no carrier" busy
+timeout 80 nocarrier
+WaitFor "handle:"
+delay 400
+send "$handle^M" ;place your handle here
+delay 400
+waitfor "password"
+delay 400
+send "$passwrd^M" ;place your password here
+waitfor "onstop"
+delay 1000
+send "q"
+;waitfor "onstop"
+;delay 1300
+;send "q"
+waitfor "onstop"
+delay 1300
+send "q"
+waitfor "Choose one of"
+goto mmud
+
+mmud:
+when
+when     "Your command had" restcheck
+delay 600
+send "/mud^M"
+waitfor "onstop"
+send "q"
+delay 500
+send "^M"
+delay 1000
+waitfor "MAJORMUD"
+send "e^M"
+delay 500
+When "unished you" gods
+when "onstop" nonstop
+goto restcheck
+
+busy:
+when
+delay 70000
+goto wait
+
+gods:
+send "^M"
+goto restcheck
+
+auto:
+when
+send "X^M"
+when "you for" attack
+timeout 15 auto
+WaitFor "MAJORMUD"
+send ";o^M"
+waitFor "Thanks for calling!"
+goto wait
+
+wait:
+delay 700
+goto nocarrier
+
+
+Hang:
+when
+send  "break^M"
+delay 100
+send  ";o^M"
+delay 100
+beep 100
+beep 200
+beep 300
+beep 100
+beep 200
+beep 300
+beep 400
+beep 200
+beep 300
+beep 400
+beep 500
+beep 300
+beep 400
+beep 500
+beep 600
+beep 400
+beep 500
+beep 600
+beep 700
+beep 800
+beep 700
+beep 700
+beep 700
+
+hangup
+closefile
+Exit

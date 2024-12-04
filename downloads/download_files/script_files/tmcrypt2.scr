@@ -1,0 +1,248 @@
+PROCEDURE destroy
+waitfor " mummy"," shade"," wight"," ghoul"," zombie"," skeleton","Obvious exits: ",100
+if found                                         
+   switch found
+      case 1:  put "attack mummy"
+      case 2:  put "attack shade"
+      case 3:  put "attack wight"
+      case 4:  put "attack ghoul"
+      case 5:  put "a     zombie"
+      case 6:  put "a      skele"
+      case 7:  RETURN
+   endswitch
+
+   waitfor "*combat engaged*",5
+   if found
+      waitfor "you gain","*combat off*","BlackHawk drops to the ground",100
+      switch found
+         case 1,2:
+            put "cast mihe^Mrest"
+         case 3:
+            waitfor "[hp=-",3
+            if found
+               put "^#~~~+++~~~"
+               time now
+               put now
+               STOP
+            else
+               put ""
+               destroy
+            endif
+      endswitch
+   else
+      put ""
+      destroy
+   endif
+
+   waitfor " at you "," you for "," into the room ","[hp=10","[hp=11","[hp=12","[hp=13",100
+   switch found
+      case 1,2,3,4:
+         delay 50
+         put "cast mahe^M"
+         destroy
+      case 5:
+         delay 50
+         put "cast mahe^M"
+         destroy
+      case 6,7:
+         put ""
+         destroy
+   endswitch
+endif
+
+if not connected
+   time now
+   put now
+   alarm
+   stop
+endif
+
+endproc
+repeat
+
+whenidle 30,"^M"
+when "hello","Hi, scripting in progress...^M"
+when "bow","Hi, scripting in progress...^M"
+when "Choose (N)onstop display (Q)uit display or (C)ontinue display","^M"
+
+when "[hp=1/","^#~~~+++~~~ATH0^M~"
+when "[hp=2/","^#~~~+++~~~ATH0^M~"
+when "[hp=3/","^#~~~+++~~~ATH0^M~"
+when "[hp=4/","^#~~~+++~~~ATH0^M~"
+when "[hp=5/","^#~~~+++~~~ATH0^M~"
+when "[hp=6/","^#~~~+++~~~ATH0^M~"
+when "[hp=7/","^#~~~+++~~~ATH0^M~"
+when "[hp=8/","^#~~~+++~~~ATH0^M~"
+when "[hp=9/","^#~~~+++~~~ATH0^M~"
+when "[hp=10/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=11/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=12/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=13/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=14/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=15/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=16/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=17/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=18/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=19/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=20/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=21/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=22/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=23/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=24/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=25/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=26/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=27/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=28/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=29/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+when "[hp=30/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+
+
+put ""
+destroy
+put "i"
+put "exp"
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "e"
+destroy
+put "e"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "pull lever^M"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "w"
+destroy
+put "w"
+destroy
+put "w"
+destroy
+put "w"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "pull lever^M"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "e"
+destroy
+put "e"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "exp"
+put "n"
+destroy
+put "e"
+destroy
+put "e"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "w"
+destroy
+put "w"
+destroy
+put "exp"
+put "w"
+destroy
+put "w"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "n"
+destroy
+put "e"
+destroy
+put "e"
+destroy
+put "s"
+destroy
+put "exp"
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+put "s"
+destroy
+
+time now
+put now
+
+until 4 = 0 ; 4 = 0 Start all over again
+

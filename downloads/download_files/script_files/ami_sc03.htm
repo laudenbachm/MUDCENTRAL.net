@@ -1,0 +1,385 @@
+<html>
+<head><title>The Major MUD Scripts Page</title></head>
+<body>
+<pre>
+/*               Written by: Anakin @ California BBS                   */
+/* This is a cave worm 'roaming' script for the Amiga program Terminus */
+/* It was written for use with a ranger, but should work for any class */
+/* It also keeps tracks of hits/misses/BS/crits for determining acc-   */
+/* uracy. Just change the health checking part to your max HPS and     */
+/* its all set.  Send any comments, questions, suggestions, or         */
+/* improvements to: Internet: anakin@calbbs.com  MajorNET: Anakin@URB  */
+
+init:
+bses = 0
+hits = 0
+miss = 0
+crits = 0
+goto parta
+
+parta:
+GOSUB mons
+print local
+tpen = 3
+print local "BS's: " ; bses ; "  Hits: " ; hits ; "  Misses: " ; miss ; "  Crits: " ; crits ; "  Swings: " ; (hits + miss + crits)
+print local
+gosub e
+gosub w
+gosub sw
+gosub sw
+gosub se
+gosub sw
+gosub s
+gosub se
+gosub se
+gosub e
+gosub ne
+gosub n
+gosub ne
+gosub e
+gosub e
+gosub ne
+gosub nw
+gosub se
+gosub sw
+gosub se
+gosub se
+gosub se
+gosub sw
+gosub s
+print local
+tpen = 3
+print local "BS's: " ; bses ; "  Hits: " ; hits ; "  Misses: " ; miss ; "  Crits: " ; crits ; "  Swings: " ; (hits + miss + crits)
+print local
+gosub d
+gosub nw
+gosub nw
+gosub w
+gosub s
+gosub n
+gosub e
+gosub se
+gosub se
+gosub s
+gosub s
+gosub sw
+gosub ne
+gosub n
+gosub n
+gosub u
+gosub n
+gosub ne
+gosub nw
+gosub nw
+gosub nw
+gosub w
+gosub w
+gosub sw
+print local
+tpen = 3
+print local "BS's: " ; bses ; "  Hits: " ; hits ; "  Misses: " ; miss ; "  Crits: " ; crits ; "  Swings: " ; (hits + miss + crits)
+print local
+gosub s
+gosub sw
+gosub w
+gosub nw
+gosub sw
+gosub s
+gosub se
+gosub e
+gosub e
+gosub se
+gosub sw
+gosub s
+gosub w
+gosub e
+gosub n
+gosub ne
+gosub nw
+gosub w
+gosub w
+gosub nw
+gosub n
+gosub ne
+gosub nw
+gosub n
+gosub ne
+gosub nw
+gosub ne
+gosub ne
+goto parta
+
+n:
+SEND "sn^Mnorth^M"
+WAIT "Stone"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+s:
+SEND "sn^Msouth^M"
+WAIT "Stone"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+e:
+SEND "sn^Meast^M"
+WAIT "Stone"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+w:
+SEND "sn^Mwest^M"
+WAIT "Stone"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+ne:
+SEND "sn^Mne^M"
+WAIT "Stone"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+u:
+SEND "sn^Mu^M"
+WAIT "Stone"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+d:
+SEND "sn^Md^M"
+WAIT "Stone"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+sw:
+SEND "sn^Msw^M"
+WAIT "Stone"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+se:
+SEND "sn^Mse^M"
+WAIT "Stone"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+nw:
+SEND "sn^Mnw^M"
+WAIT "Stone"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+RETURN
+
+mons:
+SEND "^M"
+WHEN 1 "worm" GOTO wor
+WHEN 2 "spider" GOTO spi
+WHEN 3 "giant bat" GOTO bat
+WAIT "Obvious"
+return
+
+wor:
+gosub woraa
+GOTO mons
+
+wora:
+WHEN 1 "You skewer" GOTO hitz
+WHEN 2 "You critically" GOTO critz
+WHEN 3 "You lunge" GOTO misz
+WHEN 4 "You surprise" GOTO bsz
+WHEN 5 "you for" GOTO mendz
+WAIT "gain"
+return
+
+bsz:
+bses = bses + 1
+goto wora
+
+hitz:
+hits = hits + 1
+goto wora
+
+critz:
+crits = crits + 1
+goto wora
+
+misz:
+miss = miss + 1
+goto wora
+
+woraa:
+SEND "bs worm^M"
+WHEN 1 "Well Spoken..." GOTO mons
+WAIT "*Combat Engaged*"
+GOTO wora
+
+mendz:
+SEND "mend^M"
+GOTO woraa
+
+spi:
+gosub spiaa
+GOTO mons
+
+spia:
+WHEN 1 "You skewer" GOTO hitzs
+WHEN 2 "You critically" GOTO critzs
+WHEN 3 "You lunge" GOTO miszs
+WHEN 4 "You surprise" GOTO bszs
+WHEN 5 "you for" GOTO mendzs
+WAIT "gain"
+return
+
+bszs:
+bses = bses + 1
+goto spia
+
+hitzs:
+hits = hits + 1
+goto spia
+
+critzs:
+crits = crits + 1
+goto spia
+
+miszs:
+miss = miss + 1
+goto spia
+
+spiaa:
+SEND "bs spider^M"
+WHEN 1 "Well Spoken..." GOTO mons
+WAIT "*Combat Engaged*"
+GOTO spia
+
+mendzs:
+SEND "mend^M"
+GOTO spiaa
+
+bat:
+gosub bataa
+GOTO mons
+
+bata:
+WHEN 1 "You skewer" GOTO hitb
+WHEN 2 "You critically" GOTO critb
+WHEN 3 "You lunge" GOTO misb
+WHEN 4 "You surprise" GOTO bsb
+WHEN 5 "you for" GOTO mendb
+WAIT "gain"
+return
+
+bsb:
+bses = bses + 1
+goto bata
+
+hitb:
+hits = hits + 1
+goto bata
+
+critb:
+crits = crits + 1
+goto bata
+
+misb:
+miss = miss + 1
+goto bata
+
+bataa:
+SEND "bs bat^M"
+WHEN 1 "Well Spoken..." GOTO mons
+WAIT "*Combat Engaged*"
+GOTO bata
+
+mendb:
+SEND "mend^M"
+GOTO bataa
+
+heal:
+SEND "health^M"
+WHEN 2 "Health:    29/140" GOTO resta
+WHEN 3 "Health:    28/140" GOTO resta
+WHEN 4 "Health:    27/140" GOTO resta
+WHEN 5 "Health:    26/140" GOTO resta
+WHEN 6 "Health:    25/140" GOTO resta
+WHEN 7 "Health:    24/140" GOTO resta
+WHEN 8 "Health:    23/140" GOTO resta
+WHEN 9 "Health:    22/140" GOTO resta
+WHEN 10 "Health:    21/140" GOTO resta
+WHEN 11 "Health:    20/140" GOTO resta
+WHEN 12 "Health:    19/140" GOTO resta
+WHEN 13 "Health:    18/140" GOTO resta
+WHEN 14 "Health:    17/140" GOTO resta
+WHEN 15 "Health:    16/140" GOTO resta
+WHEN 16 "Health:    15/140" GOTO resta
+WHEN 17 "Health:    14/140" GOTO resta
+WHEN 18 "Health:    13/140" GOTO resta
+WHEN 19 "Health:    12/140" GOTO resta
+WHEN 20 "Health:    11/140" GOTO resta
+WHEN 21 "Health:    10/140" GOTO resta
+WHEN 22 "Health:     9/140" GOTO resta
+WHEN 23 "Health:     8/140" GOTO resta
+WHEN 24 "Health:     7/140" GOTO resta
+WHEN 25 "Health:     6/140" GOTO resta
+WHEN 26 "Health:     5/140" GOTO resta
+WHEN 27 "Health:     4/140" GOTO resta
+WHEN 28 "Health:     3/140" GOTO resta
+WHEN 29 "Health:     2/140" GOTO resta
+WHEN 30 "Health:    30/140" GOTO resta
+WAIT "Mana:"
+RETURN
+
+resta:
+SEND "rgen^M"
+GOTO rest
+
+rest:
+SEND "rest^M"
+WHEN 1 "too sick" GOTO anti
+WHEN 2 "worm" GOTO mons
+WHEN 3 "spider" GOTO mons
+WAIT 45 "blajhdjhf"
+GOTO check
+
+anti:
+SEND "anti^M"
+GOTO rest
+
+check:
+SEND "health^M"
+WHEN 1 "Health:   134/140" GOTO mons
+WHEN 2 "Health:   135/140" GOTO mons
+WHEN 3 "Health:   136/140" GOTO mons
+WHEN 4 "Health:   137/140" GOTO mons
+WHEN 5 "Health:   138/140" GOTO mons
+WHEN 6 "Health:   139/140" GOTO mons
+WHEN 7 "Health:   140/140" GOTO mons
+WAIT "Mana:"
+GOTO rest
+
+crap:
+SEND "~~~+++~~~"
+WAIT "OK"
+SEND "ATH^M"
+END
+</pre>
+</body></html>

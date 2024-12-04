@@ -1,0 +1,833 @@
+<!--
+Page Produced by Turbofoot on 21 January 2004 19:40:11
+//-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+
+<HEAD>
+<TITLE>MUDCENTRAL: MajorMUD (version 1.11o) druid</TITLE>
+<META http-equiv="Content-Language" content="en-us">
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<META name="description" content="Welcome to MUDcentral.  The place for information on Mud games, classes, spells, monsters, and weapons.  Drop by and play online with over 2,500 real/live people!!">
+<META name="keywords" content="entertainment, games, online games, online, gaming, MUD, MPOGs, majormud, major, chat, internet games, free games, web games, multiplayer, MUDs, MegaMud, SuperMud, supermud3, info, information, pvp, non-pvp, mush, roleplaying, multi-user, multi, player, BBS, d&amp;d, MPOG, computer, game, experiences, competitions, explorations, fights, attacks, duos, dungeon, dragon, combats, multi-player, multi-user, dungeons, dragons, spells, powers, weapons, Armour, champions, races, classes, mystical, scripting, terminal, news, hints, tricks, cheats, forums, maps, medevial, fantasy, mmclient, metropolis, fantasy, realms, fun, web based, video games, warrior, sword, medieval, middle ages, warriors, paladians, clerics, priests, ninjas, thief, thieves, guild, bards, gypsy, gypsies, warlocks, mages, druids, rangers, humans, dwarfs, dwarves, gnomes, halflings, elfs, elves, gods, lords">
+</HEAD>
+
+<BODY BACKGROUND="" BGCOLOR="#000000" TEXT="#c0c0c0" LINK="#0099ff" VLINK="Aqua" ALINK="#808000">
+<table border="0" WIDTH="500" align=center>
+
+<tr>
+<td colSpan="2">
+<a href="http://www.mudcentral.net" title="MudCentral Home"><img src="/images/mudcentralheader.gif" ALT="MudCentral Home" border="0"></a>
+</td>
+</tr>
+
+<tr>
+<td width="123" height="391" valign="top">
+<IMG SRC="/images/newmudcentralnav.gif" usemap="#1" name="navbar" ALT="Click on a page to jump there" border="0">
+<A HREF="/sysops/index.html"><IMG SRC="/images/mudwizard.gif" ALT="Sysop Command Reference" border="0"></A>
+
+<map name="1">
+<area shape="rect" coords ="10,20,113,34"  href ="/chardev/index.html" ALT="Character Dev.">
+<area shape="rect" coords ="10,41,57,53"  href="/items/index.html" ALT="Items">
+<area shape="rect" coords ="10,60,68,74"  href="/spells/index.html" ALT="Spells">
+<area shape="rect" coords ="10,81,91,93"  href="/monsters/index.html" ALT="Monsters">
+<area shape="rect" coords ="10,101,69,113"  href="/quests/index.html" ALT="Quests">
+<area shape="rect" coords ="10,120,40,134"  href="/pvp/index.html" ALT="PVP">
+<area shape="rect" coords ="10,141,82,153"  href="/modules/index.html" ALT="Modules">
+<area shape="rect" coords ="10,161,87,174"  href="/toplists/index.html" ALT="Top Lists">
+<area shape="rect" coords ="10,181,103,194"  href="/downloads/index.html" ALT="Downloads">
+<area shape="rect" coords ="10,201,106,214"  href="http://www.mudmarket.com/" ALT="MUDMarket">
+<area shape="rect" coords ="10,221,51,234"  href="/chat/index.html" ALT="Chat">
+<area shape="rect" coords ="10,241,72,253"  href="http://www.mudforums.com/" ALT="Forums">
+<area shape="rect" coords ="10,261,94,273"  href="http://www.greatermud.com/" ALT="Play Now!">
+<area shape="rect" coords ="10,281,115,295"  href="/mudmaps/index.html" ALT="Maps">
+<area shape="rect" coords ="10,300,115,314"  href="/bbs_reviews/index.html" ALT="BBS Reviews">
+<AREA SHAPE="RECT" COORDS="9,319,117,338" HREF="/help/howtoplay.html" ALT="How to Play">
+<AREA SHAPE="RECT" COORDS="7,341,56,360" HREF="/help/" ALT="Help">
+<AREA SHAPE="RECT" COORDS="11,359,55,376" HREF="/links/index.html" ALT="Links">
+</map>
+</td>
+
+<td valign="top" WIDTH="500">
+<TABLE align=center CELLSPACING="2" cellPadding="2" WIDTH=500 border="0">
+<TR><TD colspan="9"><B><FONT SIZE="+2" COLOR="#FFCC33">druid</FONT></B></TD></TR>
+
+<tr><td COLSPAN=8><img src="/images/spell_pages/spellsheader.gif" alt="Spells"></td></tr>
+<TR bgcolor="#000088">
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000088"><small><b>Name</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Short</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Type</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Level</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Mana</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Difficulty</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Rounds</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Target</b></small></TD>
+</TR>
+<TR>
+<TD COLSPAN="7" align=left bgcolor="#000088"><small><b>Notes</b></small></td>
+</tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Starlight</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>STAR</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>4</b></small></td>
+<td align=center bgcolor="#000033"><small><b>0</b></small></td>
+<td align=center bgcolor="#000033"><small><b>80+level (max 155 at level 75+)</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Self</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Room Illuminate +175</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Starlight (Sold at druid spells, newhaven)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Vine Strike</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>VINE</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>15</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) 4 to (level/2)+9 (max 9 at level 1, max 12 at 6+)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Vine Strike (Sold at druid spells, newhaven)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Alertness</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>ALER</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>2</b></small></td>
+<td align=center bgcolor="#000033"><small><b>4</b></small></td>
+<td align=center bgcolor="#000033"><small><b>5</b></small></td>
+<td align=center bgcolor="#000033"><small><b>60</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Self or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Perception +10, Removes "senselessness"</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Alertness (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Mend</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>MEND</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>2</b></small></td>
+<td align=center bgcolor="#000055"><small><b>4</b></small></td>
+<td align=center bgcolor="#000055"><small><b>8</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Between</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Self or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Heal (level/3)+3 to (level/2)+12 (max 13 at level 2, max 27 at 30+), Affects Living Only</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Mend (Sold at druid spells, newhaven)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Resist Cold</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>RCOL</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>6</b></small></td>
+<td align=center bgcolor="#000033"><small><b>5</b></small></td>
+<td align=center bgcolor="#000033"><small><b>70</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Self or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Resist Cold 0% to level (max 3 at level 3, 20 at 20+), Removes "globe of the elements" / "resist cold" / "resist fire" / "resist fire" / "song of the elements"<br><i><b><font color=#88ffff>Resist Cold 0% to level (max 3 at level 3, 20 at 20+), Removes "globe of the elements" / "resist cold" / "resist fire" / "resist fire"</font></b></i></b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Resist Cold (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Elemental Chaos</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>CHAO</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>4</b></small></td>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>5</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) 7 to level+13 (max 17 at level 4, 24 at 11+)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Elemental Chaos (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Senselessness</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>SENS</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>4</b></small></td>
+<td align=center bgcolor="#000033"><small><b>6</b></small></td>
+<td align=center bgcolor="#000033"><small><b>0</b></small></td>
+<td align=center bgcolor="#000033"><small><b>40</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Perception -10, Affects Living Only, Evil in Combat, Removes "alertness"</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Senselessness (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Charm Animal</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>CHAR</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>5</b></small></td>
+<td align=center bgcolor="#000055"><small><b>10</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-5</b></small></td>
+<td align=center bgcolor="#000055"><small><b>60</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Enslave +100, Affects Animals Only</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Charm Animal (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Resist Fire</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>RFIR</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>5</b></small></td>
+<td align=center bgcolor="#000033"><small><b>8</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-5</b></small></td>
+<td align=center bgcolor="#000033"><small><b>70</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Self or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Resist Fire 0% to level (max 5 at level 5, 20 at 20+), Removes "globe of the elements" / "resist cold" / "resist cold" / "resist fire" / "resist lightning"<br><i><b><font color=#88ffff>Resist Fire 0% to level (max 5 at level 5, 20 at 20+), Removes "globe of the elements" / "resist cold" / "resist cold" / "resist fire"</font></b></i></b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Resist Fire (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Antidote</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>ANTI</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>6</b></small></td>
+<td align=center bgcolor="#000055"><small><b>8</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-15</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Between</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Self or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Cure Poison +8, Dispels "Poison", Removes "dae asp poison 2" / "dae asp poison 3"</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Antidote (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Barkskin</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>SKIN</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>7</b></small></td>
+<td align=center bgcolor="#000033"><small><b>15</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-5</b></small></td>
+<td align=center bgcolor="#000033"><small><b>40+level (max 60 at level 20+)</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Self</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>DR ((level*10)/10)+10 to ((level*10)/10)+10 (max 17 at level 7, max 30 at 20+), AC +5, Resist Fire -25%, Removes "barbskin" / "barkskin" / "glacial skin" / "stoneskin" / "stoneskin"<br><i><b><font color=#88ffff>DR ((level*10)/10)+10 to ((level*10)/10)+10 (max 17 at level 7, max 30 at 20+), AC +5, Resist Fire -25%, Removes "barbskin" / "barkskin" / "stoneskin" / "stoneskin"</font></b></i></b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Barkskin (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Camouflage</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>CAMO</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>7</b></small></td>
+<td align=center bgcolor="#000055"><small><b>10</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-5</b></small></td>
+<td align=center bgcolor="#000055"><small><b>30+level/2 (max 42 at level 25+)</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Self</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Stealth 3 to level+3 (max 10 at level 7, 28 at 25+), BS Accu +10</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Camouflage (Sold at blue tower)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Stonestrike</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>STRK</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>8</b></small></td>
+<td align=center bgcolor="#000033"><small><b>5</b></small></td>
+<td align=center bgcolor="#000033"><small><b>0</b></small></td>
+<td align=center bgcolor="#000033"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (on Armour) 14 to (level*2)+11 (max 27 at level 8, 39 at 14+) (Element: Stone)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Stone Strike (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Resist Lightning</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>RLIT</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>9</b></small></td>
+<td align=center bgcolor="#000055"><small><b>10</b></small></td>
+<td align=center bgcolor="#000055"><small><b>0</b></small></td>
+<td align=center bgcolor="#000055"><small><b>60</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Self or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Resist Lightning 1% to level+1 (max 10 at level 9, 21 at 20+), Removes "globe of the elements" / "resist lightning" / "song of the elements"<br><i><b><font color=#88ffff>Resist Lightning 1% to level+1 (max 10 at level 9, 21 at 20+), Removes "globe of the elements" / "resist lightning"</font></b></i></b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Resist Lightning (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Poison Bolt</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>PBOL</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>10</b></small></td>
+<td align=center bgcolor="#000033"><small><b>6</b></small></td>
+<td align=center bgcolor="#000033"><small><b>0</b></small></td>
+<td align=center bgcolor="#000033"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (on Armour) (level/5)+19 to (level*2)+15 (max 35 at level 10, 49 at 17+), Evil in Combat, Affects Living Only (Element: Poison), Ends with "Poison Bite" (Poison (level/5)+4 to (level/5)+4 (max 6 at level 10, max 7 at 15+), Affects Living Only (Element: Poison))</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Poison Bolt (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Rapid Healing</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>RHEL</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>11</b></small></td>
+<td align=center bgcolor="#000055"><small><b>8</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-20</b></small></td>
+<td align=center bgcolor="#000055"><small><b>60</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Self or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>HP Regen +100%, Affects Living Only, Removes "rapid healing" / "rosewood rod"</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Rapid Healing (Sold at druid spells)</b></small></td></tr>
+<TR bgcolor="#000088">
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000088"><small><b>Name</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Short</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Type</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Level</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Mana</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Difficulty</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Rounds</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Target</b></small></TD>
+</TR>
+<TR>
+<TD COLSPAN="7" align=left bgcolor="#000088"><small><b>Notes</b></small></td>
+</tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Swarm</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>SWAR</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>12</b></small></td>
+<td align=center bgcolor="#000033"><small><b>28</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-10</b></small></td>
+<td align=center bgcolor="#000033"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (on Armour) 24 to (level*2)+36 (max 60 at level 12, 76 at 20+)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Swarm (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Acid Jet</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>ACID</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>13</b></small></td>
+<td align=center bgcolor="#000055"><small><b>8</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-14</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) 24 to ((level*5)/2)+18 (max 50 at level 13, max 68 at 20+) (Element: Acid)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Acid Jet (Sold at aldreth's attic, blue tower)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Burning Aura</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>BURN</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>13</b></small></td>
+<td align=center bgcolor="#000033"><small><b>10</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-15</b></small></td>
+<td align=center bgcolor="#000033"><small><b>20</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (No AC) (level/5)+1 to (level/5)+1 (max 3 at level 13, max 4 at 15+), Evil in Combat, AC -5, DR -3, Accuracy -5 (Element: Fire)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Burning Aura (Sold at aldreth's attic, blue tower)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Entangle</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>ENTA</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>14</b></small></td>
+<td align=center bgcolor="#000055"><small><b>12</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-30</b></small></td>
+<td align=center bgcolor="#000055"><small><b>4</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Hold Person +100, Evil in Combat</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Entangle (Sold at aldreth's attic, blue tower)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Acid Rain</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>RAIN</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>15</b></small></td>
+<td align=center bgcolor="#000033"><small><b>12</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-25</b></small></td>
+<td align=center bgcolor="#000033"><small><b>20</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (No AC) (level/5)+1 to (level/5)+1 (max 4 at level 15, max 4 at 15+), AC -5, Evil in Combat (Element: Acid)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Acid Rain (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Chaos Storm</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>CSTO</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>15</b></small></td>
+<td align=center bgcolor="#000055"><small><b>34</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-20</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) 29 to (level*3)+35 (max 80 at level 15, 104 at 23+)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Chaos Storm (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Regeneration</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>RGEN</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>15</b></small></td>
+<td align=center bgcolor="#000033"><small><b>12</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-25</b></small></td>
+<td align=center bgcolor="#000033"><small><b>10</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Self or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Heal (level/20)+2 to (level/10)+4 (max 5 at level 15, max 8 at 40+), Removes "rejuvinating field"</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Barkskin Scroll (Sold at blue tower) (Dropped by dark druid (5%))</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Freedom</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>FREE</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>16</b></small></td>
+<td align=center bgcolor="#000055"><small><b>10</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-40</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Between</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Self or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Freedom +100</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Freedom (Sold at aldreth's attic, blue tower)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Partial Petrification</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>PETR</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>16</b></small></td>
+<td align=center bgcolor="#000033"><small><b>12</b></small></td>
+<td align=center bgcolor="#000033"><small><b>0</b></small></td>
+<td align=center bgcolor="#000033"><small><b>20</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Speed 150%, AC +5, DR +1, MR +5, Evil in Combat, SpellCasting -5, Dodge -15</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Partial Petrify (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Poison Cloud</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>PCLO</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>17</b></small></td>
+<td align=center bgcolor="#000055"><small><b>14</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-35</b></small></td>
+<td align=center bgcolor="#000055"><small><b>40</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Poison (level/5)+3 to (level/5)+3 (max 6 at level 17, max 7 at 20+), Evil in Combat, Affects Living Only, Accuracy -6, Max Damage -3, Affects Living Only</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Poison Cloud (Sold at druid spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Rotting Flesh</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>ROTT</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>18</b></small></td>
+<td align=center bgcolor="#000033"><small><b>16</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-35</b></small></td>
+<td align=center bgcolor="#000033"><small><b>10</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (No AC) +6, Affects Living Only, Evil in Combat</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Rotting Flesh (Sold at aldreth's attic, blue tower)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Stoneskin</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>STON</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>2</b></small></td>
+<td align=center bgcolor="#000055"><small><b>19</b></small></td>
+<td align=center bgcolor="#000055"><small><b>20</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-35</b></small></td>
+<td align=center bgcolor="#000055"><small><b>30+level (max 70 at level 40+)</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Self</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>DR ((level*10)/10)+60 to ((level*10)/10)+60 (max 79 at level 19, max 100 at 40+), AC +10, MR +5, Resist Stone +10%, Removes "barbskin" / "barkskin" / "barkskin" / "glacial skin" (Element: Stone)<br><i><b><font color=#88ffff>DR ((level*10)/10)+60 to ((level*10)/10)+60 (max 79 at level 19, max 100 at 40+), AC +10, MR +5, Resist Stone +20%, Removes "barbskin" / "barkskin" / "barkskin" / "glacial skin" (Element: Stone)</font></b></i></b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Stoneskin (Sold at blue tower)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Blaze</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>BLAZ</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>1</b></small></td>
+<td align=center bgcolor="#000033"><small><b>20</b></small></td>
+<td align=center bgcolor="#000033"><small><b>12</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-40</b></small></td>
+<td align=center bgcolor="#000033"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (on Armour) 38 to (level*4) (max 80 at level 20, 112 at 28+) (Element: Fire)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Blaze (Sold at blue tower)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Creeping Doom</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>DOOM</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>2</b></small></td>
+<td align=center bgcolor="#000055"><small><b>22</b></small></td>
+<td align=center bgcolor="#000055"><small><b>16</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-50</b></small></td>
+<td align=center bgcolor="#000055"><small><b>30+(level*3)/5 (max 51 at level 35+)</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (No AC) 4 to (level/10)+4 (max 6 at level 22, max 7 at 35+), Accuracy -5, AC -5, Evil in Combat</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Creeping Doom (Sold at blue tower)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Plasma Bolt</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>PLAS</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>2</b></small></td>
+<td align=center bgcolor="#000033"><small><b>23</b></small></td>
+<td align=center bgcolor="#000033"><small><b>14</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-50</b></small></td>
+<td align=center bgcolor="#000033"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (on Armour) 54 to (level*4)+50 (max 142 at level 23, 190 at 35+)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Plasma Bolt (Sold at aged titan spells, blue tower)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Maelstrom</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>MAEL</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>2</b></small></td>
+<td align=center bgcolor="#000055"><small><b>24</b></small></td>
+<td align=center bgcolor="#000055"><small><b>50</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-45</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) 62 to (level*5)+35 (max 155 at level 24, 195 at 32+)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Maelstrom (Sold at blue tower)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Mass Entangle</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>MSEN</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>25</b></small></td>
+<td align=center bgcolor="#000033"><small><b>30</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-55</b></small></td>
+<td align=center bgcolor="#000033"><small><b>4</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Hold Person +100, Evil in Combat</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Mass Entangle (Sold at aged titan spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Natural Prowess</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>PROW</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>1</b></small></td>
+<td align=center bgcolor="#000055"><small><b>25</b></small></td>
+<td align=center bgcolor="#000055"><small><b>20</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-30</b></small></td>
+<td align=center bgcolor="#000055"><small><b>10+level/2 (max 35 at level 50+)</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Self</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Accuracy (level/10) to (level/10) (max 2 at level 25, max 5 at 50+), Max Damage, BS Min Damage, BS Max Damage, Crits</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Natural Prowess (Sold at aged titan spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Plague</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>PLAG</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>26</b></small></td>
+<td align=center bgcolor="#000033"><small><b>40</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-55</b></small></td>
+<td align=center bgcolor="#000033"><small><b>40</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (No AC) (level/10)+2 to (level/10)+2 (max 4 at level 26, max 6 at 40+), Evil in Combat, Dodge -5, Max Damage -2, AC -5</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Plague (Sold at aged titan spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Earthquake</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>QUAK</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>28</b></small></td>
+<td align=center bgcolor="#000055"><small><b>60</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-55</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) (level/5)+91 to (level*6)+62 (max 230 at level 28, 302 at 40+) (Element: Stone), Ends with "Earthquake Hold" (Hold Person +100, Evil in Combat, 4 Rounds)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Earthquake (Sold at aged titan spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Globe Of The Elements</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>GELE</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>29</b></small></td>
+<td align=center bgcolor="#000033"><small><b>25</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-75</b></small></td>
+<td align=center bgcolor="#000033"><small><b>100</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Self</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Resist Cold +25%, Resist Fire, Resist Lightning, Resist Stone, Removes "resist cold" / "resist fire" / "resist lightning" / "resist stone"<br><i><b><font color=#88ffff>Resist Cold +25%, Resist Fire, Resist Lightning, Resist Stone, Removes "resist cold" / "resist fire" / "resist lightning"</font></b></i></b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Icy Scroll (Comes from Ancient Bone Chest, Burnt Iron Chest, Great Blackwood Chest, Ice Chest)</b></small></td></tr>
+<TR bgcolor="#000088">
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000088"><small><b>Name</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Short</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Type</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Level</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Mana</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Difficulty</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Rounds</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Target</b></small></TD>
+</TR>
+<TR>
+<TD COLSPAN="7" align=left bgcolor="#000088"><small><b>Notes</b></small></td>
+</tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Earthfist</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>FIST</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>30</b></small></td>
+<td align=center bgcolor="#000055"><small><b>16</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-60</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) 72 to (level*9)-70 (max 200 at level 30, 290 at 40+) (Element: Stone)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Earthfist (Sold at aged titan spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Nature Tap</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>NTAP</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>32</b></small></td>
+<td align=center bgcolor="#000033"><small><b>20</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-100</b></small></td>
+<td align=center bgcolor="#000033"><small><b>100</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Self</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Mana Regen (level/2)-100% to level+150 (max 182 at level 32, 200 at 50+)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Nature Tap (Dropped by amazon shaman (1%))</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Rejuvinating Field</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>REJU</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>32</b></small></td>
+<td align=center bgcolor="#000055"><small><b>40</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-65</b></small></td>
+<td align=center bgcolor="#000055"><small><b>10</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Party</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Heal (level/10)+1 to ((level*2)/10) (max 6 at level 32, max 8 at 40+), Removes "regeneration"</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Rejuvenation (Sold at aged titan spells)</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Elemental Fury</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>FURY</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>2</b></small></td>
+<td align=center bgcolor="#000033"><small><b>35</b></small></td>
+<td align=center bgcolor="#000033"><small><b>5</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-70</b></small></td>
+<td align=center bgcolor="#000033"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (on Armour) 30 to (level*2)+15 (max 85 at level 35, 115 at 50+) (Element: Stone), Ends with "Elemental Lightning" (Damage (on Armour) 30 to (level*2)+15 (max 85 at level 35, 115 at 50+) (Element: Lightning), 5 Mana, Ends with "Elemental Fire" (Damage (on Armour) 30 to (level*2)+15 (max 85 at level 35, 115 at 50+) (Element: Fire), 5 Mana, Ends with "Elemental Ice" (Damage (on Armour) 30 to (level*2)+15 (max 85 at level 35, 115 at 50+) (Element: Cold), 5 Mana)))</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Worn Stone Tablet (Sold at neko store) (Dropped by manscorpion king (100%))</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Summon Lightning Elemental</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>LITE</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>37</b></small></td>
+<td align=center bgcolor="#000055"><small><b>25</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-80</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) 80 to (level*10)-30 (max 340 at level 37, 520 at 55+) (Element: Lightning)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Metallic Parchment (Dropped by Lallim Whitemane (30%))</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Summon Stone Elemental</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>STNE</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>37</b></small></td>
+<td align=center bgcolor="#000033"><small><b>25</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-80</b></small></td>
+<td align=center bgcolor="#000033"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (on Armour) 80 to (level*10)-30 (max 340 at level 37, 520 at 55+) (Element: Stone)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Granite Tablet (Dropped by Argak the Grey (30%))</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Sandstorm</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>SAND</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>2</b></small></td>
+<td align=center bgcolor="#000055"><small><b>38</b></small></td>
+<td align=center bgcolor="#000055"><small><b>70</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-90</b></small></td>
+<td align=center bgcolor="#000055"><small><b>7+level/3 (max 30 at level 70+)</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (No AC) (level/60)+4 to (level/10)+1 (max 4 at level 38, max 8 at 70+), Illuminte -9999, AC -5, Accuracy -10, Speed 125%, Evil in Combat, Slowness +200</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Sandstone Tablet (Sold at neko store) (Dropped by manscorpion shaman (1%))</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Acid Tempest</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>ATEM</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>40</b></small></td>
+<td align=center bgcolor="#000033"><small><b>65</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-80</b></small></td>
+<td align=center bgcolor="#000033"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (on Armour) ((level*2)/5)+80 to (level*7)+20 (max 300 at level 40, 405 at 55+) (Element: Acid), Ends with "Drenched In Acid" (Damage (No AC) 4 to 7, AC -10, Accuracy -15, Dodge -5, Evil in Combat (Element: Acid), 20 Rounds). <i>Notes: take severed dragon claw, frozen shard, displacer beast tentacle and spider leg to gnome merchant in jungle</i></b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Scroll Of Acid Tempest</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Summon Fire Elemental</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>FIRE</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>40</b></small></td>
+<td align=center bgcolor="#000055"><small><b>25</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-85</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) 80 to (level*11)-30 (max 410 at level 40, 575 at 55+) (Element: Fire)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Magma Chunk (Dropped by Choira Pyromancer (30%))</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Summon Ice Elemental</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>ICEL</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>40</b></small></td>
+<td align=center bgcolor="#000033"><small><b>25</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-85</b></small></td>
+<td align=center bgcolor="#000033"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (on Armour) 80 to (level*11)-30 (max 410 at level 40, 575 at 55+) (Element: Cold)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Frozen Orb (Dropped by Sharh'Kur (30%))</b></small></td></tr>
+<TR bgcolor="#000088">
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000088"><small><b>Name</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Short</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Type</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Level</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Mana</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Difficulty</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Rounds</b></small></TD>
+<TD align=center bgcolor="#000088"><small><b>Target</b></small></TD>
+</TR>
+<TR>
+<TD COLSPAN="7" align=left bgcolor="#000088"><small><b>Notes</b></small></td>
+</tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Ember</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>EMBR</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>45</b></small></td>
+<td align=center bgcolor="#000055"><small><b>10</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-90</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) 0 to (level*4)-20 (max 160 at level 45, 200 at 55+) (Element: Fire), Ends with "Ember" (Damage (on Armour) 0 to (level*4)-20 (max 160 at level 45, 200 at 55+) (Element: Fire), 10 Mana)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Charred Scroll (Dropped by Demoness Irikani (50%))</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000033"><small><b>Thunderclap</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>THDR</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>45</b></small></td>
+<td align=center bgcolor="#000033"><small><b>75</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-125</b></small></td>
+<td align=center bgcolor="#000033"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (on Armour) 40 to (level*2)+190 (max 280 at level 45, 294 at 52+) (Element: Lightning), 25% chance of ending with "Thunderstun" (Confusion 60 to level+50 (max 95 at level 45, 110 at 60+), Evil in Combat, 3+level/15 (max 7 at level 60+) Rounds)</b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Source: Thundering Scroll (Dropped by storm giant commander (7%))</b></small></td></tr>
+<TR>
+<TD ROWSPAN="3" WIDTH="198" align=left bgcolor="#000055"><small><b>Glacial Skin</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>GLAC</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>48</b></small></td>
+<td align=center bgcolor="#000055"><small><b>35</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-125</b></small></td>
+<td align=center bgcolor="#000055"><small><b>20+level (max 80 at level 60+)</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Self</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>DR (level*2)+30 to (level*2)+30 (max 126 at level 48, 150 at 60+), AC +5, Resist Cold +20%, Resist Fire -50%, Removes "barbskin" / "barkskin" / "barkskin" / "stoneskin" (Element: Cold). <i>Notes: take one white dragon hide, an icy shard and a behemoth hide tunic to gnome merchant in jungle</i></b></small></TD></tr>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Source: Scroll Of Glacial Skin</b></small></td></tr>
+<TR>
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000033"><small><b>Barbskin</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>BARB</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>50</b></small></td>
+<td align=center bgcolor="#000033"><small><b>35</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-90</b></small></td>
+<td align=center bgcolor="#000033"><small><b>30+level (max 95 at level 65+)</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Self</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damaging Shield (level/6) to (level/5)+2 (max 12 at level 50, max 15 at 65+), DR +5, AC +10, Shock +2877, Neutral Only, Removes "barkskin" / "barkskin" / "glacial skin" / "stoneskin". <i>Notes: reward for fifth alignment quest</i></b></small></TD></tr>
+<TR>
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000055"><small><b>Boulder</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>BOUL</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>50</b></small></td>
+<td align=center bgcolor="#000055"><small><b>45</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-110</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) (level*3)-15 to (level*12)+20 (max 620 at level 50, 800 at 65+), Neutral Only (Element: Stone). <i>Notes: reward for fifth alignment quest</i></b></small></TD></tr>
+<TR>
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000033"><small><b>Close Wounds</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>CLWO</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>50</b></small></td>
+<td align=center bgcolor="#000033"><small><b>25</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-75</b></small></td>
+<td align=center bgcolor="#000033"><small><b>Between</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Self or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Heal (level/3) to level (max 50 at level 50, 60 at 60+), Good Only. <i>Notes: reward for fifth alignment quest</i></b></small></TD></tr>
+<TR>
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000055"><small><b>Dark Plague</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>DAPL</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>50</b></small></td>
+<td align=center bgcolor="#000055"><small><b>60</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-110</b></small></td>
+<td align=center bgcolor="#000055"><small><b>1+level/10 (max 7 at level 60+)</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (No AC) (level/3) to (level/3) (max 16 at level 50, max 20 at 60+), AC -15, Max Damage -5, Dodge -10, Evil Only, Evil in Combat. <i>Notes: reward for fifth alignment quest</i></b></small></TD></tr>
+<TR>
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000033"><small><b>Earthbind</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>EBIN</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>50</b></small></td>
+<td align=center bgcolor="#000033"><small><b>30</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-90</b></small></td>
+<td align=center bgcolor="#000033"><small><b>80</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Self</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>HP Regen (level/2)% to level-15 (max 35 at level 50, 35 at 50+), Mana Regen, Neutral Only. <i>Notes: reward for fifth alignment quest</i></b></small></TD></tr>
+<TR>
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000055"><small><b>Frozen Spike</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>FSPK</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>50</b></small></td>
+<td align=center bgcolor="#000055"><small><b>45</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-110</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) (level*3)-15 to (level*12)+20 (max 620 at level 50, 800 at 65+), Good Only (Element: Cold). <i>Notes: reward for fifth alignment quest</i></b></small></TD></tr>
+<TR>
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000033"><small><b>Glacial Mist</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>GMST</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>50</b></small></td>
+<td align=center bgcolor="#000033"><small><b>60</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-130</b></small></td>
+<td align=center bgcolor="#000033"><small><b>1+level/5 (max 11 at level 50+)</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (No AC) (level/10) to (level/5)+10 (max 20 at level 50, max 20 at 50+), Confusion +10, Slowness +100, Crits -5, Resist Fire +10%, Evil in Combat, Good Only. <i>Notes: reward for fifth alignment quest</i></b></small></TD></tr>
+<TR>
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000055"><small><b>Inferno</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>INFE</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>3</b></small></td>
+<td align=center bgcolor="#000055"><small><b>50</b></small></td>
+<td align=center bgcolor="#000055"><small><b>45</b></small></td>
+<td align=center bgcolor="#000055"><small><b>-110</b></small></td>
+<td align=center bgcolor="#000055"><small><b>Combat</b></small></TD>
+<td align=center bgcolor="#000055"><small><b>Monster or Character</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000055"><small><b>Damage (on Armour) (level*3)-15 to (level*12)+20 (max 620 at level 50, 800 at 65+), Evil Only (Element: Fire). <i>Notes: reward for fifth alignment quest</i></b></small></TD></tr>
+<TR>
+<TD ROWSPAN="2" WIDTH="198" align=left bgcolor="#000033"><small><b>Spore Cloud</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>SPOR</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>3</b></small></td>
+<td align=center bgcolor="#000033"><small><b>50</b></small></td>
+<td align=center bgcolor="#000033"><small><b>60</b></small></td>
+<td align=center bgcolor="#000033"><small><b>-130</b></small></td>
+<td align=center bgcolor="#000033"><small><b>1+level/5 (max 11 at level 50+)</b></small></TD>
+<td align=center bgcolor="#000033"><small><b>Room</b></small></TD>
+</TR>
+<TR><TD COLSPAN="7" align=left bgcolor="#000033"><small><b>Damage (No AC) (level/5) to (level/5)+10 (max 20 at level 50, max 20 at 50+), Confusion +10, Crits -5, Slowness +100, Max Damage -5, Evil in Combat, Evil Only. <i>Notes: reward for fifth alignment quest</i></b></small></TD></tr>
+</table>
+<center><br><i><b><font color=#88ffff>This colour is the 1.11n value</font></b></i><br><font size="-1"><strike>This means</strike> thing might not be in game</font></center><br><br>
+</td>
+</tr>
+</table>
+
+<TABLE align=center width="500" border="0">
+<TR>
+<TD align="CENTER">
+<FONT face="verdana,helvetica,arial" size="-1" color="#ffffff"><br>
+<B>Subscribe to the new <a href="http://www.majormud.com/cgi-bin/mailer/subscribe.cgi">MajorMUD Newsletter</a></b><BR>
+<BR>
+</font><HR><FONT face="verdana,helvetica,arial" size="-1" color="#ffffff">
+<BR>
+Copyright &copy; 2004 -- <a href="http://www.metropolis.com">Metropolis, Inc.</a><BR>
+Send questions or comments to <a href="mailto:info@mudcentral.com">MudCentral Webmaster</a>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+</body>
+</html>
+

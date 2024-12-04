@@ -1,0 +1,480 @@
+;This Script is an offshut from my Original Priestly Class Script, written by me
+;Thinker@jungle.net and Edited by Killjoy@jungle.net
+;
+;This script is for mystics..
+
+String Enemy Enemy2 spot move manawait ManaT done HealN LASTFOE
+String VitC ManaC Back_Return lagcount laghigh ManaM RFile Curon
+String FITE lbol sbol fjet MAHE MIHE HAND MaxH
+
+Assign ManaWait         "0"
+Assign laghigh          "9"
+Assign lagcount         "3"
+Assign FITE             "0"
+Assign RFile            "C:\qmpro\scripts\tunnel.txt"
+Graphics ansi
+
+OPENFILE $Rfile Read
+
+set_flag:
+send "set warn on^M"
+send "set tele off^M"
+send ";b^M"
+send "set gos off^M"
+send "set auc off^M"
+Get_Info_4:
+Assign Spot "Main"
+GoSub STATS
+GoSub Check1
+If $offline Logon
+If $online $Spot
+
+getmon4:
+If $offline Logon
+Assign Back_Return "GetMon"
+incr lagcount
+If "$lagcount" = "$laghigh" Relog
+
+GetMon:
+Send "^M"
+Assign Back_Return "GetMon"
+Assign Spot "GetMon"
+If $offline Logon
+timeout 6 getmon4
+Assign lagcount "0"
+Timeout 4 NoMonChk
+waitfor "Also here: "
+GetX Enemy 3 " "
+send "l $enemy^M"
+;timeout 3 NoMonchk
+;waitfor "appears to be"
+
+timeout 2 Attack_Pre
+waitfor "equipped with" Player
+
+;Goto Attack_Pre
+
+NoMonchk:
+Assign Enemy "None"
+Assign FITE "1"
+If $offline Logon
+If "$VitC" < "$done"    Wrong
+If "$VitC" < "$HealN"   MN2_H
+If "$ManaC" < "$ManaT"  MN2_H
+Return
+
+Player:
+;gosub Playalert
+Assign Enemy "None"
+Assign FITE "1"
+Return
+
+Attack_Pre:
+Assign Spot "Attack_Pre"
+Assign Back_Return "Attack_Pre"
+If $offline Logon
+If "$Enemy" = "None" NoMonchk
+
+Attack_Main:
+Assign Spot "Attack_Main"
+Assign Back_Return "Attack_Main"
+GoSub STATS
+If "$Enemy" = "None" NoMonchk
+Assign spot "Attack_Main"
+If $offline Logon
+send "bs $Enemy^M"
+pause 1000
+;If "$ManaC" = "$ManaM" Mana_Max
+
+
+Wait_Kill:
+If "$Enemy" = "None" NoMonchk
+send "^M"
+TimeOut 4 NoMonChk
+WAITFOR "Also here: "
+Assign Back_Return "Wait_Kill"
+GoSub STATS
+GoSub Heal_Kill
+If "$ManaC" > "$HAND" SPELLS
+If "$FITE" = "1" Hand_2_Hand
+Goto Wait_Kill
+
+Heal_Kill:
+If "$VitC" <= "$done"   WRONG
+;If "$VitC" <= "$MAHE"   CAST_MAHE
+return
+
+
+
+WRONG:
+send "break^M"
+send ";o"
+goto finished
+
+
+mv:
+;Assign done  "75"
+Assign Back_Return "mv"
+Assign Spot "mv"
+If $offline Logon
+send "get gold^Mget silv^M"
+send "sn^M"
+pause 1000
+send "$move"
+;timeout 2 GetMon
+;waitfor "You stumble" MV
+goto GetMon
+
+;Mv2:
+;Assign Back_Return "Mv2"
+;Return
+
+MN:
+Assign Back_Return "MN"
+Send "^M"
+If $offline Logon
+GoSub STATS
+Goto MV
+
+
+MN2_H:
+send "rest^M"
+
+RESTING:
+;If $time >= "04:55:00" PRIME
+;If $Time >= "15:55:00" PRIME
+If $offline Logon
+;Beep 750
+Assign Back_Return "RESTING"
+Assign Spot "RESTING"
+send "ST^M"
+timeout 4 resting
+Waitfor "Hits: [36m  "
+GetX VitC 4 "/"
+timeout 4 resting
+Waitfor "Mana: [36m   "
+GetX ManaC 3 "/"
+timeout 3 Rest_Check
+send "^M"
+waitfor "Also here: "
+Goto MON_REST_CHECK
+
+
+Rest_Check:
+If $offline Logon
+If "$VitC" < "$done"    Wrong
+If "$VitC" < "$MaxH"   RESTING
+If "$ManaC" < "$ManaM"  RESTING
+return
+
+;Main:
+;ReadFile 5
+;If "$5" = "Label" Label
+;If "$5" = "Done" Main2
+;If "$5" = "Quit" Finished
+;If "$5" = "Exit" Finished
+;If "$5" = "HO" HO
+;If "$5" = "_EOF_" EOF
+;If "$5" = "N1" N1
+;If "$5" = "LL" LL
+;If "$5" = "EX" EX
+;If "$5" = "S1" S1
+;If "$5" = "E1" E1
+;IF "$5" = "W1" W1
+;If "$5" = "U1" U1
+;If "$5" = "D1" D1
+;If "$5" = "NW" NW
+;If "$5" = "HI" HI
+;IF "$5" = "NE" NE
+;If "$5" = "SW" SW
+;If "$5" = "SE" SE
+;If "$5" = "DE" DE
+;If "$5" = "WI" WI
+;If "$5" = "BN" BN
+;If "$5" = "DA" DA
+;If "$5" = "GP" GP
+;If "$5" = "NF" NF
+;If "$5" = "IV" IV
+;If "$5" = "MA" MA
+;If "$5" = "BL" BL
+;If "$5" = " "  Main;
+;If "$5" = ""   Main
+;If "$5" = ";"  Main
+;Displayln "$5   -- Is not an option.. Disconnecting...."
+;HangUp
+;Exit
+
+E1:
+Assign move     "e^M"
+GoSub MN
+Goto Main
+
+N1:
+assign move    "n^M"
+GoSub MN
+Goto Main
+
+GP:
+Assign move     "go path^M"
+GoSub MN
+Goto Main
+
+S1:
+Assign move     "s^M"
+GoSub MN
+Goto Main
+
+W1:
+Assign move     "w^M"
+GoSub MN
+Goto Main
+
+LL:
+Assign move     "light lan^M"
+GoSub MN
+Goto Main
+
+MA:
+Assign move     "go manhole^M"
+GoSub MN
+Goto Main
+
+NH:
+send "sys go new^M"
+GoSub MN
+Goto Main
+
+EX:   
+Assign move     "x^M"
+GoSub MN
+Goto Main
+
+U1:
+Assign move     "u^M"
+GoSub MN
+Goto Main
+
+D1:
+Assign move     "down^M"
+GoSub MN
+Goto Main
+
+NW:
+Assign move     "nw^M"
+GoSub MN
+Goto Main
+
+NE:
+Assign move     "ne^M"
+GoSub MN
+Goto Main
+
+SW:
+Assign move     "sw^M"
+GoSub MN
+Goto Main
+
+HO:
+Assign move     "go hole^M"
+GoSub MN
+Goto Main
+
+SE:
+Assign move     "se^M"
+GoSub MN
+Goto Main
+
+HS:
+Assign move     "hide 100 silver^Mhide 100 copper^M"
+GoSub MN
+Goto Main
+
+HC:
+Assign move     "hide 100 copper^M"
+GoSub MN
+Goto Main
+
+BN:
+Assign move     "Bash n^Mbash s^Mbash e^Mbash w^M"
+GoSub MN
+Goto Main
+
+check1:
+when "shadowy figure" shadow
+;when "gigantic black ooze" Player
+when "Hit any key" "^M"
+when "surprise slashes you" EEGADZ
+when "surprise smashes you" EEGADZ
+when "sarprise skewers you" EEGADZ
+when "surprise slices you" EEGADZ
+when "surprise bludgeons you" EEGADZ
+when "surprise whaps you" EEGADZ
+when "Halls of the" HALLS
+when "The door is closed" "bash n^Mbash s^Mbash e^Mbash w^M$move^M"
+;when "You stumble" "a $Enemy"
+;when "You can't move" MV
+when "Choose one of" Wrong
+when "You notice fine broadsword" "get fine^M"
+when "You may not" NoMonchk
+when "Please be more spec" Hand_2_Hand
+when "You do not see" NoMonchk
+;when "unbalanced" NoMonChk
+;when "overcome" NoMonChk
+;when "You don't think" mv
+when "You have chosen" Player
+when "moves to attack you" EEGADZ
+when "To do this action, you must" Player
+when "attempts to bash" "bash n^Mbash s^Mbash e^Mbash w^M"
+;when "X to exit):" "/go majormud^M^Me^M"
+;when "You are too sick" "cure^Mrest^M"
+;when "[MAJORMUD]" "e^M"
+;when "(N)ons" "^M"
+when "you gain" RESFITE
+when "gold drop" "get gold^M"
+when "silver drop" "get silv^M"
+;when "You notice" "get gold^Mget silver^Mget copper^Mrest^M"
+when "left to the" getmon
+
+Return
+
+2_GetMon:
+Assign Enemy "None"
+goto $Back_Return
+
+MANA_MAX:
+send "prev^Ma $Enemy^M"
+goto wait_kill
+
+STATS:
+If $offline Logon
+Assign Back_Return "STATS"
+send "health^M"
+TimeOut 5 STATS
+Waitfor "Health:   "
+GetX 1 3 "/"
+If "$1" <= "130" MN2_H
+Return
+
+CAST_MAHE:
+send "cast mend^Ma $Enemy^Ma^M"
+return
+
+Main:
+ReadFile 5
+If "$5" = "done" Main2
+goto getmon4
+
+Main2:
+CloseFile
+OpenFile $SCPath$RFile Read
+Goto Main
+            
+ALERT:
+beep 10000
+beep 7500
+beep 10000
+beep 7500
+beep 10000
+beep 7500
+beep 10000
+beep 7500
+beep 10000
+beep 7500
+Return
+
+Relog:
+send "relog^M"
+goto Finished
+
+Logon:
+send "logon^M"
+goto Finished
+
+cleanup:
+send "cleanup^M"
+goto Finished
+
+SPELLS:
+Assign FITE "1"
+send "a $Enemy^M"
+If "$ManaC" <= "$fjet" AGONY
+If "$ManaC" <= "$lbol" FORCE
+;If "$ManaC" <= "$sbol" GODST
+goto wait_kill
+
+RESFITE:
+Assign FITE "1"
+goto GetMON
+
+Hand_2_Hand:
+Assign FITE "0"
+send "bs $Enemy^M"
+goto wait_kill
+
+AGONY:
+send "fjet $Enemy^M"
+goto wait_kill
+
+FORCE:
+send "lbol $Enemy^M"
+goto wait_kill
+
+GODST:
+send "sbol $Enemy^M"
+goto wait_kill
+
+
+PLAYALERT:
+beep 5000
+beep 5000
+beep 5000
+beep 1000
+beep 1000
+Return
+
+
+;bug_check:
+;send "St^M"
+;TimeOut 4 Hangup
+;Waitfor "Hits: [36m  "
+;return
+
+PRIME:
+send "x^M"
+pause 10000
+goto finished
+
+HALLS:
+send "l u^M"
+TimeOut 3 Getmon
+waitfor "healer"
+send "l u^M"
+TimeOut 3 Getmon
+waitfor "healer"
+goto finished
+
+EEGADZ:
+ASSIGN done  "40"
+gosub stats
+send "^M"
+timeout 3 attack_pre
+send "^M"
+waitfor "Also here: "
+getx Enemy 3 " "
+send "a $enemy^M"
+goto wait_kill
+
+
+MON_REST_CHECK:
+GetX Enemy 3 " "
+send "l $enemy^M"
+timeout 3 Attack_Pre
+waitfor "equipped with"
+pause 4000
+goto resting
+
+shadow:
+send "shadowform sux cock^M"
+send "spit^M"
+goto player
+

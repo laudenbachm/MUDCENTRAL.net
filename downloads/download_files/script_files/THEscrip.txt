@@ -1,0 +1,1522 @@
+'THEscript ver 5.0, by Sean Hargis.   Free as always!
+'Support page: http://www.netdot.com/thescript
+'
+'Make sure you go through the edit section carefully!
+'
+'I can be reached at sean@netdot.com or as Muti on Dreamscape
+
+dim followhp as string, followhps as integer, resthp as integer, hanghp as
+integer, lighttype as string, curexit as string, monster(20) as string
+dim poof(122) as string, curmon as string, dir as string, a as integer, b
+as integer, c as string, hangphrase(5) as string
+dim followdesc as string, getgold as integer,  getsilver as integer,
+getcopper as integer, attack as string, alsohere as integer, exits as integer
+dim location as string, sneak as integer, spell as integer, startexp as
+integer, holder as string, starttime as integer, endtime as integer
+dim endexp as integer, timesofar as integer, expsofar as integer, xph as
+string, username as string, password as string, globalgo as string
+dim recast as integer, recaststat as string, userecast as integer,
+recastcmd as string, userelog as integer, manahp as integer, usemana as
+integer
+dim manadesc as string, usefollower as integer, reatt(3) as string,
+usesneak as integer, statline as integer, usereattack as integer
+dim relogwhen(8) as string, relogsend(8) as string, mapfile as string,
+recastgone as string, bashpick as string, reattack as string
+dim endphrase as string
+
+
+
+'*****************EDIT THIS SECTION******************
+
+'Path and filename of map file.  One direction per line, finish with END
+'See the web page if you need more assistance
+  MapFile = "c:\progra~1\mustan~1\qmodem~1\scripts\caveworm.txt"
+
+'Up to 20 monster names.  Put the  character at the end of Rocs, 
+'Greater Hellhounds, and Elite Guards to keep the script from attacking
+'rooms of the same name.  This specifies the start of an ANSI sequence.
+'Example: Monster(1) = "Elite Guard"
+  Monster(1)  = "cave worm" 
+  Monster(2)  = "spider"
+  Monster(3)  = "giant bat"
+  Monster(4)  = "dark "
+  Monster(5)  = "tentacled"
+  Monster(6)  = "ô§§ô"
+  Monster(7)  = "ô§§ô"
+  Monster(8)  = "ô§§ô"
+  Monster(9)  = "ô§§ô"
+  Monster(10) = "ô§§ô"
+  Monster(11) = "ô§§ô"
+  Monster(12) = "ô§§ô"
+  Monster(13) = "ô§§ô"
+  Monster(14) = "ô§§ô"
+  Monster(15) = "ô§§ô"
+  Monster(16) = "ô§§ô"
+  Monster(17) = "ô§§ô"
+  Monster(18) = "ô§§ô"
+  Monster(19) = "ô§§ô"
+  Monster(20) = "ô§§ô"
+ 
+'Set UseRecast to 1 to always keep a spell on yourself, 0 otherwise.
+UseRecast = 1
+  RecastCmd = "tige" 'spell command
+  RecastStat = "You feel ferocious!" 'what it says when you do STAT
+  RecastGone = "effects of way of the tiger wear off" 'wear off msg
+
+'Set UseMana to 1, or 0 if you don't want to REST for mana
+UseMana = 0
+  ManaDesc = "Mana: "   'seen with the "health" command, one space
+ 'ManaDesc = "Kai: "    'for Mystics...
+  ManaHp = 0            'mana to rest to before moving
+  
+'Set UseFollower to 1 if you will have a follower, 0 otherwise.
+UseFollower = 0
+  FollowHps = 90     'Hp PERCENTAGE to let the follower rest to
+ 'Do a PAR command and cut/paste the follower's statline, up to H:
+ 'Example:
+  FollowDesc = "(Warlock)    [H:"
+
+'Your character info:
+  RestHp = 110              'Hp to rest to
+  HangHp = 20               'Hang up at or below this HP value
+  LightType = "use lantern" 'Command (or spell) to use for light, if needed
+  UseSneak = 1              '1 to use stealth, 0 to walk
+  BashPick = "bash"         'Do you bash or pick doors?
+
+'Attack commands
+  Attack = "bs "         'Main attack command or spell (with a space)
+  
+'Set UseReattack to 1 to REattack after the 1st round with a spell
+'or other attack
+  UseReattack = 1
+  Reattack = "ju "          'secondary attack or spell (with a space)
+  Reatt(1) = "You surprise" '3 things that will trigger the secondary attack
+  Reatt(2) = "fists!"
+  Reatt(3) = "You punch"
+  
+  GetGold = 0               '1 to get, 0 to leave
+  GetSilver = 0
+  GetCopper = 0
+
+'5 Optional auto-hangup phrases  
+  HangPhrase(1) = "ô§§ô"
+  HangPhrase(2) = "ô§§ô"
+  HangPhrase(3) = "ô§§ô" 
+  HangPhrase(4) = "ô§§ô"                   
+  HangPhrase(5) = "ô§§ô" 
+  
+'This phrase will cause the script to END (not hangup)
+'be careful with what you put here
+  EndPhrase = "<putsomethinghardtotypebyaccidentinhere>"
+
+'Set UseRelog to 1 to enable relogging (recommended), 0 to stay offline.
+'This is only for non-script hangups - telnet crashes, BBS cleanup etc.
+UseRelog = 1
+  Username = "muti"        'BBS login username
+  Password = "yerpassword" 'password
+  GlobalGo = "/go mud"     'command to get to the MajorMud entry screen
+ '8 things you may see while relogging, and what to send when
+ 'you see them:
+  RelogWhen(1) = "Hit Ctrl-X to abort"
+   RelogSend(1) = "^X"
+  RelogWhen(2) = "type it in and press"
+   RelogSend(2) = Username
+  RelogWhen(3) = "Enter your password"
+   RelogSend(3) = Password
+  RelogWhen(4) = "onstop"
+   RelogSend(4) = ""
+  RelogWhen(5) = "in your mailbox"
+   RelogSend(5) = "N"
+  RelogWhen(6) = "X to EXIT" 'Cybercity specific
+   RelogSend(6) = GlobalGo
+  RelogWhen(7) = "Make your selection" 'Generic for MBBS
+   RelogSend(7) = GlobalGo
+  RelogWhen(8) = "ô§§ô"
+   RelogSend(8) = "ô§§ô"
+ 
+'**********************END EDIT******************
+'**********
+'********
+'******
+'****
+'**
+
+
+
+
+
+
+
+
+
+
+
+gosub initrecast    'get continuous defense spell going
+gosub initstartexp  'check time and exp for XPH calculator
+gosub sethitpointarray 'set hangup hitpoints
+gosub checkstatline    'check for the proper statline
+
+START_SCRIPT:
+  when clear all
+  close
+  open MapFile for input as #1
+  Location = ""
+  Exits = 1
+  gosub start_sneak
+  goto next_move 
+
+WALK:      
+  when clear all
+  alsohere = 0 
+  exits = 0 
+  sneak = 0
+  location = "WALK"
+  gosub addwhensnomons 
+  gosub walkwhens 
+  timeout 20
+  waitfor "exits" 
+  exits = 1 
+  if alsohere = 0 then 
+      if UseSneak <> 0 then 
+       if sneak = 1 then
+       goto next_move
+       end if
+       if sneak = 0 then
+       gosub sneak_up
+       goto next_move
+       
+       end if
+      end if
+     goto next_move  
+   else 'if we found a monster...
+     Curmon = Monster(alsohere)
+     if UseSneak <> 0 then
+      if sneak = 0 then
+       if UseReattack <> 0 then
+        send ReAttack; Curmon 'if we failed sneak, use the secondary attack
+       else
+        send Attack; Curmon
+       end if
+      goto kick_some_ass
+      end if
+     end if
+    send Attack; Curmon
+    goto kick_some_ass
+   end if
+
+WALK_FUMBLE:
+   exits = 0
+   send dir
+   goto walk
+
+WALK_HELD:
+   when clear all
+   gosub addwhens
+   location = "WALK_HELD"
+   send "rest"
+   when match "exits"                         do let exits = 1 
+   when match "You fumble"                    do goto walk_held
+   when match "You can move again"            do goto walk_held_gone
+   when match "You get back on your feet"     do goto walk_held_gone
+   when match "are freed from the webbing"    do goto walk_held_gone
+   when match "You feel braver"               do goto walk_held_gone
+   timeout 60
+   waitfor "ô§§ô"
+
+ WALK_HELD_GONE:
+   gosub sneak_up
+   if exits = 1 then
+   goto next_move
+   end if
+   send dir
+   goto walk
+
+WALK_BLIND:
+   when clear all
+   gosub addwhens
+   location = "WALK_BLIND"
+   exits = 1
+   sneak = 0
+   send "rest"
+   when match "You fumble"                    do goto walk_blind
+   when match "You can see again"             do goto check_wounds
+   when match "Your vision returns to normal" do goto check_wounds
+   timeout 60
+   waitfor "ô§§ô"
+    
+WALK_DOOR:
+   let sneak = 0
+   when clear all
+   gosub addwhensnomons
+   location = "WALK_DOOR"
+   send BashPick; " "; dir
+   when match "fail"                     do goto walk_door
+   when match "You fumble in confusion"  do goto walk_door
+   when match "There is no benefit"      do goto walk_door_open
+   when match "You bashed the door open" do goto walk_door_open
+   when match "You bashed the gate open" do goto walk_door_open
+   when match "already open"             do goto walk_door_open
+   timeout 15
+   waitfor "You successfully"
+       
+WALK_DOOR_OPEN:
+   if bashpick = "pick" then
+   send "open "; dir
+   end if
+   gosub sneak_up
+   send dir
+   goto walk
+   
+NEXT_MOVE:
+   when clear all
+   input #1, dir
+   if dir = "END" then
+   let sneak = 0
+   goto start_script
+   end if
+   send dir
+   goto walk
+
+KICK_SOME_ASS:
+   Sneak = 0
+   location = "KICK_SOME_ASS"
+   when clear all
+   gosub addwhensnomons
+   when match "You fumble"              do goto fight_fumble
+   if UseReattack <> 0 then
+   when match Reatt(1)                  do send Reattack; Curmon
+   when match Reatt(2)                  do send Reattack; Curmon
+   when match Reatt(3)                  do send Reattack; Curmon
+   end if
+   when match "is very dark"            do gosub light
+   if UseRecast <> 0 then
+   when match RecastGone                do send RecastCmd; "^M"; Reattack;
+Curmon
+   end if
+   when match "You do not see"          do goto check_wounds
+   when match "had no effect"           do goto check_wounds
+   when match "Why would"               do goto check_wounds
+   when match "experience."             do goto check_wounds
+   when match "left to the"             do goto check_wounds
+   timeout 120
+   waitfor "You gain"
+    goto check_wounds
+      
+FIGHT_FUMBLE:
+   when match "You gain"                do goto check_wounds
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+
+CHECK_WOUNDS:
+   when clear all      
+   gosub addwhens
+   location = "CHECK_WOUNDS"
+   a=0
+   b=0
+   send
+   when match "You are blind."           do goto walk_blind
+   when match "is very dark"             do gosub light
+   timeout 10
+   waitfor "exits"
+   if getgold > 0 then
+   send "get crown"
+   end if
+   if getsilver > 0 then
+   send "get noble"
+   end if
+   if getcopper > 0 then
+   send "get farthing"
+   end if
+   send "hea"
+   when match "You fumble" do goto check_wounds
+   timeout 10
+   waitfor "Health:   "
+   receive c
+   c = left(c, 3)
+   a = val(c)
+   if a <= hanghp then
+   goto hang_up
+   end if
+   if a < resthp then
+   goto pre_rest
+   end if
+
+CHECKWOUNDS2:
+   location = "CHECKWOUNDS2"
+   if UseMana <> 0 then
+   send "hea"
+   when match "You fumble" do goto checkwounds2
+   timeout 10
+   waitfor "Mana: "
+   receive c
+   c = left(c, 3)
+   a = val(c)
+   if a < manahp then
+   goto pre_mana_rest
+   end if
+   end if
+
+CHECKWOUNDS3:
+   location = "CHECKWOUNDS3"
+   if UseFollower <> 0 then
+   send "par"
+   when match "not in a party" do goto next_move
+   timeout 10
+   waitfor FollowDesc
+   receive c
+   c = left(c, 3)
+   a = val(c)
+   if a < FollowHps then
+   goto pre_follower_rest
+   end if
+   end if
+   
+   if exits = 0 then
+   if spell = 0 then
+   gosub initrecast
+   end if
+   gosub getxph
+   gosub sneak_up
+   send dir
+   goto walk
+   end if
+   
+   if spell = 0 then
+   gosub initrecast
+   end if
+   gosub getxph
+   gosub sneak_up
+   goto next_move
+
+    
+PRE_REST:
+   send "rest"
+
+REST_UP:
+   when clear all
+   gosub addwhens
+   location = "REST_UP"
+   when match "You fumble"              do goto pre_rest
+   when match "is very dark"            do gosub light
+   when match "damage!"                 do goto check_wounds
+   when match "are no longer dizzy"     do send "rest"
+   when match "effects of the poison"   do send "rest"
+   when match "fist for"                do goto check_wounds
+   when match "at you with"             do goto check_wounds
+   when match "reaches for"             do goto check_wounds
+   when match "draws the breath"        do goto check_wounds
+   when match "touches you"             do goto check_wounds
+   timeout 6
+   waitfor "ô§§ô"
+
+CHECK_UP:
+   when clear all
+   gosub addwhensnomons 
+   location = "CHECK_UP"  
+   send "hea"
+   when match "You fumble"              do goto check_up
+   timeout 10
+   waitfor "Health:   "
+   receive c
+   let c = left(c, 3)
+   let a = val(c)
+   if a <= hanghp then
+   goto hang_up
+   end if
+   if a <= resthp then
+   goto rest_up
+   end if
+  
+   if UseMana <> 0 then
+   goto checkmana2
+   end if
+   
+   if UseFollower <> 0 then
+   goto checkfollower2
+   end if
+   
+   if exits = 0 then
+    if spell = 0 then
+    gosub initrecast
+    end if
+    gosub getxph
+    gosub sneak_up
+    send dir
+    goto walk
+   end if
+  if spell = 0 then
+  gosub initrecast  
+  end if
+  gosub sneak_up
+  gosub getxph   
+  gosub sneak_up
+  goto next_move
+
+PRE_MANA_REST:
+   if UseSneak <> 0 then
+   send "hide"
+   else
+   send "rest"
+   end if
+   goto mana_up
+
+CHECKMANA2:
+   location = "CHECKMANA2"
+   send "hea"
+   when match "not in a party" do goto next_move
+   timeout 10
+   waitfor ManaDesc
+   receive c
+   let c = left(c, 3)
+   let a = val(c)
+   if a < manahp then
+   goto mana_up
+   end if
+    
+   if UseFollower <> 0 then
+   goto pre_follower_rest
+   end if
+
+   if spell = 0 then
+   gosub initrecast
+   end if
+   gosub getxph
+   gosub sneak_up
+   if exits = 0 then
+   send dir
+   goto walk
+   end if
+   goto next_move
+
+MANA_UP:
+   when clear all
+   gosub addwhens
+   location = "MANA_UP"
+   when match "You fumble"              do goto pre_mana_rest
+   when match "don't think you're"      do goto pre_mana_rest
+   when match "is very dark"            do gosub light
+   when match "damage!"                 do goto check_wounds
+   when match "mana for"                do goto check_wounds
+   when match "are no longer dizzy"     do send "rest"
+   when match "effects of the poison"   do send "rest"
+   when match "fist for"                do goto check_wounds
+   when match "at you with"             do goto check_wounds
+   when match "reaches for"             do goto check_wounds
+   when match "draws the breath"        do goto check_wounds
+   when match "touches you"             do goto check_wounds
+   timeout 5
+   waitfor "ô§§ô"
+
+
+PRE_FOLLOWER_REST:
+   send "rest"
+   goto follower_up
+
+CHECKFOLLOWER2:
+   location = "CHECKFOLLOWER2"
+   send "par"
+   when match "not in a party" do goto next_move
+   timeout 10
+   waitfor FollowDesc
+   receive c
+   let c = left(c, 3)
+   let a = val(c)
+   if a < followhps then
+   goto follower_up
+   end if
+   if spell = 0 then
+   gosub initrecast
+   end if
+   gosub sneak_up
+   
+   if exits = 0 then
+   gosub getxph
+   gosub sneak_up
+   send dir
+   goto walk
+   end if
+   
+   gosub getxph
+   gosub sneak_up
+   goto next_move
+
+FOLLOWER_UP:
+   when clear all
+   gosub addwhens
+   location = "FOLLOWER_UP"
+   when match "You fumble"              do goto pre_follower_rest
+   when match "don't think you're"      do goto pre_follower_rest
+   when match "is very dark"            do gosub light
+   when match "damage!"                 do goto check_wounds
+   when match "mana for"                do goto check_wounds
+   when match "are no longer dizzy"     do send "rest"
+   when match "effects of the poison"   do send "rest"
+   when match "fist for"                do goto check_wounds
+   when match "at you with"             do goto check_wounds
+   when match "reaches for"             do goto check_wounds
+   when match "draws the breath"        do goto check_wounds
+   when match "touches you"             do goto check_wounds
+   timeout 5
+   waitfor "ô§§ô"
+
+LIGHT:
+   if lighttype = "" then
+    print
+    print "Went to a dark place without a light defined!"
+    print
+    goto hang_up
+   end if
+   send lighttype
+   when match "You do not have" do goto hang_up
+   send
+   return
+
+
+    
+HANG_UP:
+  when clear all
+  send "break"
+  hangup
+   END
+   
+
+ ATTACK_MON1:
+   WHEN CLEAR ALL
+   let curmon = monster(1)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+ATTACK_MON2:
+   WHEN CLEAR ALL
+   let curmon = monster(2)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON3:
+   WHEN CLEAR ALL
+   let curmon = monster(3)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON4:
+   WHEN CLEAR ALL
+   let curmon = monster(4)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON5:
+   WHEN CLEAR ALL
+   let curmon = monster(5)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON6:
+   WHEN CLEAR ALL
+   let curmon = monster(6)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON7:
+   WHEN CLEAR ALL
+   let curmon = monster(7)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON8:
+   WHEN CLEAR ALL
+   let curmon = monster(8)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON9:
+   WHEN CLEAR ALL
+   let curmon = monster(9)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON10:
+   WHEN CLEAR ALL
+   let curmon = monster(10)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON11:
+   WHEN CLEAR ALL
+   let curmon = monster(11)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON12:
+   WHEN CLEAR ALL
+   let curmon = monster(12)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON13:
+   WHEN CLEAR ALL
+   let curmon = monster(13)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON14:
+   WHEN CLEAR ALL
+   let curmon = monster(14)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON15:
+   WHEN CLEAR ALL
+   let curmon = monster(15)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON16:
+   WHEN CLEAR ALL
+   let curmon = monster(16)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON17:
+   WHEN CLEAR ALL
+   let curmon = monster(17)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON18:
+   WHEN CLEAR ALL
+   let curmon = monster(18)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON19:
+   WHEN CLEAR ALL
+   let curmon = monster(19)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+ATTACK_MON20:
+   WHEN CLEAR ALL
+   let curmon = monster(20)
+   if UseSneak <> 0 then
+   if sneak = 0 then
+   if UseReattack <> 0 then
+   send Reattack; Curmon
+   else
+   send Attack; Curmon
+   end if
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   end if
+   send Attack; Curmon
+   goto kick_some_ass
+   
+   
+RELOG:
+  when clear all
+  let location = "RELOG"
+  dial entry 1
+  when match RelogWhen(1)          do send RelogSend(1)
+  when match RelogWhen(2)          do send RelogSend(2)
+  when match RelogWhen(3)          do send RelogSend(3)
+  when match RelogWhen(4)          do send RelogSend(4)
+  when match RelogWhen(5)          do send RelogSend(5)
+  when match RelogWhen(6)          do send RelogSend(6)
+  when match RelogWhen(7)          do send RelogSend(7)
+  when match RelogWhen(8)          do send RelogSend(8)
+  timeout 120
+  waitfor "Realm of Legends"
+  send "E"
+  when match "gods have punished you" do send
+  when match "is very dark" do goto check_wounds
+  when match "are blind"    do goto check_wounds
+  waitfor "exits"
+  goto check_wounds
+
+CHECKSTATLINE:
+  location = "CHECKSTATLINE"
+  statline = 0
+  send
+  when match "[!" do let statline = 1
+  waitfor "exits"
+  let exits = 1
+  if statline = 0 then
+  send "set statline full custom [!%h!/%H:%m/%M:%X/%x%r]"
+  send "set talk slow"
+  end if
+return
+
+GETXPH:
+  location = "GETXPH"
+  send "exp"
+  waitfor "Exp: "
+  receive holder
+  do while instr(holder, "[") 'strip ansi procedure
+  holder = (left(holder, instr(holder, "[") - 1)) + (right(holder,
+len(holder) - instr(instr(holder, "["), holder, "m")))
+  loop
+  instr(holder, " ")
+  holder = left(holder, instr(holder, " "))
+  endexp = val(holder)
+  holder = str(timer)
+  endtime = val(holder)
+  if endtime < starttime then
+  send "exp"
+  waitfor "Exp: "
+  receive holder
+  do while instr(holder, "[") 
+  holder = (left(holder, instr(holder, "[") - 1)) + (right(holder,
+len(holder) - instr(instr(holder, "["), holder, "m")))
+  loop
+  instr(holder, " ")
+  holder = left(holder, instr(holder, " "))
+  startexp = val(holder)
+  holder = str(timer)
+  starttime = val(holder)
+  goto GETXPH
+  end if
+  let timesofar = endtime - starttime
+  if timesofar < 1 then
+  goto SKIPEXP
+  end if
+  let expsofar = endexp - startexp
+  if expsofar < 1 then
+  goto SKIPEXP
+  end if
+  let expsofar = expsofar / timesofar
+  let expsofar = expsofar * 3600
+  let xph = str(expsofar)
+  print
+  print "XPH: "; xph
+SKIPEXP:
+return
+
+INITRECAST: 'Continuous spell check
+  if UseRecast <> 0 then
+  spell=0
+  send "stat^M"
+  when match RecastStat do let spell = 1
+  timeout 15
+  waitfor "exits"
+  if spell = 0 then
+  send RecastCmd
+  end if
+  end if
+  spell = 1
+return  
+
+INITSTARTEXP:  'Get start time and experience for XPH calculator
+  send "exp"
+  waitfor "Exp: "
+  receive holder
+   do while instr(holder, "[") 'strip ansi codes
+   holder = (left(holder, instr(holder, "[") - 1)) + (right(holder,
+len(holder) - instr(instr(holder, "["), holder, "m")))
+   loop
+  holder = left(holder, instr(holder, " "))
+  startexp = val(holder)
+  holder = str(timer)
+  starttime = val(holder)
+return
+
+START_SNEAK:
+ if UseSneak <> 0 then
+ sneak = 1
+ send "sneak^M"
+ when match "don't think you're" do let sneak = 0
+ timeout 10
+ waitfor "exits"
+ if sneak = 0 then
+  goto start_sneak
+ end if
+ end if
+ return
+
+SNEAK_UP:
+ if UseSneak <> 0 then
+ sneak = 1
+ send "sneak^M"
+ when match "don't think you're" do let sneak = 0
+ timeout 10
+ waitfor "exits"
+ if sneak = 0 then
+  goto start_sneak
+ end if
+ end if
+ return
+
+
+WALKWHENS:   
+   when match "no exit in that"        do goto hang_up
+   when match "too heavy to move"      do goto hang_up
+   when match "You fumble"             do goto walk_fumble
+   when match "You can't seem to move" do goto walk_held
+   when match "You are blind."         do goto walk_blind
+   when match "There is a closed door" do goto walk_door
+   when match "There is a closed gate" do goto walk_door
+   when match "The door is closed"     do goto walk_door
+   when match "The gate is closed"     do goto walk_door
+   when match "is very dark"           do gosub light
+   when match monster(1)               do let alsohere = 1
+   when match monster(2)               do let alsohere = 2
+   when match monster(3)               do let alsohere = 3
+   when match monster(4)               do let alsohere = 4
+   when match monster(5)               do let alsohere = 5
+   when match monster(6)               do let alsohere = 6
+   when match monster(7)               do let alsohere = 7
+   when match monster(8)               do let alsohere = 8
+   when match monster(9)               do let alsohere = 9
+   when match monster(10)              do let alsohere = 10
+   when match monster(11)              do let alsohere = 11
+   when match monster(12)              do let alsohere = 12
+   when match monster(13)              do let alsohere = 13
+   when match monster(14)              do let alsohere = 14
+   when match monster(15)              do let alsohere = 15
+   when match monster(16)              do let alsohere = 16
+   when match monster(17)              do let alsohere = 17
+   when match monster(18)              do let alsohere = 18
+   when match monster(19)              do let alsohere = 19
+   when match monster(20)              do let alsohere = 20
+   if UseSneak <> 0 then
+   when match "Sneaking..."                 do let sneak = 1
+   when match "don't think you're sneaking" do let sneak = 0
+   when match "You make a sound"            do let sneak = 0
+   end if   
+return 
+
+
+
+'Maintenance stuff
+
+SETHITPOINTARRAY:
+   let poof(1) = "[!-!"
+   let poof(2) = "[!0!"
+   let poof(3) = "[!1!"
+   let poof(4) = "[!2!"
+   let poof(5) = "[!3!"
+   let poof(6) = "[!4!"
+   let poof(7) = "[!5!"
+   let poof(8) = "[!6!"
+   let poof(9) = "[!7!"
+   let poof(10) = "[!8!"
+   let poof(11) = "[!9!"
+   let poof(12) = "[!10!"
+   let poof(13) = "[!11!"
+   let poof(14) = "[!12!"
+   let poof(15) = "[!13!"
+   let poof(16) = "[!14!"
+   let poof(17) = "[!15!"
+   let poof(18) = "[!16!"
+   let poof(19) = "[!17!"
+   let poof(20) = "[!18!"
+   let poof(21) = "[!19!"
+   let poof(22) = "[!20!"
+   let poof(23) = "[!21!"
+   let poof(24) = "[!22!"
+   let poof(25) = "[!23!"
+   let poof(26) = "[!24!"
+   let poof(27) = "[!25!"
+   let poof(28) = "[!26!"
+   let poof(29) = "[!27!"
+   let poof(30) = "[!28!"
+   let poof(31) = "[!29!"
+   let poof(32) = "[!30!"
+   let poof(33) = "[!31!"
+   let poof(34) = "[!32!"
+   let poof(35) = "[!33!"
+   let poof(36) = "[!34!"
+   let poof(37) = "[!35!"
+   let poof(38) = "[!36!"
+   let poof(39) = "[!37!"
+   let poof(40) = "[!38!"
+   let poof(41) = "[!39!"
+   let poof(42) = "[!40!"
+   let poof(43) = "[!41!"
+   let poof(44) = "[!42!"
+   let poof(45) = "[!43!"
+   let poof(46) = "[!44!"
+   let poof(47) = "[!45!"
+   let poof(48) = "[!46!"
+   let poof(49) = "[!47!"
+   let poof(50) = "[!48!"
+   let poof(51) = "[!49!"
+   let poof(52) = "[!50!"
+   let poof(53) = "[!51!"
+   let poof(54) = "[!52!"
+   let poof(55) = "[!53!"
+   let poof(56) = "[!54!"
+   let poof(57) = "[!55!"
+   let poof(58) = "[!56!"
+   let poof(59) = "[!57!"
+   let poof(60) = "[!58!"
+   let poof(61) = "[!59!"
+   let poof(62) = "[!60!"
+   let poof(63) = "[!61!"
+   let poof(64) = "[!62!"
+   let poof(65) = "[!63!"
+   let poof(66) = "[!64!"
+   let poof(67) = "[!65!"
+   let poof(68) = "[!66!"
+   let poof(69) = "[!67!"
+   let poof(70) = "[!68!"
+   let poof(71) = "[!69!"
+   let poof(72) = "[!70!"
+   let poof(73) = "[!71!"
+   let poof(74) = "[!72!"
+   let poof(75) = "[!73!"
+   let poof(76) = "[!74!"
+   let poof(77) = "[!75!"
+   let poof(78) = "[!76!"
+   let poof(79) = "[!77!"
+   let poof(80) = "[!78!"
+   let poof(81) = "[!79!"
+   let poof(82) = "[!80!"
+   let poof(83) = "[!81!"
+   let poof(84) = "[!82!"
+   let poof(85) = "[!83!"
+   let poof(86) = "[!84!"
+   let poof(87) = "[!85!"
+   let poof(88) = "[!86!"
+   let poof(89) = "[!87!"
+   let poof(90) = "[!88!"
+   let poof(91) = "[!89!"
+   let poof(92) = "[!90!"
+   let poof(93) = "[!91!"
+   let poof(94) = "[!92!"
+   let poof(95) = "[!93!"
+   let poof(96) = "[!94!"
+   let poof(97) = "[!95!"
+   let poof(98) = "[!96!"
+   let poof(99) = "[!97!"
+   let poof(100) = "[!98!"
+   let poof(101) = "[!99!"
+   let poof(102) = "[!100!"
+   let poof(103) = "[!101!"
+   let poof(104) = "[!102!"
+   let poof(105) = "[!103!"
+   let poof(106) = "[!104!"
+   let poof(107) = "[!105!"
+   let poof(108) = "[!106!"
+   let poof(109) = "[!107!"
+   let poof(110) = "[!108!"
+   let poof(111) = "[!109!"
+   let poof(112) = "[!110!"
+   let poof(113) = "[!111!"
+   let poof(114) = "[!112!"
+   let poof(115) = "[!113!"
+   let poof(116) = "[!114!"
+   let poof(117) = "[!115!"
+   let poof(118) = "[!116!"
+   let poof(119) = "[!117!"
+   let poof(120) = "[!118!"
+   let poof(121) = "[!119!"
+   let poof(122) = "[!120!"
+    return
+
+ADDWHENS:
+   when match monster(1)    do goto attack_mon1
+   when match monster(2)    do goto attack_mon2
+   when match monster(3)    do goto attack_mon3 
+   when match monster(4)    do goto attack_mon4
+   when match monster(5)    do goto attack_mon5
+   when match monster(6)    do goto attack_mon6
+   when match monster(7)    do goto attack_mon7
+   when match monster(8)    do goto attack_mon8
+   when match monster(9)    do goto attack_mon9
+   when match monster(10)   do goto attack_mon10
+   when match monster(11)   do goto attack_mon11
+   when match monster(12)   do goto attack_mon12
+   when match monster(13)   do goto attack_mon13
+   when match monster(14)   do goto attack_mon14
+   when match monster(15)   do goto attack_mon15
+   when match monster(16)   do goto attack_mon16
+   when match monster(17)   do goto attack_mon17
+   when match monster(18)   do goto attack_mon18
+   when match monster(19)   do goto attack_mon19
+   when match monster(20)   do goto attack_mon20
+ADDWHENSNOMONS:
+   when match poof(1)       do goto hang_up
+   when match poof(2)       do goto hang_up
+   when match poof(3)       do goto hang_up
+   when match poof(4)       do goto hang_up
+   if hanghp >= 5 then
+   when match poof(5)       do goto hang_up
+   when match poof(6)       do goto hang_up
+   when match poof(7)       do goto hang_up
+   when match poof(8)       do goto hang_up
+   when match poof(9)       do goto hang_up
+   end if
+   if hanghp >= 10 then
+   when match poof(10)      do goto hang_up
+   when match poof(11)      do goto hang_up
+   when match poof(12)      do goto hang_up
+   when match poof(13)      do goto hang_up
+   when match poof(14)      do goto hang_up
+   end if
+   if hanghp >= 15 then
+   when match poof(15)      do goto hang_up
+   when match poof(16)      do goto hang_up
+   when match poof(17)      do goto hang_up
+   when match poof(18)      do goto hang_up
+   when match poof(19)      do goto hang_up
+   end if
+   if hanghp >= 20 then
+   when match poof(20)      do goto hang_up
+   when match poof(21)      do goto hang_up
+   when match poof(22)      do goto hang_up
+   when match poof(23)      do goto hang_up
+   when match poof(24)      do goto hang_up
+   end if
+   if hanghp >= 25 then
+   when match poof(25)      do goto hang_up
+   when match poof(26)      do goto hang_up
+   when match poof(27)      do goto hang_up
+   when match poof(28)      do goto hang_up
+   when match poof(29)      do goto hang_up
+   end if
+   if hanghp >= 30 then
+   when match poof(30)      do goto hang_up
+   when match poof(31)      do goto hang_up
+   when match poof(32)      do goto hang_up
+   when match poof(33)      do goto hang_up
+   when match poof(34)      do goto hang_up
+   end if
+   if hanghp >= 35 then
+   when match poof(35)      do goto hang_up
+   when match poof(36)      do goto hang_up
+   when match poof(37)      do goto hang_up
+   when match poof(38)      do goto hang_up
+   when match poof(39)      do goto hang_up
+   end if
+   if hanghp >= 40 then
+   when match poof(40)      do goto hang_up
+   when match poof(41)      do goto hang_up
+   when match poof(42)      do goto hang_up
+   when match poof(43)      do goto hang_up
+   when match poof(44)      do goto hang_up
+   end if
+   if hanghp >= 45 then
+   when match poof(45)      do goto hang_up
+   when match poof(46)      do goto hang_up
+   when match poof(47)      do goto hang_up
+   when match poof(48)      do goto hang_up
+   when match poof(49)      do goto hang_up
+   end if
+   if hanghp >= 50 then
+   when match poof(50)      do goto hang_up
+   when match poof(51)      do goto hang_up
+   when match poof(52)      do goto hang_up
+   when match poof(53)      do goto hang_up
+   when match poof(54)      do goto hang_up
+   end if
+   if hanghp >= 55 then
+   when match poof(55)      do goto hang_up
+   when match poof(56)      do goto hang_up
+   when match poof(57)      do goto hang_up
+   when match poof(58)      do goto hang_up
+   when match poof(59)      do goto hang_up
+   end if
+   if hanghp >= 60 then
+   when match poof(60)      do goto hang_up
+   when match poof(61)      do goto hang_up
+   when match poof(62)      do goto hang_up
+   when match poof(63)      do goto hang_up
+   when match poof(64)      do goto hang_up
+   end if
+   if hanghp >= 65 then
+   when match poof(65)      do goto hang_up
+   when match poof(66)      do goto hang_up
+   when match poof(67)      do goto hang_up
+   when match poof(68)      do goto hang_up
+   when match poof(69)      do goto hang_up
+   end if
+   if hanghp >= 70 then
+   when match poof(70)      do goto hang_up
+   when match poof(71)      do goto hang_up
+   when match poof(72)      do goto hang_up
+   when match poof(73)      do goto hang_up
+   when match poof(74)      do goto hang_up
+   end if
+   if hanghp >= 75 then
+   when match poof(75)      do goto hang_up
+   when match poof(76)      do goto hang_up
+   when match poof(77)      do goto hang_up
+   when match poof(78)      do goto hang_up
+   when match poof(79)      do goto hang_up
+   end if
+   if hanghp >= 80 then
+   when match poof(80)      do goto hang_up
+   when match poof(81)      do goto hang_up
+   when match poof(82)      do goto hang_up
+   when match poof(83)      do goto hang_up
+   when match poof(84)      do goto hang_up
+   end if
+   if hanghp >= 85 then
+   when match poof(85)      do goto hang_up
+   when match poof(86)      do goto hang_up
+   when match poof(87)      do goto hang_up
+   when match poof(88)      do goto hang_up
+   when match poof(89)      do goto hang_up
+   end if
+   if hanghp >= 90 then
+   when match poof(90)      do goto hang_up
+   when match poof(91)      do goto hang_up
+   when match poof(92)      do goto hang_up
+   when match poof(93)      do goto hang_up
+   when match poof(94)      do goto hang_up
+   end if
+   if hanghp >= 95 then
+   when match poof(95)      do goto hang_up
+   when match poof(96)      do goto hang_up
+   when match poof(97)      do goto hang_up
+   when match poof(98)      do goto hang_up
+   when match poof(99)      do goto hang_up
+   end if
+   if hanghp >= 100 then
+   when match poof(100)     do goto hang_up
+   when match poof(101)     do goto hang_up
+   when match poof(102)     do goto hang_up
+   when match poof(103)     do goto hang_up
+   when match poof(104)     do goto hang_up
+   end if
+   if hanghp >= 105 then
+   when match poof(105)     do goto hang_up
+   when match poof(106)     do goto hang_up
+   when match poof(107)     do goto hang_up
+   when match poof(108)     do goto hang_up
+   when match poof(109)     do goto hang_up
+   end if
+   if hanghp >= 110 then
+   when match poof(110)     do goto hang_up
+   when match poof(111)     do goto hang_up
+   when match poof(112)     do goto hang_up
+   when match poof(113)     do goto hang_up
+   when match poof(114)     do goto hang_up
+   end if
+   if hanghp >= 115 then
+   when match poof(115)     do goto hang_up
+   when match poof(116)     do goto hang_up
+   when match poof(117)     do goto hang_up
+   when match poof(118)     do goto hang_up
+   when match poof(119)     do goto hang_up
+   when match poof(120)     do goto hang_up
+   end if
+   when match hangphrase(1) do goto hang_up
+   when match hangphrase(2) do goto hang_up
+   when match hangphrase(3) do goto hang_up
+   when match hangphrase(4) do goto hang_up
+   when match hangphrase(5) do goto hang_up
+   when match RecastGone    do let spell = 0
+   when match EndPhrase     do end
+return
+
+
+CATCH ERR_TIMEOUT
+if not carrier then
+ hangup
+ if userelog <> 0 then
+ goto RELOG
+ else 
+ goto hang_up
+ end if
+end if
+if location = "RELOG" then
+ goto relog
+end if
+if location = "WALK" then
+ exits = 0
+ goto walk_held
+end if
+if location = "WALK_HELD" then
+ goto walk_held_gone
+end if
+if location = "WALK_BLIND" then
+ goto next_move
+end if
+if location = "WALK_DOOR" then
+ goto hang_up
+end if
+if location = "KICK_SOME_ASS" then
+ goto next_move
+end if
+if location = "CHECK_WOUNDS" then
+ goto check_wounds
+end if
+if location = "REST_UP" then
+ goto check_up
+end if
+if location = "CHECK_UP" then
+ goto check_up
+end if
+if location = "CHECKWOUNDS2" then
+ goto checkwounds2
+end if
+if location = "CHECKWOUNDS3" then
+ goto checkwounds3
+end if
+if location = "CHECKMANA2" then
+ goto checkmana2
+end if
+if location = "MANA_UP" then
+ goto checkmana2
+end if
+if location = "FOLLOWER_UP" then
+ goto checkfollower2
+end if
+if location = "CHECKFOLLOWER2" then
+ goto checkfollower2
+end if
+if location = "RELOG" then
+ goto relog
+end if
+if location = "GETXPH" then
+ return
+end if
+if location = "CHECKSTATLINE" then
+ send "set statline full custom [!%h!/%H:%m/%M:%X/%x%r]"
+ send "set talk slow"
+end if
+      
+print
+print
+print "UNHANDLED ERROR, TERMINATING!"
+print
+print
+goto hang_up
+end
+
+
+
+

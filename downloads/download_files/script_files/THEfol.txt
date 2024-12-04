@@ -1,0 +1,39 @@
+this is the follow script for qmodem pro for win95 it goes with THEscript if
+you want to have a follower
+'Short & Simple
+
+dim monster as string
+
+START:
+when clear all
+ timeout 9000
+ when match "lil has invited"                    do send "follow
+lil^Mfrontrank"
+ when match "The just hung up"                   do hangup
+ when match "The drops to the ground!"               do hangup
+ when match "mana stops to rest"                do send "rest"
+ when match "Your mind is muddled"              do send "a she"
+ when match "lil stops to rest"                  do send "rest"
+ when match "are no longer following lil"        do hangup
+ when match "supercalifragilisticexpialidocious" do hangup 'secret hangup
+word
+ when match ".backrank"                          do send "backrank"  'The
+leader can say a rank starting 
+ when match ".midrank"                           do send "midrank"   'with
+a period to set the follower's
+ when match ".frontrank"                         do send "frontrank" 'rank
+   waitfor  "lil moves to attack "
+     receive monster
+       monster = left(monster, 4)
+       send "a "; monster
+       goto start
+       end
+       catch err_timeout
+       goto start
+       end
+
+
+
+
+
+

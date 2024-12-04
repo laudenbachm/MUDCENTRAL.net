@@ -1,0 +1,122 @@
+//  NOTE:  See the script reference in TFW help menu for further info
+//
+//  this script is coded to login from a dropped connection and take you
+//  all the way into mud.  This was written for the uptown menu system and
+//  may require changes for other systems.  For other mud games besides
+//  uptown, change the '/go utmud' to the go page for the mud of your
+//  choice.
+//
+//  execute this script from your script:
+//      calld( "uptown" )      <---  note: this assumes this script will be
+//                                         compiled as 'uptown.slc'
+//
+//  change the following variables to that of your account:
+//
+//      password_str
+//      userid_str
+//
+//  Please note: this script was written for TFW.  Although
+//      Telix for Dos 3.50+ may support these commands, I don't know for
+//      certain.
+//
+main()
+{
+
+    int rc, old_sound;
+
+    str userid_str   [] = "Your Userid Here";     // <---------- change this
+    str password_str [] = "Your Password Here";   // <---------- change this
+    str system_str   [] = "/GO UTMUD";            // <<<  change if needed
+
+    old_sound = _sound_on;
+    _sound_on = 0;
+
+    capture( "RELOG.CAP" );
+
+    while(1)
+    {
+
+        if ( ! carrier() )
+        {
+            //  reference the dial() command for more information
+            //
+            //  dial( str, int, int )
+            //
+            //  first parameter indicates the slot on the dial menu to dial
+            //      put the number of the slot to dial in the string.
+            //
+            //  second parameter indicates the number of times to attempt
+            //      to connect to that number.
+            //
+            //  third parameter indicates whether or not to run the script
+            //      linked to that dialing entry if one exists.  Choose 0
+            //      to RUN the script if one exists, otherwise choose 1.
+
+            dial( "2", 10, 1 );
+        }
+
+        //  the waitfor() command in TFW can support upto 8 strings.
+
+        if ( rc = waitFor(  "Otherwise type ^"new^":",
+                            "Enter your password:",
+                            ")onstop, (Q)uit, or (C)ontinue?",
+                            "Your Option :",
+                            "[MAJORMUD]:",
+                            "Do you want to see it now (Y/N)?",
+                            "Your selection:",
+                            "Obvious exits:",                   20 ))
+        {
+
+            if ( rc == 1 )
+            {
+                cputs( userid_str );
+                cnewline();
+            }
+            else
+            if ( rc == 2 )
+            {
+                cputs( password_str );
+                cnewline();
+            }
+            else
+            if ( rc == 3 )
+            {
+                cnewline();
+            }
+            else
+            if ( rc == 4 )
+            {
+                cputs( system_str );
+                cnewline();
+            }
+            else
+            if ( rc == 5 )
+            {
+                cputs( "e^m" );
+            }
+            else
+            if ( rc == 6 )
+            {
+                cputs( "n^m" );
+            }
+            else
+            if ( rc == 7 )
+            {
+                cputs( system_str );
+                cnewline();
+            }
+            else
+            {
+                break;
+            }
+        }
+        else
+        {
+            cnewline();
+        }
+    }
+
+    capture( "*CLOSE*" );
+
+    _sound_on = old_sound;
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>MUDCENTRAL: Everything You Want to Know about MajorMUD</TITLE>
+<META name="description" content="Welcome to MUDcentral.  The place for information on Mud games, classes, spells, monsters, and weapons.  Drop by and play online with over 2,500 real/live people!!">
+<META name="keywords" content="entertainment, games, online games, online, gaming, MUD, MPOGs, majormud, major, chat, internet games, free games, web games, multiplayer, MUDs, MegaMud, SuperMud, supermud3, info, information, pvp, non-pvp, mush, roleplaying, multi-user, multi, player, BBS, d&d, MPOG, computer, game, experiences, competitions, explorations, fights, attacks, duos, dungeon, dragon, combats, multi-player, multi-user, dungeons, dragons, spells, powers, weapons, armor, champions, races, classes, mystical, scripting, terminal, news, hints, tricks, cheats, forums, maps, medevial, fantasy, mmclient, metropolis, fantasy, realms, fun, web based, video games, warrior, sword, medieval, middle ages, warriors, paladians, clerics, priests, ninjas, thief, thieves, guild, bards, gypsy, gypsies, warlocks, mages, druids, rangers, humans, dwarfs, dwarves, gnomes, halflings, elfs, elves, gods, lords">
+</HEAD>
+<BODY BACKGROUND="" BGCOLOR="#000000" TEXT="#c0c0c0" LINK="#0099ff" VLINK="Aqua" ALINK="#808000">
+
+<center>
+<table border="0" width="600">
+<tr><td colspan="2"><a href="http://www.mudcentral.net">
+<img src="/images/mudcentralheader.gif" ALT="MudCentral Home" border="0"></a></td></tr>
+<tr>
+<td width="123" height="391" valign="top">
+<IMG SRC="/images/newmudcentralnav.gif" usemap="#1"  name="navbar"  ALT="Click on a page to jump there" border=0>
+<A HREF="/sysops/index.html"><IMG SRC="/images/mudwizard.gif" ALT="Sysop Command Reference" border=0></A>
+</td>
+
+<map name="1">
+<area shape="rect" coords ="10,20,113,34"  href ="/chardev/index.html" ALT="Character Dev.">
+<area shape="rect" coords ="10,41,57,53"  href="/items/index.html" ALT="Items">
+<area shape="rect" coords ="10,60,68,74"  href="/spells/index.html" ALT="Spells">		
+<area shape="rect" coords ="10,81,91,93"  href="/monsters/index.html" ALT="Monsters">
+<area shape="rect" coords ="10,101,69,113"  href="/quests/index.html" ALT="Quests">
+<area shape="rect" coords ="10,120,40,134"  href="/pvp/index.html" ALT="PVP">
+<area shape="rect" coords ="10,141,82,153"  href="/modules/index.html" ALT="Modules">
+<area shape="rect" coords ="10,161,87,174"  href="/toplists/index.html" ALT="Top Lists">
+<area shape="rect" coords ="10,181,103,194"  href="/downloads/index.html" ALT="Downloads">
+<area shape="rect" coords ="10,201,106,214"  href="http://www.mudmarket.com/" ALT="MUDMarket">
+<area shape="rect" coords ="10,221,51,234"  href="/chat/index.html" ALT="Chat">
+<area shape="rect" coords ="10,241,72,253"  href="http://www.mudinfo.net/index.php" ALT="Forums">
+<area shape="rect" coords ="10,261,94,273"  href="http://www.greatermud.com/" ALT="Play Now!">
+<area shape="rect" coords ="10,281,115,295"  href="/mudmaps/index.html" ALT="Maps">
+<area shape="rect" coords ="10,300,115,314"  href="/bbs_reviews/index.html" ALT="BBS Reviews">
+<AREA SHAPE="RECT" COORDS="9,319,117,338" HREF="/help/howtoplay.html" ALT="How to Play">
+<AREA SHAPE="RECT" COORDS="7,341,56,360" HREF="/help/" ALT="Help">
+<AREA SHAPE="RECT" COORDS="11,359,55,376" HREF="/links/index.html" ALT="Links">
+</map>
+<td valign="top" width="477">
+      
+
+
+<table width=440 border=0>
+
+<tr><td>
+  <script type="text/javascript"><!--
+google_ad_client = "pub-2720616807411724";
+/* 468x60, MudCentral */
+google_ad_slot = "7429119240";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+  <p>
+  <b><font color=#ffcc33><b>7.1) THE EVIL/LEGAL SYSTEM</b></font>
+</td></tr>
+<tr><td>
+      MajorMUD controls the users by giving evil points for actions which
+      are considered 'bad'.  As these evil points accumulate on a user they
+      will start to be punished by the game.  This starts by allowing other
+      users to attack them without penalty.  It then progresses to having
+      guards attack them on site.  After that, bounty-hunters and other
+      monsters will be generated with the specific purpose of attacking
+      the user.  After that the gods will begin to punish them by striking
+      them with lightning.  You may use the online sysop commands to alter
+      a user's evil level and thereby alter the way the game will treat
+      that user.
+</td></tr>
+<tr><td>
+      When a user first creates a character they get the chance to choose
+      to be a 'lawful' character.  If they make this choice then they are
+      forever banned from instigating any action which would give them
+      evil points.  Anyone attacking them is also given a larger number
+      of evil points than for a normal attack.  Although a user may not
+      change the state of their original decision regarding lawfulness
+      without rerolling, you may use the online sysop god commands to alter
+      this state.
+</td></tr>
+<tr><td>
+      You can configure the rate at which users lose evil points using the
+      CNF options MAXEPDAY, EPCYCLE, and EPAMOUNT.  At cleanup, any user
+      who has played the game and who has done any evil actions will
+      have their evil points reduced by 2 evil points.  Any user who has
+      played the game without any evil action will have their evil points
+      reduced by 3 plus the following formula:
+</td></tr>
+<tr><td>
+      (EPAMOUNT * (minutes played in game that day/EPCYCLE))<br><br>
+
+      The total number of evil points that will be forgiven are based on
+      the value of MAXEPDAY.  Note also that when moving from neutral towards
+      GOOD or SAINT (i.e. current evil points < 0) that the base of 2 evil
+      points does not apply (in other words, subtract 2 from the number of
+      evil points about to be forgiven and that is how much closer to
+      GOOD/SAINT the user will get).
+</td></tr>
+<tr><td>
+      For reference points, the following define the evil point ranges
+      which correspond to the reputation shown in the game.  The (EPs) shown
+      in brackets indicate the results of attacking someone of that
+      reputation.<br><br>
+</td></tr>
+<tr><td>
+<table>
+<tr><td align=right><small><b>-220</td><td><small><b><= Saint</td><td><small><b>< -200 (EP * 2)</td></tr>
+<tr><td align=right><small><b>-200</td><td><small><b><= Good</td><td><small><b><  -50 (EP * 2)</td></tr>
+<tr><td align=right><small><b>-500</td><td><small><b><= Neutral</td><td><small><b><   30</td></tr>
+<tr><td align=right><small><b>30</td><td><small><b><= Seedy</td><td><small><b><   40 (No EP )</td></tr>
+<tr><td align=right><small><b>40</td><td><small><b><= Outlaw</td><td><small><b><   80 (No EP; Guards attack until you are down)</td></tr>
+<tr><td align=right><small><b>80</td><td><small><b><= Criminal</td><td><small><b><  120 (No EP; Guards attack until you die)</td></tr>
+<tr><td align=right><small><b>120</td><td><small><b><= Villain</td><td><small><b><  210 (No EP; Above plus bounty hunters attack you)</td></tr>
+<tr><td align=right><small><b>210</td><td><small><b><= Fiend</td><td><small><b><  300 (No EP; Above plus gods hit you with lightning)</td></tr>
+</table>
+</td></tr>
+<tr><td>
+      Over 300 EPs, a fiend that cannot attack again until they go back
+      down to less than 300.<br><br>
+
+      ** NOTE ** DO NOT adjust any evil point values (either CNF or online)
+      unless you know what you are doing.  Use the SYSOP LIST USERS command
+      to see what the current evil levels of your users are and use that to
+      guide you in these settings.  Neither West Coast Creations nor the
+      staff or close-to-staff members of Dreamscape BBS will provide any
+      guidance on setting these aside from pointing you back to the default
+      values.  Settings which are incorrect -for-your-system- may result in
+      your users quitting the game due to other users taking advantage of
+      them.
+</td></tr>
+
+</table>
+
+</td>
+</tr> 
+</table>
+<CENTER><TABLE width="500" border="0">
+	<TR>
+        	<TD align="CENTER">
+
+		
+<script type="text/javascript"><!--
+google_ad_client = "pub-2720616807411724";
+/* 728x90, Mud Central */
+google_ad_slot = "9592774669";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+
+		
+		<FONT face="verdana,helvetica,arial" size="-1" color="#ffffff">
+
+               
+
+<hr>
+	<a href="http://www.80s.com" target="new">80s Webite</a> | 
+	<a href="http://www.gameport.com" target="new">Games</a> | 
+	<a href="http://www.macromusic.com" target="new">Music Store</a> | 
+	<a href="http://www.musicfanclubs.org" target="new">Music Fan Clubs</a><br><br>
+	
+	
+                <BR />Copyright &copy; 
+				<script language="JavaScript">
+				var d=new Date(); 
+				yr=d.getFullYear();
+				if (yr!=2003)
+				document.write("- "+yr);
+				</script>
+-- <a href="http://www.metrobbs.com">Metropolis Entertainment, Inc.</a>| <A HREF="privacypolicy.html">Privacy Policy</A><BR /> 
+		Send questions or comments to <a href="mailto:info@mudcentral.com">MudCentral Webmaster</a>
+                </FONT></TD>
+	</TR>
+</TABLE>
+
+
+</CENTER>
+
+
+<script type="text/javascript">
+
+
+</script>
+<script type="text/javascript">
+try {
+
+
+} catch(err) {}</script>
+
+
+</body></html>
+

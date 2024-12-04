@@ -1,0 +1,46 @@
+Procedure GetN string s,integer n
+integer i
+string ch
+s = ""
+ch = ""
+i = 0
+While i<n and ch<>"^M"
+   repeat
+      GetCh ch
+   until success
+   concat s,ch
+   if ch="^H"           ; BackSpace is displayed to screen
+      if i=0
+         print " ",     ; move back the correct position
+      else
+         i = i-1;
+      endif
+   else
+      i = i+1
+   endif
+EndWhile
+EndProc
+
+I=1
+WHILE I=1
+   WAITFOR "It appears to be ","wounds, but","heal ","wounds at ","enough mana","moves to attack",0
+      IF FOUND
+         SWITCH FOUND
+            CASE 1: GetN con,23
+                    PUT "It's ",con
+            CASE 2: PUT "mihe^ma"
+            CASE 3: GetN per,3
+                     PUT "mihe ",per
+                     PUT "a"
+            CASE 4: GetN per,3
+                     PUT "mihe ",per
+                     PUT "a"
+            CASE 5: PUT "No mana..."
+            CASE 6: GetN mon,4
+                     PUT "a ",mon
+         ENDSWITCH
+      ENDIF
+ENDWHILE
+                                        
+
+

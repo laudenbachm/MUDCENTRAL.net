@@ -1,0 +1,119 @@
+PROCEDURE destroy
+waitfor " slime"," filthbug"," kobold"," rat"," lashworm"," carrion",3
+if found
+   switch found
+      case 1:  put "bs slime"
+      case 2:  put "bs filthbug"
+      case 3:  put "bs kobold"
+      case 4:  put "bs rat"
+      case 5:  put "bs lashworm"
+      case 6:  put "bs carrion"
+   endswitch
+
+   waitfor "*combat engaged*",3
+   if found
+      waitfor "you gain","*combat off*","Justin drops to the ground",100
+      switch found
+         case 1,2:
+            put "g s^m g c^mu^Mrest"
+         case 3:
+            waitfor "[hp=-",3
+            if found
+               put "^#~~~+++~~~"
+               time now
+               put now
+               STOP
+            endif
+      endswitch
+   else
+      put ""
+   endif
+
+   waitfor " at you "," you for "," into the room ","[hp=45","[hp=45","[hp=45","[hp=45",10
+
+   switch found
+      case 1,2,3,4:
+         delay 50
+         put "c mend^M" 
+         destroy
+      case 5:
+         delay 50
+         put "cast mend^M"
+         destroy
+      case 6,7:
+         destroy
+   endswitch
+endif
+
+endproc
+
+repeat
+
+whenidle 30,"^M"
+when "Choose (N)onstop display (Q)uit display or (C)ontinue display","^M"
+
+;when "[majormud]: ","^#~~~+++~~~ATH0^M~"
+;when "[hp=1/","^#~~~+++~~~ATH0^M~"
+;when "[hp=2/","^#~~~+++~~~ATH0^M~"
+;when "[hp=3/","^#~~~+++~~~ATH0^M~"
+;when "[hp=4/","^#~~~+++~~~ATH0^M~"
+;when "[hp=5/","^#~~~+++~~~ATH0^M~"
+;when "[hp=6/","^#~~~+++~~~ATH0^M~"
+;when "[hp=7/","^M~~~+++~~~ATH0^M~"
+;when "[hp=8/","^#~~~+++~~~ATH0^M~"
+;when "[hp=9/","^M~~~+++~~~ATH0^M~"
+;when "[hp=10/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=11/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=12/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=13/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=14/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=15/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=16/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=17/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=18/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=19/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=20/","cast mahe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=21/","cast mihe^M~^#~~~+++~~~ATH0^M~" ;[If you want the script to drop
+;when "[hp=22/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; carrier when your hitpoints
+;when "[hp=23/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; are at 21 through 30 also,
+;when "[hp=24/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; just delete the first set of
+;when "[hp=25/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; semicolons on the first column
+;when "[hp=26/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; for these lines so that the
+;when "[hp=27/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; compiler will include it into
+;when "[hp=28/","cast mihe^M~^#~~~+++~~~ATH0^M~" ; the script.]
+;when "[hp=29/","cast mihe^M~^#~~~+++~~~ATH0^M~"
+;when "[hp=30/","cast mihe^M~^#~~~+++~~~ATH0^M~"
+
+destroy
+put "i"
+put "exp"
+put "sn^md"
+destroy
+put "u"
+destroy
+put "sn^md"
+destroy
+put "u"
+destroy
+put "sn^md"
+destroy
+put "u"
+destroy
+put "sn^md"
+destroy
+put "u"
+destroy
+
+
+time now
+put now
+
+IF NOT CONNECTED
+   time now
+   put now
+   ALARM
+   STOP
+endif
+
+until 4 = 0 ; 4 = 0 Start all over again
+

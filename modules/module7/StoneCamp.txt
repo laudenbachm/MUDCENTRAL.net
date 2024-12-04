@@ -1,0 +1,26 @@
+Area: Stone Giant Encampment
+By: Vladmir
+
+          S C
+         /  |
+        S   S S
+        |   |/
+        S-S-S
+       /   /|\
+      S S-S S S
+      |  \   \|
+      S   S   S   S
+       \ /     \  |
+        S     S-S-S
+       / \   /   /
+    S-S   S-S-S-S
+    | | 
+    S S
+    | |
+    S S
+    | | 
+    S-S-S 
+     /
+  E-S
+ /
+P   (To Mountain Plateau, Rocky Pathway) 

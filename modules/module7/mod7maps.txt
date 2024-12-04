@@ -1,0 +1,807 @@
+MajorMUD MapsMOD 7 MAPS
+By: Doubtful
+Underground River and Lake
+
+R
+|
+R     R   R
+ \   / \ /
+  R-R   R-R   R     R
+         / \  |    /|
+  R     R   R-R-R-R R
+ /     /             \
+R     R     R   R-R   R-R-R      T : Type dig down to Giant River Turtle
+ \     \    |  /   \ /                            
+  R     R R-R-R     T
+   \   /   /
+    R R   R                               R
+     \   /                               /
+      R-R                               R
+      |                                /
+      R                 R             R-R  
+     /                 / \           /   \    
+    R   R       R   R-R   R-R     R-R     R-R
+   /   /       /   /   \ /   \   /   \       \
+  R   R   R-R R R-R     R     R-R     R       R
+   \ /   /   \|/              |       |        \
+    R-R-R     R               R       R         R
+                               \       \	|
+                                R       R       R-R-R-R
+                                               /
+                                              R
+                                             /
+                                            M    M : Type Move Rocks
+                                            |
+                                          L-L-L
+                                         / / \
+                                    L-L-L L   L
+                                   / \  | |  / \
+                                  L   L L L L   L
+                                   \ /   \ \ \ /
+                                L-L-L     L L L
+                               /   \      |  \ \  
+                              L     L     L-L L L
+                               \             \|  \
+                                L             L   L   O-O
+                                |                 |  /   \
+                                L                 L-O     O
+                               /|
+                              L-L                   L-L   L
+                              | |                   | |  / \ 
+                              L L     L             L L-L   D
+                             / / \   / \           /   \
+                            L L   L-L   L-L-L     L     L  Down to Sandbar
+                             \ \            |     |    /
+                              L L-L         L     L   L
+                                 /           \   /   /
+                                L   L L   L   L-L   L-L   L
+                                |   |  \ /           \   / \
+                              L L L-L   L-L           L-L   L-L
+                              |/ /   \ /                       \
+                              L-L L L L                         L
+                              |  / \| |
+                              L-L   L L                
+
+Sandbar
+
+  S   S-S
+ / \ /  |                   K : King Crab, with a king crab claw here type
+U   S S S-S-R     S             dig sand to get down to Seher' Sahham. 
+ \     \    |     |
+  S   S R   S K S-S
+   \ / \|   | |/          
+    R   S R S S             
+         \| | |             
+          S R-S
+
+Reef/Beach/Cliff
+
+            #-#-2
+           /     \                        rooms
+          # #-#-# #                        A-A
+         /|/  |  \|\                       B-B
+        # # #-#-# # #                      C-C etc...
+         / /    |  \                                              Tree
+        # # 2-#-# # #                                              Of
+       / / /     \ \|\                                            Life 
+      2 # #       # 2 #         #  B-A     D                         
+     /|/           \ \         / \              (Cliffs)
+    # #       # #   # #   #-#-#   # A    #-#-D                     T
+     /       / \ \   \ \ /         \|    |\  |                    / \
+    #     #-# # # #   #-#           #  #-E #-C-#-#-#-#-#-#-#-!-#-T   T
+   /     /   / \| |                                               \ /
+  &     #-# 3 * # #             #        E   C                     T
+   @       / / \   \           / \      / \ /|                         
+    % # # # *   *   #-#-#-3 #-# #-# #  F @-B #      ! = Fall down into     
+    |/| |\ \|  /          |  \  |  /                 the Shallow Jungle
+    # # # 3-# *     #-# # #-#-# 3 #-#  #-F                          
+     /  |     |     | | |\  |  /    |
+    # # #     #   #-# # # # # #-#-#-#    
+    |/|/      |  /     \|  \ \     \              
+    3 # #     # # #-#-# 3 # #-# #-# #   
+        |\    |/   \   \ / \    |  \|
+      # 3 #   3 # #-3 # # # # # #   #
+      |\| |    / \|   | |/ \ \|\|
+  #   # # # # # # # #-# # # # # 3 #
+  |   |  / /| |/   /  |  / \ \    |\
+D+#-#-# # # 3 # #-#   #-#   # #   # #
+  |   |  \|  \| |  \   /     \ \  | @ <- Go Crack
+  #   #-# # # # #   #-#       # # # S (Rope and Grapple)
+         \ / \ /     /         \ \|
+        # #   # #   #     #-#-# # 3     S
+        |\     / \ /|     |   | |       |
+    #-#-#-# #-#   # #     #   # #       #
+      | |   |       |     |  / \|       |
+      # #   #       #     # #   #       D (to capt.quarters)
+      |  \          |    /  |
+      #   #         #   #   #
+      |    \        |  /   /
+      #     #   #   #-#   #
+      |      \  |\  |  \  |                 * (Go Pool)
+      #       #-# #-#   #-#                 % (Go Beach)
+     / \          |                         & (Go Lagoon)
+    #   #         #                         S (Ship)
+    |   |                                    
+    #   #                              
+     \ /                                    
+      D
+      @ (Go wellspring To Sandbar/Go fountain To Reef)     
+      U-U
+
+Shallow Jungle
+
+                                            T 
+                                           / \ 
+                                          T   T-#
+                                           \ /  |
+                                            T   #     (H)
+                                               /   Small Hut
+                                              #    (Go Path)
+                                              |
+                                            #-# H+S@#   #
+                                             \     / \ /|
+                                          #-#-#   # # # #
+                                          |  / \  |/ \  |
+                                    M   #-# #   # #   #-#
+                                     \  | | |   |    / \
+                                      #-# G-#   #   #   #
+                                         /   \  |   |  /
+                                      #-#-# #-#-#   # #
+                                         \   /   \ /  |
+                                          # # #-# #   #-#
+                                          | | |  \|\     \
+                                  #       # # #-# # #   #-#
+                                  |\       \ \  |   |   |     S Sylk
+                                  # #       #-# #   #   #     M MudPits
+                                  |  \      | | |  /    |     G Gnome Merchant
+                                  #-# #     # # # #-#-# #     
+                                  | |\|    / / / \    |  \
+                                  # # #   # #-#   #   #   #       _______________________
+                                   \ \|  / / \   /|\ / \  |      |                       |
+                                #   # #-# #   # # # #   #-#      |  U    Abandoned       |
+                                 \ /  |   |    /   \   /| |\     |  |     Temple         |
+                                  #   #   #   #     # #-D D-#    |  #                    |
+                                 /|   |  / \  |    /  |     |    |  |   S : 3-5 snake    |
+                                # #   # #   # # #-#   #-D D-#    |  #       regen rooms  |
+                                |  \ /     / /  |    / \| |/     |  |       a round      |
+                                #   #-#-# # #   #   #   #-#      |  S                    |
+                                |     | | | |  /   /             |  |                    |
+                                #-#-#-# # # # # #-#  All downs   |  S                    |
+                               /     / /   \ \ \|   lead to the  |  +                    |
+                              #-#-# # #   # # # #    Abandoned   |  U   Up to Deep       |
+                                  | |/|  /|\   \      Temple     |        Jungle         |
+                                  #-# # # # #-#-#                |_______________________|
+                                 /  |   |/ /|
+                                #   # #-# # #
+                                |  /| |/ / / \
+                                # # # # # # # #
+                                 \| |/  |/ \|  \
+                                  #-#-#-#   #-#-#
+                                 /
+                                M
+
+Deep Jungle/Catacombs
+  
+                                               #
+@ go cave                                     / \
+@ go jungle                                  #   # #
+A > a                                       /   /|  \
+                                           #-# #-# #-# #-#
+                                          /|   |     |   |\
+D > Z (With Idol)                        2 #   g #-# # #-# #-#
+D > d (Without Idol)                    / /      |  \ \     / \
+E > Y (With Idol)                    #-# #   #-#-2   # #-# #   #-#
+E > a (Without Idol)                /  | |        \   \   \|      \
+G > g (From Temple)                #-#-# # #   2-#-#-#   #-# # #   #-#
+                                  /|     | |  / \     \     \  |  /   \
+                                 # # # #-# # #   #-#   # #   # # #     #
+                                   | |/  | |/      |   | |\  |/ /|     |
+                               #   # # #-# #-# #-# #-D # # # # a # #   #
+                                \ / /  |     | |  \      |   |   | |   |
+                                 # #   #   # # #   2     #-#-# #-# #-# # #
+                                  /   / \ /  | |    \   /  |     |   | | |
+                   #   #-#     # #   # 2-# #-# #-# #-#-#   #     #-# # #-#
+                  / \   /|     |/     /|  \    |  /  |  \  |       | | |
+               #-#   #-# #     2 #-#-# #-# #-#-# A   # # 2 #-2     # # #
+              /     /|  /      | |  \                  |  \  |     | | |
+             # #-#-# #-#       # 2 # #   #             #   # #     # #-#-#
+             | | | |           | | |  \  |              \    |     |/  |
+             # # # #@#+#-#$#-#-# # #-# #-#         #-#-#-#-# #     #   #
+             |  /| |           | |  /  |                    \|         |
+             # # #-# #-#       # #-#   2                 #-#-2       #-#
+             | |    /  |       |   |  /|                 |    \
+             # #-# #-# #       #   # # #               # #     #
+              \  |\  |         |  / /  |                \ \
+               # # # #         # # #   #                 #-#
+               | | |  \         \ /   /
+               # # #-#-#         2   #
+              / / /   /
+             # # #   #
+              \| |   |      __________________________________________________________
+               # #-#-#     |                                   #-#
+   Down To    / /| |  \    |                                     |
+  Abandoned  # # # #   #   |                                     #-#
+   Temple    | | |  \ /|   |                                       |      Up To
+             # # #-# # #   |                 # #   #-#             #   Lost City
+             | |    \  |   |                  \|  /|              /   (U-3 Sea W)
+     #       #-#-#   #-#   |                   2-# #             #         #-#-#-U
+      \     /     \        |                  /    |              \        |
+       #-D-#   #-# #-#     |               # #   # #   #-#         #       #
+      /  |  \ /   \|       |                \|   | |  /             \      |
+     #   #   #     #-#     |               # #   2 # #         #-# #-2   # #
+      \ / \ /              |               |    / \|  \        |  /   \ / \|
+       #-#-#               |               #-#-#   #   #       # E   # #   #
+       | | |               |              / \          |\      |/   / \      
+       #-#-#               |             2   #-#-#-# # 2 #-# #-# #-#   #-#-#
+       | | |               |            / \      |  \| |   |/   /          |
+       #-#-#               |     #-#-#-#   #-#   #   #-#   2   #     #-#-#-#
+       | | |               |       |       |  \        |   |   |     |
+     #-# #-# #             |     #-#-#-# # # # #-#-#   # #-#   #-#-# #   #
+    /  |\ /|/ \            |            \|  /|     |  /  |  \       /    |
+   #   # # #   #           |         #   2-# #     # #   #   #-#-#-#   #-#
+    \ /  |  \ /            |          \       \         /   /|        /
+     #   #   #             |           #-#     #-#     #   # #   #-#-#
+         |                 |              \   /   \   /   /       /
+         #-E               |               #-#   # #-# #-# #   #-#
+       Entrance            |                  \  | |   |   |  /
+          To               |                   #-2 #-Z G   2-#
+    Tasloi Village         |                      \       /
+                           |                       #   #-#
+                           |                        \ /
+                                                     #
+
+Tasloi Village
+                      
+                          
+                            E-#   Entrance To Tasloi Village 
+                             /     From Deep Jungle
+                        3-#-#-#-#
+                       /  |      \
+                      #   # #-3   3
+                      |   | |
+                      #   #-#
+                      |  /         
+ A: Climb Tree Up to  A #-3   #     
+    Massive Web           |   |     A: Tasloi Animal Master and 6 Wasps   
+ T: Climb Tree Up to      T-#-3 C
+    Tasloi Treetops           |/    C: Tasloi Chief and 6 Warriors 
+                              #
+
+Tasloi Village, Massive Web
+
+                                    #-A Climb Tree Down to Tasloi Village
+                                    |
+                                #-#-#-#-#
+                               /    |    \
+                              #   U-6-#   #
+                             / \    |    / \\
+                            6   #-# # #-#   6
+                           /    |  \|/  |    \
+                          #     6   U   6     #
+                         / \   /    |    \   / \       UP: go strand
+                        #   #-#   #-6-#   #-#   #          (or climb)
+                        |          /|\          |     
+                        #   U   #-# # #-#   6   #      
+                         \ / \ /    |    \ / \ / 
+                          #   #     #     U   #        The Southwest U is also 
+                           \   \   / \   /   /         a 6 regen room
+                            6   6-#   6-#   6
+                             \ /         \ /
+                              #-#   6   #-#
+                                 \ / \ /
+                                  #   #
+
+Tasloi Village, Treetops
+
+            6     6-#
+             \    |  \
+              # #-#   #
+              | |\    |
+            6-#-# S #-#      S Tasloi Shaman
+             /  |  /
+            #   6-#   #
+             \  |    /
+              #-# #-6
+                |   |
+                B   #  B: Climb Tree down to Tasloi Village
+                 \ /
+                  #
+
+Lost City
+
+  O-O-O-O     P-P-P-P     D-D-D-D
+  |     |     |     |     |     |
+  O M-G O #-#+P C-C P #-#+D 6-6 D
+  | | | | |   | +   | |   | | | |   O Small Path
+  O P G O #-# P C+C P # # D 6 6 D   C Elder Council Chambers
+  |   + |   | | | | | | | |   + |   D Dirt Path
+  O-O-3-O #-# P C C P #-# D-#-#-D   S Slaves Quarters
+    |\|/|     | +   |     |/ /|     P Elder Path
+    #-#-#-#-#-#-#-#-#-#-#-#-#-#     G Guardian hut
+    +           |\|           |     U To Upper Grounds
+    # T-T-T-T-T #-# T-T-T-T-T #     T Train Grounds 
+    | |   |   | |\| |       | |     ? Search
+    # T   T   T #-# T       T #     $ Bank (duh)
+    | |   |   | |\| |       | |     A Armor Shop (Front/Back Rooms)
+    #?T-T-U-T-T #-# T-T-U-T-T?#     G General Store
+    | |       | |\| |   |   | |     H Hides Shop 
+    # T       T #-# T   T   T #     J Jewelery Shop
+    | |       | |\| |   |   | |     W Weapons Shop (Front/Back Rooms)
+    # T-T-T-T-T #-# T-T-T-T-T #     % Up Dummy/Down City
+    +           |\|           |     M Gibbering Mage
+    #-#-#-#-#-#-#-#-#-#-#-#-#-#     P Deranged Priest, Go hatch up to Lost City Treetops
+    |\|/|\|/|/| | | |\|/|\|/|\|
+  #-#-#-#-#-#-# #-# #-#-#-#-#-#-#    T-T-T         T-T-T
+  |   | | |     | |     |   | | |    |   |         |   |
+  # W $ A #-#-#-#-#-#-#-#-# J S #    T D-T-T-T-T-T-T-% T
+  | |   | | | | | | | | | |   | |    |   |         |   |
+  #-W H W #-#-#?D-# #-#-#-# # # #    T-T-T         T-T-T
+  |   |         | |         |   |      Upper Training  
+  #-#-#-#     #-#-#-#     #-#-#-#
+
+            D: Down to the Catacombs
+
+Lost City, Treetops
+
+                   B
+                  @         @: Go cliff to Barren Hills
+                 6 
+               # # #-#      1: Twist Knot
+              / \|/   \     2: Move Branch
+             # # # # #3#    3: Pull Vine
+             |  5  4  /|    4: Push Knot
+             # 1-#-#-# #    5: Tear Bark
+              \     \  |    6: Climb Vine
+               # # # # #
+              @ \| 2 |/
+             #   #-#-#
+             |
+             D             Down to the Deranged Priest
+
+Barren Hills
+
+                    U  Northern Outlook
+                   /
+      #-U-O-U-O-O-O-O-O-O-O-O-O-U-O-U
+      |    /                        |
+      #   #       #-#-#             #
+       \  |      /    |            / 
+        # #     #     G           #  
+        | |    /      |          / \
+        # #   #     # #         #   #
+       /   \ /     / \         /     \
+      #     #     #   #   #-#-#       #
+     /     /     /     \ /     \      |
+    #   #-#-#   #       #       #   U #     
+   /   /     \  |       |        \ /   \                 
+  #   #       # #       #         #     #          
+ /   /        |  \     /|         |    /        
+#   #         #   #   # #         #   #             
+ \ /         /|    \   \ \         \ /                   
+  #         U #     #-#-# #         #                    
+   \           \        |  \        |                
+    # #-#       #       #   #       #              
+     \   \     /       /     \       \              
+      #   #-#-#       #       #       #              
+       \   / \       /         \      |                  
+        #-#   #   #-#-#-#   #   #     #                     
+       /       \ /       \ /   /      |               
+      #         U         #   #       #         
+       \         \       /   /        |                   
+        #         #     #   U         #         
+        |          \    |    \       /         
+        #-#-U       #   #     #     #                  
+       /     \      |   |     |    /                  
+      #       #     #   #   U-#   #                 
+       \      |     |  /   /     /             
+      #-#     #     # #   #     #                                   
+     /   \    /    / /   /     /                                        
+    #   # #-#     # #   #     #                                    
+    |  / \       /  |  /     /                                     
+    #-#   # #-#-#   #-#     #                                       
+          |/       /       /                             
+          #       #       #      
+           \     /       /                                  
+            #   #       #                              
+           /    |      /                             
+          #-#-#-#-#-#-#                                           
+                 /
+                #  Go vine to Lost City Treetops
+
+Barren Hills to Mountains
+                                                   
+             U  To Mountain Plateau                               
+              \                                  
+               U-#-#-#-#-#-#                               
+                            \                     
+                           U-U                    
+                           U-D                               
+                         #-#-U2x                               
+                        /                                               
+             D-U-U-U-#-#                                     
+             U-#-#-#-#                                                    
+                      \                            
+                       U-U-#                                       
+                            \                                 
+               D-#-#-#-#-#-#-#                               
+               U-#-#                                           
+                    \                                       
+                     U-#-U-#-#-#                                        
+                               /                              
+                              #                                    
+                             /                                    
+                      #-#-#-#                                 
+                     /                                             
+          U-#-#-U-#-#                                                 
+           \                                               
+            #-#-D                                                 
+                U-#-#-#-#-#-#                                           
+                             \                                  
+                              #                                  
+                               \                          
+                                D                          
+                               /                 
+                              #                
+                             /                         
+                            #                    
+                           /                              
+                          #                                  
+                         /                                  
+          U-#-#-#-#-#-#-#                                         
+           \                                                                 
+            #                                             
+             \                                           
+              #-#-#-#                                        
+                     \                                    
+                      #-#-#-#-#-#-#                                      
+                                   \                          
+            #-#-#-U-#-#-#-#-U-D-#-#-#                        
+           /                                                 
+        #-U-#-#-D 
+                U-#-#-#-#              
+                         \                 
+                          #-#-#                               
+                               \                        
+                                #-#-D
+      U-#-#-#-#-#-#-#-#-#-U-#-#-#-#-U                                                                
+       \                                                                    
+        #                                                                
+         \                                                   
+          #-#-#-#-#-#-D
+              U-#-#-#-U                                           
+               \                                               
+                #-#-#-#-U-#-#-#
+                               \              
+                            #-#-U
+                           /           
+                          U              
+                         /                      
+          U-#-#-#-U-#-#-#        
+           \
+            #-#-#-#
+                   \
+                    #
+                     \
+                      U
+                     /
+  U-#-#-#-#-#-#-#-#-#
+   \
+    U
+   /
+  #-#-#-#-#-#-#-#-#
+                   \
+                    D To Northern Outlook
+                    
+Mountain Plateau
+ 
+                      U
+                       \ 
+                        # Level 2
+                        |  West Side
+ U    Level 1    U      #  
+  \             /      / 
+   #           #    #-#        
+   |\         /    /         Level 3      
+   #-#   #-#-#    #              #-U    D Level 4  
+   |  \ /          \            /        \
+   D   #            D          D          U2x To Storm Giant Fortress
+
+
+Stone Fortress
+
+               # S    Stone Chieftain
+              /  |
+	     # # # #
+	     |  \|/		
+	     #-#-#
+	    /	/|\
+	   # #-# # #
+	   |  \   \|
+	   #   #   #   #
+	    \ /     \  |
+	     #     #-#-#
+  	    / \   /   /
+	 #-#   #-#-#-#
+	 | |
+	 # #
+	 | |
+	 # #
+	 | |
+	 #-#-#
+	  /
+       E-#      Stone Encampment, Entrance
+      /
+   #-#
+    /|
+   #-#   #-#
+      \ /   \
+     # #     #
+     |\|\   /|
+     # # # # #
+      \  |/ \|
+       D D   #   Down to Mountain Plateau
+
+Storm Giant Fortress
+
+      Storm King
+  #     @-#
+  |       | Storm Commander
+  #       G-$ #
+  |       |   |    
+  #       #-#-#
+  |       |
+  #       #    
+  |       |
+  #     #-#-#
+  |       |
+  #       #
+  |       |
+  # #-#-#-#   #-#
+  | |     |   | |
+  #-#-#   #-#-#-#
+  | |     |     |
+  #-#-#-#-#-#-#-#
+  |
+  #Gate
+ / Level 5
+D2x
+ To Mountain Plateau
+
+Undermountain Caves
+
+                                     #       #   #-U  To Storm Giant Fortress
+                                     |\      |\ / /|
+                             #       # #     # # # #
+                             |\       \ \   /   / /
+                             # #   #   # #-#   # #
+                            /   \ / \ /       /   \
+                           #     #   #   #   #     #
+                            \           / \ /      |
+                             #       #-# #-#   #   #
+                              \       \ / \|\  |\ /
+                               #     # #   # # # #
+                              / \   / \      |  \
+              To UnderMtn  D #   #-#   #-#   #   #
+                           |/   /  |      \ /   /
+                           #   #   #       #   #
+                               |    \         /
+                               #     #       #
+                                \   /|\     /
+                                 3 # # #   3
+                                 |/   \ \ /
+                                 #     # #
+                                       |
+                               #       #
+                              / \       \
+                             #   #   #-# #
+                              \ /|\ /   \ \
+                               # #-#     #-#
+                                \|/
+                                 #         #
+                                 |        / \
+                                 #     #-#   #
+                                  \   /      |
+                             #-#   #-3   #   #
+                             |/ \  |/   / \ /
+                             #   #-#   #   #
+                             |   |/ \ /
+                             #   #   #
+                              \ /
+                               #
+                                \
+                                 #
+                                  \
+                                   #   D To Elder Guant One
+                                   |  /
+                                   3 #
+                                    \|
+                                     #
+
+UnderMountain
+
+  U     #-#
+   \   /   \
+    #-1     #
+           /
+    U     #
+     \     \
+      #     #
+     /|    /
+  #-#-#   #
+   / / \ / \
+  #-#   #   #
+
+NW up is to Undermountain Cave
+South up is to the Earth Dragon
+
+Volcano Chisled Tunnels 
+
+                 #                           
+                  \
+                   #
+                   |
+                   #
+                  /|\
+                 # # # 
+                 |   |
+                 # # # 
+                  \|/
+                   #
+                   |
+                   #
+                   |
+                   #
+                  /
+           #-#   #
+          /  |  /
+         #   #-# 
+         |  /  |
+         # #   # 
+        / /   /
+     #-# #   #-# #-# 
+    /         / /
+   #   #     # # 
+  /    |    /  |
+ #-#   #   #   # 
+   |    \ / \ /
+   #     #   # 
+  /     / \
+ #     #   # 
+ |     |   |
+ #-# #-#   # 
+   | |
+   # #-#
+    \
+     #
+
+Volcano
+
+                                       # 3-#
+                                      /| | |
+                                     # #-# #
+                                     |    +
+                                     #-D # #-#
+                                     |   | | |
+                                   # 3   #-# #
+                                  / \ \     ?
+                               #-# 3-# #   3-# #-#
+                               +   |   |  ?  | | |
+                               #   #-# #-#   #-# #
+                               |     |/          |
+                               #     #           #
+                              /                   \
+                           #-3                     3
+                          /                         \
+                     #-#-#                           #
+                    ?                                |
+                   3                                 #-#
+                    \                                   \
+                     #                               #-#?#
+                     |                                /  |
+                     #                               #   #-#
+                    /|\                               \     \
+                   # 3 #               			#     #-#
+                   1   1                   		|     |  \
+                   # 3 #              			3     #   #
+                    \ /                			 \     \  |
+                     #                 			  D-#   3-#
+                     |                                      \    |
+                     #                                       #-# #     3
+                     |                                          \ \   / \
+                     #                                           3 #-# D #
+                    /                                            |   ? | |
+               #-# 3                                       #-#   # #-# # #-#
+              /  |/                                        |  \  |/     ?   \
+             #   #-#     #-#                               #   3 # #-#   #-# 3
+             |  /  |     |  \                             +    |   |  \    | |
+             # 3   #     #   #-3     #   #           #-# #     #   #   3-#-# #
+            / /   /       ?  |      /|  / \         /  | |      \  |       |/
+         #-# #   #-3 #-#?3-# #   #-# #+#   #+#   #-#   3-# 3     #-#       #
+        /    ?    / /   /    ?   |     |      \ /      |  /
+       #   # D   # #   #   #-#   #   #-3       3       #-#
+      /    |    /  |   |  / /   /    |                   |
+     3-#   #   #   3   # # #-#-3   #-#                   D
+       |    \ / \ /   / /         /
+       #     3   #   # 3       #-#
+      /     / \     / +       /
+     #     #   # #-3 #   #-#-3
+     |     |   | |    \ /
+     #-3 #-#   #?#     #
+       | |        \   /
+       # #-3       #-#
+        \
+         #
+
+Lower Left Down (To Dark Phoenix)
+Lower Middle Down (To Earth Dragon)
+Farthest Right Down (To Red Demonling)
+Upper Middle Down (To Behemoth Hellhounds) To make new Magma's
+
+Volcano Lower Levels
+Northern Most Down
+
+      U
+     / \
+    # # #
+    |\| |    Up to Volcano
+    # # #
+     \ /
+      #
+
+Dark Phoenix and Lesser Efreetis
+
+     1-1-1
+    / ?   \
+   1   1   1
+   |   |   |
+   1   1+# 1    Up to Volcano
+   |       |
+   1   U   1
+    \  |  /
+     1-1-1
+
+Earth Dragon
+
+           #-#
+           |    
+           # #-D  Down to Undermountain
+           |?    
+   U   #-# #      Up to Volcano
+    \ +  |/ 
+     #   #
+
+Red Demonling
+
+      U
+      |     Up to Volcano 
+  4+#-#
+
+Behemoth Hellhounds
+
+ U #
+  \|\
+   # #
+   |  \     Up to Volcano
+   #-# #
+     |/
+     #
+
+I would like to Thank LordRahl, Fingolfin Brightblade, and last but not least 
+Frost for supplying me with most of the maps. I would also like to thank Locke 
+Cole for his viewer which was used to make many of the maps. If you find any 
+errors or additions please e-mail them to Doubtful11@yahoo.com 
+ 
+            Try Yahoo! Clubs
+
+
+
+            More...
+
+
+                  The Never-ending Family Reunion
+                  Share photos, exchange news, keep in touch anytime anywhere.
+                  Start a Yahoo! Club Today!
+
+            [Close]
+
+

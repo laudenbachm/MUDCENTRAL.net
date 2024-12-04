@@ -1,0 +1,279 @@
+<html>
+<head><title>The Major MUD Scripts Page</title></head>
+<pre>
+
+/*                Written by: Anakin @ California BBS                 */
+/* This is an Ancient Crypt script for the Amiga program Terminus     */
+/* Just change the health checking part to your max HPs and it should */
+/* be all set. Send any comments, questions, improvements, ect to:    */
+/* Internet: anakin@calbbs.com  MajorNET: Anakin@URB                  */
+
+init:
+ONCARRIER GOTO crap
+goto parta
+
+parta:
+GOSUB mons
+GOSUB fine
+gosub w
+gosub n
+gosub e
+gosub n
+gosub w
+gosub w
+gosub w
+gosub n
+gosub n
+gosub e
+gosub s
+gosub n
+gosub w
+gosub s
+gosub s
+gosub e
+gosub e
+gosub e
+gosub s
+gosub w
+gosub w
+gosub w
+gosub s
+gosub e
+gosub s
+gosub s
+gosub e
+gosub e
+gosub n
+gosub w
+gosub n
+gosub e
+goto parta
+
+n:
+SEND "sn^Mnorth^M"
+WHEN 1 "no exit" GOTO crap
+WAIT "Crypt"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+GOSUB heall
+RETURN
+
+s:
+SEND "sn^Msouth^M"
+WHEN 1 "no exit" GOTO crap
+WAIT "Crypt"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+GOSUB heall
+RETURN
+
+e:
+SEND "sn^Meast^M"
+WHEN 1 "no exit" GOTO crap
+WAIT "Crypt"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+GOSUB heall
+RETURN
+
+w:
+SEND "sn^Mwest^M"
+WAIT "Crypt"
+WAIT "Obvious"
+GOSUB mons
+GOSUB heal
+GOSUB heall
+RETURN
+
+mons:
+SEND "^M"
+WHEN 1 "skeletal" GOTO war
+WHEN 2 "moaning" GOTO moa
+WHEN 3 "tiger" GOTO bet
+WHEN 4 "notice fine" GOTO fbro
+WAIT "Obvious"
+return
+
+fbro:
+SEND "get fine^M"
+WAIT 10 "You took"
+GOTO mons
+
+war:
+gosub waraa
+GOTO mons
+
+wara:
+WHEN 1 "you for" GOTO mendz
+WAIT "gain"
+return
+
+waraa:
+SEND "bs skel^M"
+WHEN 1 "Well Spoken..." GOTO mons
+WAIT "*Combat Engaged*"
+GOTO wara
+
+mendz:
+SEND "mend^M"
+GOTO waraa
+
+moa:
+gosub moaaa
+GOTO mons
+
+moaa:
+WHEN 1 "draws the" GOTO mendzs
+WHEN 2 "touches you" GOTO mendzs
+WAIT "gain"
+return
+
+moaaa:
+SEND "a moan^M"
+WHEN 1 "Well Spoken..." GOTO mons
+WAIT "*Combat Engaged*"
+GOTO moaa
+
+mendzs:
+SEND "mend^M"
+GOTO moaaa
+
+bet:
+gosub betaa
+GOTO mons
+
+beta:
+WHEN 1 "you for" GOTO mendx
+WAIT "gain"
+return
+
+betaa:
+SEND "bs huge^M"
+WHEN 1 "Well Spoken..." GOTO mons
+WAIT "*Combat Engaged*"
+GOTO beta
+
+mendx:
+SEND "mend^M"
+GOTO betaa
+
+heal:
+SEND "health^M"
+WHEN 1 "Health:    30/162" GOTO resta
+WHEN 2 "Health:    29/162" GOTO resta
+WHEN 3 "Health:    28/162" GOTO resta
+WHEN 4 "Health:    27/162" GOTO resta
+WHEN 5 "Health:    26/162" GOTO resta
+WHEN 6 "Health:    25/162" GOTO resta
+WHEN 7 "Health:    24/162" GOTO resta
+WHEN 8 "Health:    23/162" GOTO resta
+WHEN 9 "Health:    22/162" GOTO resta
+WHEN 10 "Health:    21/162" GOTO resta
+WHEN 11 "Health:    20/162" GOTO resta
+WHEN 12 "Health:    19/162" GOTO resta
+WHEN 13 "Health:    18/162" GOTO resta
+WHEN 14 "Health:    17/162" GOTO resta
+WHEN 15 "Health:    16/162" GOTO resta
+WHEN 16 "Health:    15/162" GOTO resta
+WHEN 17 "Health:    14/162" GOTO resta
+WHEN 18 "Health:    13/162" GOTO resta
+WHEN 19 "Health:    12/162" GOTO resta
+WHEN 20 "Health:    11/162" GOTO resta
+WHEN 21 "Health:    10/162" GOTO resta
+WHEN 22 "Health:     9/162" GOTO resta
+WHEN 23 "Health:     8/162" GOTO resta
+WHEN 24 "Health:     7/162" GOTO resta
+WHEN 25 "Health:     6/162" GOTO resta
+WHEN 26 "Health:     5/162" GOTO resta
+WHEN 27 "Health:     4/162" GOTO resta
+WHEN 28 "Health:     3/162" GOTO resta
+WHEN 29 "Health:     2/162" GOTO resta
+WHEN 30 "Health:     1/162" GOTO resta
+WAIT "Mana:"
+RETURN
+
+heall:
+SEND "health^M"
+WHEN 1 "Health:    60/162" GOTO resta
+WHEN 2 "Health:    59/162" GOTO resta
+WHEN 3 "Health:    58/162" GOTO resta
+WHEN 4 "Health:    57/162" GOTO resta
+WHEN 5 "Health:    56/162" GOTO resta
+WHEN 6 "Health:    55/162" GOTO resta
+WHEN 7 "Health:    54/162" GOTO resta
+WHEN 8 "Health:    53/162" GOTO resta
+WHEN 9 "Health:    52/162" GOTO resta
+WHEN 10 "Health:    51/162" GOTO resta
+WHEN 11 "Health:    50/162" GOTO resta
+WHEN 12 "Health:    49/162" GOTO resta
+WHEN 13 "Health:    48/162" GOTO resta
+WHEN 14 "Health:    47/162" GOTO resta
+WHEN 15 "Health:    46/162" GOTO resta
+WHEN 16 "Health:    45/162" GOTO resta
+WHEN 17 "Health:    44/162" GOTO resta
+WHEN 18 "Health:    43/162" GOTO resta
+WHEN 19 "Health:    42/162" GOTO resta
+WHEN 20 "Health:    41/162" GOTO resta
+WHEN 21 "Health:    40/162" GOTO resta
+WHEN 22 "Health:    39/162" GOTO resta
+WHEN 23 "Health:    38/162" GOTO resta
+WHEN 24 "Health:    37/162" GOTO resta
+WHEN 25 "Health:    36/162" GOTO resta
+WHEN 26 "Health:    35/162" GOTO resta
+WHEN 27 "Health:    34/162" GOTO resta
+WHEN 28 "Health:    33/162" GOTO resta
+WHEN 29 "Health:    32/162" GOTO resta
+WHEN 30 "Health:    31/162" GOTO resta
+WAIT "Mana:"
+RETURN
+
+resta:
+SEND "rgen^M"
+GOTO rest
+
+rest:
+SEND "rest^M"
+WHEN 1 "too sick" GOTO anti
+WHEN 2 "skeletal" GOTO mons
+WHEN 3 "moaning" GOTO mons
+WAIT 45 "blajhdjhf"
+GOTO check
+
+anti:
+SEND "anti^M"
+GOTO rest
+
+check:
+SEND "health^M"
+WHEN 1 "Health:   156/162" GOTO mons
+WHEN 2 "Health:   157/162" GOTO mons
+WHEN 3 "Health:   158/162" GOTO mons
+WHEN 4 "Health:   159/162" GOTO mons
+WHEN 5 "Health:   160/162" GOTO mons
+WHEN 6 "Health:   161/162" GOTO mons
+WHEN 7 "Health:   162/162" GOTO mons
+WAIT "Mana:"
+GOTO rest
+
+crap:
+SEND "~~~+++~~~"
+WAIT 10 "OK"
+SEND "ATH^M"
+END
+
+fine:
+SEND "i^M"
+WHEN 1 "broadsword" GOTO hide
+WAIT "Wealth:"
+RETURN
+
+hide:
+SEND "hide fine^M"
+WAIT "hid"
+GOTO fine
+</pre>
+
+</body></html>
